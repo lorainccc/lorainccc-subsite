@@ -24,8 +24,8 @@
       <h2>LCCC'S<br />
         Mobile App</h2>
       </a>
-     <p>
-      <a class="secondary button radius" href="/website-feedback?siteurl=<?php echo site_url(); ?>">Provide Website Feedback</a>
+     <p class="website-feedback">
+      <a href="/website-feedback?siteurl=<?php echo get_permalink(); ?>" target="_blank">Feedback about this page</a>
      </p>
      </div>
     <div class="large-3 medium-3 columns">
