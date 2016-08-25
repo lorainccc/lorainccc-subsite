@@ -46,8 +46,8 @@ function lorainccc_subsite_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'lorainccc_subsite' ),
 		'left-nav' => esc_html__( 'Left Nav', 'lorainccc_subsite' ),
-		'footer-quicklinks-nav' => esc_html__( 'Footer Quicklinks', 'lorainccc_subsite' ),
-		'footer-campus-location-nav' => esc_html__( 'Footer Campus Locations', 'lorainccc_subsite' ),
+		'footer-quicklinks-nav' => esc_html__( 'Footer Quicklinks', 'lorainccc' ),
+		'footer-campus-location-nav' => esc_html__( 'Footer Campus Locations', 'lorainccc' ),
 		'mobile-primary' => esc_html__( 'Mobile Primary Menu', 'lorainccc_subsite' ),
 	) );
 	/*
