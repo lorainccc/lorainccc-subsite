@@ -25,7 +25,7 @@
         Mobile App</h2>
       </a>
      <p class="website-feedback">
-      <a href="/website-feedback?siteurl=<?php echo get_permalink(); ?>" target="_blank">Feedback about this page</a>
+      <a href="/website-feedback?siteurl=<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank">Feedback about this page</a>
      </p>
      </div>
     <div class="large-3 medium-3 columns">
