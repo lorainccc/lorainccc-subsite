@@ -1,14 +1,14 @@
 /*!
  Theme Name: lorainccc-subsite
- Theme URI:    http://www.lorainccc.edu 
- Description:  Lorain County Community College Theme 
- Author: LCCC Web Development Team 
- Author URI: http://www.lorainccc.edu 
- Template: lccc-framework 
- Version:1.0.0 
- License: GNU General Public License v2 or later 
- License URI: http://www.gnu.org/licenses/gpl-2.0.html 
- Text Domain:  lorainccc-subsite */ 
+ Theme URI:    http://www.lorainccc.edu
+ Description:  Lorain County Community College Theme
+ Author: LCCC Web Development Team
+ Author URI: http://www.lorainccc.edu
+ Template: lccc-framework
+ Version:1.0.0
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  lorainccc-subsite */
  /*!
 Table of Contents
 Color Section : LCCC Color Scheme
@@ -29,7 +29,7 @@ CUSTOM VARIABLES
 DEFAULT VARIABLES
 **********************//*!
 Color Section : LCCC Color Scheme
-*//*! 
+*//*!
 Mixins Section: LCCC Mixins
 */.alignnone{margin:5px 20px 20px 0}
 .aligncenter,div.aligncenter{display:block;margin:5px auto 5px auto}.alignright{float:right;margin:5px 0 20px 20px}
@@ -203,3 +203,9 @@ aside.columns{padding-right:.9375rem !important;padding-left:.9375rem !important
 .white-panel{margin-top:3rem}.cta-icons{margin-bottom:2rem}.footer-sm-links{width:210px;margin:0 auto 1rem auto}
 .footer-sm-links li a{padding:0}.footer-sm-links li a img{margin:0 .25rem}footer .row .columns{border-bottom:1px solid #5593db;padding:2rem 0 1rem 0}
 footer{padding-bottom:0}}
+button.radius, .button.radius{
+ border-radius: 10px;
+}
+button.round, .button.round {
+ border-radius: 1000px;
+}
