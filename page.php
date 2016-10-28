@@ -12,7 +12,7 @@
 
 get_header(); ?>
 <div class="row page-content">
-<div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu --> 
+<div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
   <div class="row show-for-small-only sub-mobile-menu-row" style="background:#000;">
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
@@ -40,7 +40,7 @@ get_header(); ?>
    </ul>
   </div>
  </div>
-</div><!--End Mobile Side Menu --> 
+</div><!--End Mobile Side Menu -->
 <div class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
@@ -63,7 +63,7 @@ get_header(); ?>
 			</nav><!-- .main-navigation -->
 				<?php endif; ?>
 		<?php endif; ?>
-		
+
 	</div>
 	</div>
  	<!--<div class="small-12 medium-12 large-12 columns">
@@ -71,20 +71,20 @@ get_header(); ?>
 							<?php //dynamic_sidebar( 'lccc-events-sidebar' ); ?>
 				<?php //} ?>
 	</div>-->
-	</div>			
-	<div class="small-12 medium-8 large-8 columns">		
+	</div>
+	<div class="small-12 medium-8 large-8 columns">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post();
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+				 get_template_part( 'template-parts/content', 'page' );
 
-			<?php endwhile; // end of the loop. ?>
+			     endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-</div>	
-	
+</div>
+
 </div>
 <?php get_footer(); ?>
 
