@@ -14,15 +14,15 @@ get_header(); ?>
 <div class="row page-content">
 <div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
-  <div class="row show-for-small-only sub-mobile-menu-row" style="background:#000;">
+  <div class="row show-for-small-only sub-mobile-menu-row hide-for-print" style="background:#000;">
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
      <button class="menu-icon" type="button" data-toggle></button>
      </span> </div>
-   <div class="small-10 columns nopadding">
+   <div class="small-10 columns nopadding hide-for-print">
     <h3 class="sub-mobile-menu-header" style="padding-top: 6px;
    padding-left: 8px;color:#ffffff ;"><?php echo bloginfo('the-title'); ?></h3></div>
   </div>
-  <div id="sub-responsive-menu" class="show-for-small-only">
+  <div id="sub-responsive-menu" class="show-for-small-only hide-for-print">
    <ul class="vertical menu" data-drilldown data-parent-link="true">
 
     <?php     wp_nav_menu(array(
@@ -44,7 +44,7 @@ get_header(); ?>
 <div class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
-<div class="medium-4 large-4 columns hide-for-small-only">
+<div class="medium-4 large-4 columns hide-for-small-only hide-for-print">
 	<div class="small-12 medium-12 large-12 columns sidebar-widget">
 	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>
 	 <div class="small-12 medium-12 large-12 columns sidebar-menu-header">
