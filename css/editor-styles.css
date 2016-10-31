@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+
+#tinymce {font-family: 'Open Sans';}
+#tinymce h1, #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6, #tinymce h7{font-family: 'Raleway';}
+#tinymce h1{font-size:2.1875rem;margin-top:.25rem}
+#tinymce h2{line-height:110%;margin-top:.25rem;font-size:1.625rem}
+#tinymce h3{line-height:110%;margin-top:.25rem;font-size:1.425rem;color:#6d6d6d}
+
+/* Clipboard Bullets */
+
+ul.bullet-clipboard{
+ list-style-type:none;
+}
+
+ul.bullet-clipboard link{
+ text-indent: -1.4em;
+}
+
+ul.bullet-clipboard li{
+ margin: 5px 0 0 0;
+ padding: 0 0 15px 0;
+}
+
+ul.bullet-clipboard li:before{
+ font-family: "Genericons";
+ font-size: 38px;
+ content: "\f425";
+ margin: -18px 0 0 0;
+ color: #606060;
+ float: left;
+ width: 1.4em;
+}
+
+/* Arrow Bullets */
+
+ul.bullet-arrow{
+ list-style-type:none;
+}
+
+ul.bullet-arrow link{
+ text-indent: -1.4em;
+}
+
+ul.bullet-arrow li{
+ margin: 5px 0 0 0;
+ padding: 0 0 15px 0;
+}
+
+ul.bullet-arrow li:before{
+ font-family: "Genericons";
+ font-size: 38px;
+ content: "\f429";
+ margin: -18px 0 0 0;
+ color: #606060;
+ float: left;
+ width: 1.4em;
+}
