@@ -50,6 +50,7 @@ Section 1: Foundation
 *//*!
 Section 2: Content
 */.site-main table thead{background:#0055a5;color:#fff}
+div.row hr{margin: -80px auto 40px;height: 25px;padding: 10px 0;width: 100%;}
 main.site-main table thead{background:#0055a5;color:#fff}.tabs{border:0}.tabs-panel{padding:0}
 .tabs-title{margin:.5rem .5rem .5rem 0}.tabs-content{border:0}table{border:2px solid #ddd}
 li.button.tabs-title,li.button.tabs-title.is-active{padding:0}li.button.tabs-title.is-active{background:#0055a5}
@@ -77,7 +78,7 @@ a img.alignleft{float:left;margin:5px 20px 20px 0}a img.aligncenter{display:bloc
 .orbit-slide p{font-size:.75rem}.cta-icons{width:100%;background-color:#0055a5;border-width:5px 0;border-style:solid;border-color:#ffc600}
 .cta-icons .icon-label{font-weight:500;color:#fefefe;font-size:1.125rem;margin-top:1rem}
 .cta-icons .row{background-image:url(/wp-content/themes/lorainccc/images/logo_xl_lccc_blue.png);background-position:center center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover;padding:15px 0}
-.cta-icons .row .columns{padding:1.75rem 0}.yellow-icon{width:100px;height:100px;border-radius:50%;background-color:#ffc600;transition:background-color .25s ease-out,color .25s ease-out;position:relative}
+.cta-icons .row .columns{padding:1.75rem 0}.yellow-icon{width:100px;height:100px;border-radius:50%;background-color:#ffc600;-webkit-transition:background-color .25s ease-out,color .25s ease-out;transition:background-color .25s ease-out,color .25s ease-out;position:relative}
 .yellow-icon img{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto}.yellow-icon:hover{background-color:smart-scale(#ffc600,10%,25%)}
 .service-box{margin-top:3rem}.service-box-header h2{text-transform:uppercase;font-weight:700;color:#fefefe;font-size:.6875rem;background:#0c3b78;line-height:170%;padding:1rem 0;margin-bottom:0;margin-top:0}
 .service-box-header h2 span{display:block;font-size:1.5625rem;color:#ffc600;text-transform:capitalize}
