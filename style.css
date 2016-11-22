@@ -140,7 +140,7 @@ ul.bullet-arrow{list-style-type:none;margin:0}ul.bullet-arrow link{text-indent:-
 ul.bullet-arrow li{margin:5px 0 0 0;padding:0 0 15px 0}ul.bullet-arrow li:before{font-family:"Genericons";font-size:38px;content:"\f429";margin:-18px 0 0 0;color:#606060;float:left;width:1.4em}
 /*!
 Section 4: Header
-*/input[type=search],input[type=search]:focus{max-width:260px;width:100%;height:2rem;margin:.5rem 0 0 0;border-radius:20px;padding:.25rem .25rem .25rem 2.2rem;font-size:.75rem;font-weight:700;background-image:url(/wp-content/themes/lorainccc/images/icons/icon-search.png);background-repeat:no-repeat;background-position:.75rem .45rem}
+*/input[name=search],input[name=search]:focus{max-width:260px;width:100%;height:2rem;margin:.5rem 0 0 0;border-radius:20px;padding:.25rem .25rem .25rem 2.2rem;font-size:.75rem;font-weight:700;background-image:url(/wp-content/themes/lorainccc/images/icons/icon-search.png);background-repeat:no-repeat;background-position:.75rem .45rem}
 a.skip-link.screen-reader-text{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 a.skip-link.screen-reader-text:focus{position:static;width:auto;height:auto}.ql-icon{background-position:left center;background-repeat:no-repeat;background-size:.78125rem .78125rem}
 .ql-1{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-az_blue.svg)}
