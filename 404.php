@@ -70,7 +70,7 @@ get_header(); ?>
 				<?php //} ?>
 	</div>-->
 	</div>
-				<div class="small-12 medium-8 large-8 columns" style="padding-top: 0.8rem;">		
+				<div class="small-12 medium-8 large-8 columns error-content" style="padding-top: 0.8rem;">		
 						<div id="primary" class="content-area">
 										<main id="main" class="site-main" role="main">
 													<?php if ( is_active_sidebar( 'lccc-four-o-four-sidebar' ) ) : ?>
