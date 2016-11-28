@@ -212,4 +212,5 @@ aside.columns{padding-right:0;padding-left:0}.gateway-main,.home-left{padding-ri
 }@media screen and (min-width:1074px){nav.menu-centered{height:36px}}@media screen and (max-width:39.9375em){h1{font-size:1.35rem;line-height:105%}
 .white-panel{margin-top:3rem}.cta-icons{margin-bottom:2rem}.footer-sm-links{width:210px;margin:0 auto 1rem auto}
 .footer-sm-links li a{padding:0}.footer-sm-links li a img{margin:0 .25rem}footer .row .columns{border-bottom:1px solid #5593db;padding:2rem 0 1rem 0}
-footer{padding-bottom:0}}
+footer{padding-bottom:0}}table.outerformtablerows{border:0;background:#fff}table.outerformtablerows tbody{border:0}
+.fieldtr,.fieldtitle{background:#fff}.eformstext{display:none}div.afnavbuttons input[type=submit]{margin:0 10px 0 0}
