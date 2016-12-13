@@ -43,7 +43,7 @@
     </div>
     <div class="large-3 medium-3 columns">
       <h2>Campus Locations</h2>
-   <?php if ( has_nav_menu( 'footer-campus-location-nav' ) ) : ?>
+  <?php if ( has_nav_menu( 'footer-campus-location-nav' ) ) : ?>
 		<nav id="campus-location-navigation" class="footer-navigation" role="navigation">
 			<?php
 				// Primary Footer navigation menu.
