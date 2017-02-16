@@ -8,8 +8,9 @@
  */
 
 get_header(); ?>
-<div class="row page-content" ng-app="demo">
 
+<div class="row page-content" ng-app="demo">
+	
 <div class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
@@ -53,11 +54,16 @@ if ( function_exists( 'sharing_display' ) ) {
 			
 			?>	
 					<div class="small-12 medium-12 large-12 columns events-list">	
+									<div ng-controller="calendarDemo">										
+											<?php
+														$selected_date = "{{day.format('MMMM Do, YYYY')}}";
+											?>
+								</div>	
 						<?php 
 				$lcccevents = '';
 				$stockerevents = '';
 				$athleticevents = '';
-	
+				$lcccacademicevents = '';
 			//Grab posts (endpoints)
   	$domain = 'http://' . $_SERVER['SERVER_NAME'];
 
@@ -92,10 +98,13 @@ if ( function_exists( 'sharing_display' ) ) {
 usort( $posts, function ( $a, $b) {
 return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 });
-						if($posts !=''){	
+						$currentdate = date("Y-m-d");
+						$dayswithevents = array();
+					if($posts !=''){	
 					foreach ( $posts as $post ){
 												$featured = $post->featured_media;
-									if(strtotime($post->event_start_date) == strtotime($myvar)){
+									if(strtotime($post->event_start_date) > strtotime($currentdate)){
+										$dayswithevents[] = $post->event_start_date;
 										$eventcounter++;
 											if($featured != 0){			
 												echo '<div class="small-12 medium-12 large-12 columns">';
@@ -169,9 +178,32 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 	<div class="medium-4 large-4 columns show-for-medium">
 					<div class="medium-12 large-12 columns">
 								<div ng-controller="calendarDemo">
+									
 											<calendar selected="day"></calendar>
-								</div>	
+									
+										
+											<?php
+														$selected_date = "{{day.format('MMMM Do, YYYY')}}";
+														if(	$selected_date != ""){
+															echo '<span>Selected date: <b>'.$selected_date.'</b></span><br />';
+														}else{
+															echo 'before';
+														}	
+													$dayswithevents = array_unique($dayswithevents);
+													$dayscount = count($dayswithevents);
+													echo 'Count '.$dayscount.'<br />';
+													for( $z=0; $z<=$dayscount; $z++){
+																	if($dayswithevents[$z] != ''){		
+																	echo $dayswithevents[$z].'<br />';
+																	}
+														}
+												
+											?>
+										
+								</div>		
+
 					</div>
+
 									  <?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
 			<div class="medium-12 large-12 columns hide-for-print">
 			<?php dynamic_sidebar( 'lccc-badges-sidebar' ); ?>
