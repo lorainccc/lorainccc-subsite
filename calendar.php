@@ -7,7 +7,9 @@
  * @since Twenty Fourteen 1.0
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div class="row page-content" ng-app="demo">
 	
@@ -27,9 +29,7 @@ if ( function_exists( 'sharing_display' ) ) {
 					endwhile; // End of the loop.
 						?>
 	<div class="small-12 columns show-for-small-only">
-	<div ng-controller="calendarDemo">
-	<calendar selected="day"></calendar>
-</div>
+			<?php get_sidebar(); ?>
 	</div>
 	<div class="small-12 medium-8 large-8 columns">
 <?php $myvar = get_query_var('d');
@@ -175,34 +175,11 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 						?>
 			</div>
 	</div>
-	<div class="medium-4 large-4 columns show-for-medium">
-					<div class="medium-12 large-12 columns">
-								<div ng-controller="calendarDemo">
-									
-											<calendar selected="day"></calendar>
-									
-										
-											<?php
-														$selected_date = "{{day.format('MMMM Do, YYYY')}}";
-														if(	$selected_date != ""){
-															echo '<span>Selected date: <b>'.$selected_date.'</b></span><br />';
-														}else{
-															echo 'before';
-														}	
-													$dayswithevents = array_unique($dayswithevents);
-													$dayscount = count($dayswithevents);
-													echo 'Count '.$dayscount.'<br />';
-													for( $z=0; $z<=$dayscount; $z++){
-																	if($dayswithevents[$z] != ''){		
-																	echo $dayswithevents[$z].'<br />';
-																	}
-														}
-												
-											?>
-										
-								</div>		
+	<div class="medium-4 large-4 columns show-for-medium nopadding">
+		<div class="medium-12 large-12 columns">		
+			<?php get_sidebar(); ?>
+		</div>
 
-					</div>
 
 									  <?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
 			<div class="medium-12 large-12 columns hide-for-print">

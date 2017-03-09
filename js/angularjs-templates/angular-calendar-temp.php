@@ -1,4 +1,3 @@
-
 <div class="header">
     <i class="fa fa-angle-left" ng-click="previous()"></i>
     <span>{{month.format("MMMM, YYYY")}}</span>
@@ -15,11 +14,15 @@
 </div>
 <div class="week" ng-repeat="week in weeks">
    <div class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected:day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">
+						<a ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected:day.date.isSame(selected) }" href="/mylccc/day?d={{day.full}}">
 				<div class="small-12 columns">
 					{{day.number}} 
 					</div>
 				<div class="small-12 columns">
-				<a class="calendar-event-listing" href="/mylccc/day?d={{day.full}}"></a>
+					
+
+				</div>
+			</a>			
 		</div>
-</div>
+	
 </div>

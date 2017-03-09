@@ -239,6 +239,14 @@ wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', arr
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
 	) );
 
+				wp_localize_script( 'ngScripts', 'appInfo',
+			array(
+				'api_url'			 => rest_get_url_prefix() . '/wp/v2/',
+				'nonce'				 => wp_create_nonce( 'wp_rest' ),
+				'is_admin'			 => current_user_can('administrator')		
+			)
+		);
+	
 }
 add_action( 'wp_enqueue_scripts', 'lorainccc_subsite_foundation_scripts' );
 
