@@ -139,12 +139,11 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;box-shadow:0 15px 1
 .entry-content table{margin:0 0 1em 0;width:100%;border:1px solid #ccc;border-top:0;display:table}
 .entry-content table th{padding:.5em .75em;vertical-align:top;font-weight:bold;text-align:left;background:#0055a5;color:#fff;text-transform:uppercase;font-size:1.1em}
 .entry-content table td{border-top:1px solid #ccc;padding:.3em .75em;vertical-align:top}
-.entry-content table.outerformtablerows{border:0;background:#fff}.entry-content table tr.odd{background:#f7f7f7}
-.entry-content table.outerformtablerows tbody{border:0}.fieldtr,.fieldtitle{background:#fff}
-.eformstext{display:none}div.afnavbuttons input[type=submit]{margin:0 10px 0 0}.ui-widget-content a{color:#007bbf}
-.hbheader_date h6{font-size:1rem;text-align:center;font-weight:bold}.homeblock_header{padding:0 0 10px 0;border-bottom:1px inset #CCC}
-.homeblock_content{padding-top:10px}.hbheader_category{margin-top:-10px;padding:0}
-div.day-listings{height:30px}.hbheader_category a{float:left;text-align:center;color:#fff}
+.entry-content table.outerformtablerows{border:0;background:#fff}.entry-content table.outerformtablerows tbody{border:0}
+.fieldtr,.fieldtitle{background:#fff}.eformstext{display:none}div.afnavbuttons input[type=submit]{margin:0 10px 0 0}
+.ui-widget-content a{color:#007bbf}.hbheader_date h6{font-size:1rem;text-align:center;font-weight:bold}
+.homeblock_header{padding:0 0 10px 0;border-bottom:1px inset #CCC}.homeblock_content{padding-top:10px}
+.hbheader_category{margin-top:-10px;padding:0}div.day-listings{height:30px}.hbheader_category a{float:left;text-align:center;color:#fff}
 .hbimage{padding:0}.main{padding:0}.hbimage{padding-top:10px}ul.calendarlist li{list-style:none;background:#fff;margin-bottom:5px;min-height:60px;padding:3px;border:2px solid #a6c7c7}
 div.daycontainer span ul.calendardayseventslist li{min-height:35px;border-bottom:1px solid #dcdcdc;border-top:0;border-left:0;border-right:0}
 div.daycontainer span ul.calendardayseventslist li:last-child{min-height:35px;border-bottom:0;border-top:0;border-left:0;border-right:0}
