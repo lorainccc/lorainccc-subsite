@@ -92,7 +92,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 	
 	<div class="small-12 medium-12 large columns noapadding">
 				<header class="page-header">
-				<h1 class="page-title"> Events</h1>
+				<a href="/mylccc/lccc_events"><h1 class="page-title"> Events</h1></a>
 				<?php
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 		
