@@ -1,15 +1,16 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * Template Name: Individual Event Feed
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package MyLCCC_Theme
+ * @package WordPress
+ * @subpackage lorainccc
+ * @since Lorainccc 1.0
  */
-
 get_header(); ?>
 	<div class="row main">
 <?php
+
+		
 $today = getdate();
 				$currentDay = $today['mday'];
 				$month = $today['mon'];
@@ -93,9 +94,11 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 				<h1 class="page-title"> Events</h1>
 				<?php
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		
                 ?>
 			</header><!-- .page-header -->
+	</div>
+		<div class="small-12 columns show-for-small-only">	
+
 	</div>
 	<div class="small-12 medium-8 large-8 columns nopadding">
 	<div id="primary" class="content-area">
@@ -118,10 +121,32 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 						//Create instance
 							$multi = new MultiBlog( 1 );
 				
-						//Adding endpoints to multi array
+				//setting page slug variable to allow the template to load feed based upon page slug
+						$page_title = basename(get_permalink());
+						switch($page_title){
+									case 'lccc-events':
+														//Adding endpoints to multi array
+														$multi->add_endpoint ( $lcccevents );
+									break;
+									case 'athletic-events':
+														//Adding endpoints to multi array
+														$multi->add_endpoint ( $athleticevents );
+									break;
+									case 'stocker-events':
+														//Adding endpoints to multi array
+														$multi->add_endpoint ( $stockerevents );
+									break;
+							default:
+							//Adding endpoints to multi array
 							$multi->add_endpoint ( $lcccevents );
-							$multi->add_endpoint ( $athleticevents );
-							$multi->add_endpoint ( $stockerevents );
+				
+						//Adding endpoints to multi array
+						$multi->add_endpoint ( $athleticevents );
+				
+						//Adding endpoints to multi array
+						$multi->add_endpoint ( $stockerevents );
+						}
+				
 							
 						//Fetch Posts from Endpoints
 							$posts = $multi->get_posts();
@@ -308,7 +333,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	</div>
-	<div class="small-12 medium-4 large-4 columns" style="padding-top:0.5rem;">	
+	<div class="medium-4 large-4 columns">	
 <?php
 get_sidebar();
 ?>
