@@ -153,7 +153,7 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;box-shadow:0 15px 1
 .callout .name,.callout .hours-label{font-weight:700}.callout .callout-contact-method{margin-top:1.35rem}
 .callout .map-link{margin-top:4.45rem}ul,ol{margin:2.5rem 0 1rem 2.5rem}blockquote{border:0}
 .content-area a:hover{text-decoration:underline}.error-content input[name=search],input[name=search]:focus{max-width:100%}
-.entry-content table{margin:0 0 1em 0;width:100%;border:1px solid #ccc;border-top:0;display:table}
+.entry-content li{font-size:1rem}.entry-content table{margin:0 0 1em 0;width:100%;border:1px solid #ccc;border-top:0;display:table}
 .entry-content table th{padding:.5em .75em;vertical-align:top;font-weight:bold;text-align:left;background:#5a5a5a;color:#fff;text-transform:uppercase;font-size:1.1em}
 .entry-content table td{border-top:1px solid #ccc;padding:.3em .75em;vertical-align:top}
 .entry-content table.outerformtablerows{border:0;background:#fff}.entry-content table.outerformtablerows tbody{border:0}
