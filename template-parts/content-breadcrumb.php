@@ -5,10 +5,19 @@
     if (is_home() || is_front_page()) {
      echo lccc_breadcrumb() . get_bloginfo('name') ;
     } elseif ( is_category() ) {
+     // Display Category Name
     	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title() ;
     }elseif ( is_archive() ) {
-	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
+     // Archive Page
+     if(is_tax( 'report_year' ) || is_tax( 'report_month' )){
+     // Daily Crim Log Archive Page
+     echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/daily-crime-log/' title='Return to Daily Crime Log'>Daily Crime Log</a> > " . single_cat_title( '', false ) ;
+     } else {	
+      // Other Archive Page
+     echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
+     }
     } elseif ( is_tax() ) {
+     // Taxonomy 
         echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
     }elseif ( is_page() && $post->post_parent != 0 ) {
      // Page is a Subpage
@@ -16,8 +25,10 @@
     }elseif ( is_page() && $post->post_parent > 0 ) {
  echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > ";
      }elseif ( is_single() ) {
+     // Single Post (most likely lccc_event)
 	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') . " > " . get_the_title()  ;
     }else {
+     // Single Page
     	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_title() ;
     };
    };
