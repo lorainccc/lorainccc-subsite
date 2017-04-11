@@ -17,7 +17,7 @@ $today = getdate();
 				$firsteventdate ='';
     $nexteventdate ='';
 				$todaysevents = '';
-				$temp = strLen($currentDay);            
+				$temp = strLen($currentDay);
 				$twoDay = '';
 	   $nextTwoDay = '';
     if ($temp < 2){
@@ -38,34 +38,34 @@ $today = getdate();
 				}else{
 							$nextTwoDay = $currentDay;
 				}
-		$starteventdate = 
+		$starteventdate =
 			event_meta_box_get_meta('event_start_date');
-		$starteventtime = event_meta_box_get_meta('event_start_time');  
+		$starteventtime = event_meta_box_get_meta('event_start_time');
 		$endeventdate = event_meta_box_get_meta('event_end_date');
 		$endtime = event_meta_box_get_meta('event_end_time');
-		
+
 
 										$starttimevar=strtotime($starteventtime);
 										$starttime=	date("h:i a",$starttimevar);
 										$starteventtimehours = date("G",$starttimevar);
 										$starteventtimeminutes = date("i",$starttimevar);
-		
+
           $startdate=strtotime($starteventdate);
 										$eventstartdate=date("Y-m-d",$startdate);
 										$eventstartmonth=date("M",$startdate);
                                         $eventstartmonthfull=date("F",$startdate);
 										$eventstartday =date("j",$startdate);
                                         $eventstartyear =date("Y",$startdate);
-										
+
 										$endeventtimevar=strtotime($endtime);
 										$endeventtime = date("h:i a",$endeventtimevar);
 										$endeventtimehours = date("G",$endeventtimevar);
 										$endeventtimeminutes = date("i",$endeventtimevar);
-		
+
 										$enddate=strtotime($endeventdate);
 										$endeventdate = date("Y-m-d",$enddate);
-		
-										
+
+
 		$duration = '';
 		if($endeventtimehours == 0){
 			$endeventtimehours =24;
@@ -75,32 +75,32 @@ $today = getdate();
 				if($durationhours == 24){
 				$duration .= '1 day';
 				}else{
-				$duration .= $durationhours.'hrs'; 
+				$duration .= $durationhours.'hrs';
 				}
 		}
 		$durationminutes = $endeventtimeminutes - $starteventtimeminutes;
 		if($durationminutes > 0){
 			$duration .= $durationminutes.'mins';
 		}
-$location = event_meta_box_get_meta('event_meta_box_event_location');  
+$location = event_meta_box_get_meta('event_meta_box_event_location');
 $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 	$eventsubheading = event_meta_box_get_meta('event_meta_box_sub_heading');
 
 ?>
 <div class="small-12 medium-12 large-12 columns contentdiv">
 
-	
+
 	<div class="small-12 medium-12 large columns noapadding">
 				<header class="page-header">
 				<a href="/mylccc/lccc_events"><h1 class="page-title"> Events</h1></a>
 				<?php
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		
+
                 ?>
 			</header><!-- .page-header -->
 	</div>
 	<div class="small-12 medium-4 large-4 columns">
-				<div class="small-12 medium-12 large-12 columns hide-for-print nopadding" style="padding-top:0.5rem;padding-bottom:1.5rem;">	
+				<div class="small-12 medium-12 large-12 columns hide-for-print nopadding" style="padding-top:0.5rem;padding-bottom:1.5rem;">
 <?php if ( is_active_sidebar( 'calendar-sidebar' ) ) { ?>
 			<div class="hide-for-print">
 			<?php dynamic_sidebar( 'calendar-sidebar' ); ?>
@@ -110,9 +110,9 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 			<h4>Select Event Type:</h4>
 			<select id="event_type" name="event_type" class="postform">
 				<option value="All">Select</option>
-								<option value="All">All</option>			
+								<option value="All">All</option>
 								<option value="Athletics">Athletics</option>
-								<option value="Stocker">Stocker</option>				
+								<option value="Stocker">Stocker</option>
 			</select>
 		</div>
 		<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
@@ -121,8 +121,8 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 			</div>
 	<?php } ?>
 	</div>
-	
-	
+
+
 	</div>
 
 	<div class="small-12 medium-8 large-8 columns nopadding">
@@ -134,7 +134,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 						$lcccevents = '';
 						$stockerevents = '';
 						$athleticevents = '';
-						
+
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
 							$domain = 'http://www.lorainccc.edu';
@@ -142,24 +142,24 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
 							$stockerevents = new Endpoint( 'http://sites.lorainccc.edu/stocker/wp-json/wp/v2/lccc_events?per_page=100' );
-						
+
 						//Create instance
 							$multi = new MultiBlog( 1 );
-				
+
 						//Adding endpoints to multi array
 							$multi->add_endpoint ( $lcccevents );
 							$multi->add_endpoint ( $athleticevents );
 							$multi->add_endpoint ( $stockerevents );
-							
+
 						//Fetch Posts from Endpoints
 							$posts = $multi->get_posts();
 						    $count = count($posts);
-						//Test to see if any events exist 
+						//Test to see if any events exist
 							if(empty($posts)){
 									echo 'No Posts Found!';
 							}
 							$icounter = 0;
-							$pagecounter = 1;						
+							$pagecounter = 1;
 							$posts_per_page = 10;
    				            $currentdate = date("Y-m-d");
 							$currentday = date("d");
@@ -171,7 +171,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 });
 				$eventcounter = 0;
 				$firstactive = '';
-                
+
 				foreach ( $posts as $post ){
 							if( $post->event_end_date >= $currentdate ){
 										$firstactive = $eventcounter;
@@ -179,32 +179,32 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 							}
 							$eventcounter++;
 				}
-                  
+
                 //See if there is a vriable page in the URL is set or exists
                 if (isset($_GET['page'])) {
-                    $currentpage = $_GET['page']; 
+                    $currentpage = $_GET['page'];
                     $advamount = $_GET['page'] * $posts_per_page;
                     $activepost = $firstactive + $advamount - $posts_per_page;
                 }else{
                     $currentpage = 1;
                 }
-                
+
                 //Defining Posts array starting point based on current page
                  if (isset($_GET['page'])) {
                      if( $_GET['page'] != 1 ){
                         $posts = array_slice($posts,$activepost);
                      }else{
-                        $posts = array_slice($posts,$firstactive);  
+                        $posts = array_slice($posts,$firstactive);
                      }
                  }else{
-                      $posts = array_slice($posts,$firstactive); 
-                 }		  
+                      $posts = array_slice($posts,$firstactive);
+                 }
 						//$posts will be an array of all posts sorted by post date
 							foreach ( $posts as $post ){
                                 if(	$icounter<$posts_per_page){
 								?>
 								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id->rendered; ?>" >
-						
+
 										<header class="entry-header">
 												<a href="<?php echo $post->link; ?>">
 													<?php echo '<h1 class="entry-title">'.$post->title->rendered.'</h1>'; ?>
@@ -212,14 +212,14 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 										</header><!-- .entry-header -->
 									<?php
 									echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-   									
-									echo '</div>';	
+
+									echo '</div>';
 								?>
 										<div class="small-12 medium-12 large-12 columns entry-content nopadding">
 												<?php
 														//set the variable to see if a featured image exists
 														$featured = $post->featured_media;
-												
+
 														//Test to see if image exists. If the vaule is equal zero then no image exists
 														if($featured != 0){
 																echo '<div class="small-12 medium-3 large-3 columns nopadding">';
@@ -233,7 +233,8 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															echo '<p>'.'Date: '.$newDate.'</p>';
 															}
 															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
+               $newTime = date("g:i a", strtotime($post->event_start_time));
+															echo '<p>'.'Time: '.$newTime.'</p>';
 															}
 															$location = $post->event_location;
 															if ( $location != ''){
@@ -253,7 +254,8 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															echo '<p>'.'Date: '.$newDate.'</p>';
 															}
 															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
+               $newTime = date("g:i a", strtotime($post->event_start_time));
+															echo '<p>'.'Time: '.$newTime.'</p>';
 															}
 															$location = $post->event_location;
 															if ( $location != ''){
@@ -261,9 +263,9 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															}
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
+															echo ' <p>' . $post->excerpt->rendered . '</p>' ;
 																echo '<a class="button" href="'.$post->link.'">More Information</a>';
-															echo '</div>';	
+															echo '</div>';
 														}
 												?>
 										</div>
@@ -272,14 +274,14 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 										</div>
 									</div>
 									<?php
-											$icounter ++;			
+											$icounter ++;
 										}
-								
+
 							}
                             //$count = $count - $firstactive;
 							$pagecount = ceil($count/$posts_per_page);
 							$pages =  get_query_var('page');
-	
+
 							if( $pages == '' ){
 										$pages = 1;
 
@@ -294,7 +296,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 														$pages++;
 														echo '<div class="column column-block">';
 																	echo '<a href="/mylccc/lccc_events/?page='.$pages.'">More Events</a>';
-														echo '</div>';	
+														echo '</div>';
 													}elseif( $pages == 2 ){
 														$next= $pages+1;
 														$prev= $pages-1;
@@ -321,17 +323,17 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 														$pages--;
 														echo '<div class="column column-block">';
 																	echo '<a href="/mylccc/lccc_events/?page='.$pages.'">Previous Events</a>';
-														echo '</div>';	
+														echo '</div>';
 														echo '<div class="column column-block">'.str_repeat('&nbsp;', 1).'</div>';
 														echo '<div class="column column-block">'.str_repeat('&nbsp;', 1).'</div>';
-												
+
 													}
 										echo '</div>';
 								echo '</div>';
 							}
-		
+
 				?>
-				
+
 			</div>
 				<div id="mobile-lccc-event-listings" class="small-12 columns show-for-small-only">
 							<h1>Today</h1>
@@ -345,7 +347,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 						$lcccevents = '';
 						$stockerevents = '';
 						$athleticevents = '';
-						
+
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
 							$domain = 'http://www.lorainccc.edu';
@@ -353,24 +355,24 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
 							$stockerevents = new Endpoint( 'http://sites.lorainccc.edu/stocker/wp-json/wp/v2/lccc_events?per_page=100' );
-						
+
 						//Create instance
 							$multi = new MultiBlog( 1 );
-				
+
 						//Adding endpoints to multi array
 							$multi->add_endpoint ( $lcccevents );
 							$multi->add_endpoint ( $athleticevents );
 							$multi->add_endpoint ( $stockerevents );
-							
+
 						//Fetch Posts from Endpoints
 							$posts = $multi->get_posts();
 						    $count = count($posts);
-						//Test to see if any events exist 
+						//Test to see if any events exist
 							if(empty($posts)){
 									echo 'No Posts Found!';
 							}
 							$icounter = 0;
-							$pagecounter = 1;						
+							$pagecounter = 1;
 							$posts_per_page = 10;
    				            $currentdate = date("Y-m-d");
 							$currentday = date("d");
@@ -382,7 +384,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 });
 				$eventcounter = 0;
 				$firstactive = '';
-                
+
 				foreach ( $posts as $post ){
 							if( $post->event_end_date >= $currentdate ){
 										$firstactive = $eventcounter;
@@ -390,32 +392,32 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 							}
 							$eventcounter++;
 				}
-                  
+
                 //See if there is a vriable page in the URL is set or exists
                 if (isset($_GET['page'])) {
-                    $currentpage = $_GET['page']; 
+                    $currentpage = $_GET['page'];
                     $advamount = $_GET['page'] * $posts_per_page;
                     $activepost = $firstactive + $advamount - $posts_per_page;
                 }else{
                     $currentpage = 1;
                 }
-                
+
                 //Defining Posts array starting point based on current page
                  if (isset($_GET['page'])) {
                      if( $_GET['page'] != 1 ){
                         $posts = array_slice($posts,$activepost);
                      }else{
-                        $posts = array_slice($posts,$firstactive);  
+                        $posts = array_slice($posts,$firstactive);
                      }
                  }else{
-                      $posts = array_slice($posts,$firstactive); 
-                 }		  
+                      $posts = array_slice($posts,$firstactive);
+                 }
 						//$posts will be an array of all posts sorted by post date
 							foreach ( $posts as $post ){
                                 if(	$icounter<$posts_per_page){
 								?>
 								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id->rendered; ?>" >
-						
+
 										<header class="entry-header">
 												<a href="<?php echo $post->link; ?>">
 													<?php echo '<h1 class="entry-title">'.$post->title->rendered.'</h1>'; ?>
@@ -423,14 +425,14 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 										</header><!-- .entry-header -->
 									<?php
 									echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-   									
-									echo '</div>';	
+
+									echo '</div>';
 								?>
 										<div class="small-12 medium-12 large-12 columns entry-content nopadding">
 												<?php
 														//set the variable to see if a featured image exists
 														$featured = $post->featured_media;
-												
+
 														//Test to see if image exists. If the vaule is equal zero then no image exists
 														if($featured != 0){
 																echo '<div class="small-12 medium-3 large-3 columns nopadding">';
@@ -444,7 +446,8 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															echo '<p>'.'Date: '.$newDate.'</p>';
 															}
 															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
+	               $newTime = date("g:i a", strtotime($post->event_start_time));
+															echo '<p>'.'Time: '.$newTime.'</p>';
 															}
 															$location = $post->event_location;
 															if ( $location != ''){
@@ -464,7 +467,8 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															echo '<p>'.'Date: '.$newDate.'</p>';
 															}
 															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
+               $newTime = date("g:i a", strtotime($post->event_start_time));
+															echo '<p>'.'Time: '.$newTime.'</p>';
 															}
 															$location = $post->event_location;
 															if ( $location != ''){
@@ -472,9 +476,9 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															}
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
+															echo ' <p>' . $post->excerpt->rendered . '</p>' ;
 																echo '<a class="button" href="'.$post->link.'">More Information</a>';
-															echo '</div>';	
+															echo '</div>';
 														}
 												?>
 										</div>
@@ -483,14 +487,14 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 										</div>
 									</div>
 									<?php
-											$icounter ++;			
+											$icounter ++;
 										}
-								
+
 							}
                             //$count = $count - $firstactive;
 							$pagecount = ceil($count/$posts_per_page);
 							$pages =  get_query_var('page');
-	
+
 							if( $pages == '' ){
 										$pages = 1;
 
@@ -505,7 +509,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 														$pages++;
 														echo '<div class="column column-block">';
 																	echo '<a href="/mylccc/lccc_events/?page='.$pages.'">More Events</a>';
-														echo '</div>';	
+														echo '</div>';
 													}elseif( $pages == 2 ){
 														$next= $pages+1;
 														$prev= $pages-1;
@@ -532,22 +536,22 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 														$pages--;
 														echo '<div class="column column-block">';
 																	echo '<a href="/mylccc/lccc_events/?page='.$pages.'">Previous Events</a>';
-														echo '</div>';	
+														echo '</div>';
 														echo '<div class="column column-block">'.str_repeat('&nbsp;', 1).'</div>';
 														echo '<div class="column column-block">'.str_repeat('&nbsp;', 1).'</div>';
-												
+
 													}
 										echo '</div>';
 								echo '</div>';
 							}
-		
+
 				?>
-				
+
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	</div>
 
-</div>		
+</div>
 		<?php
 get_footer();
