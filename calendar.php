@@ -98,6 +98,7 @@ if ( function_exists( 'sharing_display' ) ) {
 usort( $posts, function ( $a, $b) {
 return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 });
+      	$date=strtotime($myvar);
 						$currentdate = date("Y-m-d");
 						$dayswithevents = array();
 					if($posts !=''){	
