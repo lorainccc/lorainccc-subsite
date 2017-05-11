@@ -181,7 +181,7 @@ get_header(); ?>
 														<td><?php the_content(); ?>
               <?php 
                if (academic_event_metabox_get_meta('event_url') != ''){
-                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+                echo '<p><a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a></p>';
                }
                ?>
               </td>  
@@ -236,7 +236,7 @@ get_header(); ?>
 														<td><?php echo the_content(); ?>
               <?php 
                if (academic_event_metabox_get_meta('event_url') != ''){
-                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+                echo '<p><a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a></p>';
                }
                ?>
               </td>  
@@ -292,7 +292,7 @@ get_header(); ?>
 														<td><?php echo the_content(); ?>
               <?php 
                if (academic_event_metabox_get_meta('event_url') != ''){
-                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+                echo '<p><a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a></p>';
                }
                ?>              
               </td>  
