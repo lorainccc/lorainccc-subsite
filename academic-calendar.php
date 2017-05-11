@@ -178,7 +178,13 @@ get_header(); ?>
 								$spendwithoutmonth = date("d, Y",$spenddatevar);
 								?>
 													<tr>
-														<td><?php the_content(); ?></td>  
+														<td><?php the_content(); ?>
+              <?php 
+               if (academic_event_metabox_get_meta('event_url') != ''){
+                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+               }
+               ?>
+              </td>  
 														<td><?php echo $spdayofweek; ?></td>
 														<?php if($spenddate != ''){?>
 														<td><?php echo $spdatewithoutyear.'- '.$spendwithoutmonth; ?></td>
@@ -227,7 +233,13 @@ get_header(); ?>
 							 $suenddisplaydate = date(" d, Y",$suenddatevar);
 								?>
 													<tr>
-														<td><?php echo the_content(); ?></td>  
+														<td><?php echo the_content(); ?>
+              <?php 
+               if (academic_event_metabox_get_meta('event_url') != ''){
+                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+               }
+               ?>
+              </td>  
 														<td><?php echo $sudayofweek; ?></td>
 														<?php if($suenddate != ''){ ?>
 														<td><?php echo $sudisplaydate.'- '.$suenddisplaydate; ?></td>
@@ -277,7 +289,13 @@ get_header(); ?>
 								$faenddateyear = date("Y", $faenddatevar); 
 								?>
 													<tr>
-														<td><?php echo the_content(); ?></td>  
+														<td><?php echo the_content(); ?>
+              <?php 
+               if (academic_event_metabox_get_meta('event_url') != ''){
+                echo '<a href="' . academic_event_metabox_get_meta('event_url') . '" target="_blank">' . academic_event_metabox_get_meta('event_url_label') . '</a>';
+               }
+               ?>              
+              </td>  
 														<td><?php echo $fadayofweek; ?></td>
 														<?php if( $faenddate != ''){ ?>
 														<?php if( $fadateyear != $faenddateyear ){?>
