@@ -6,6 +6,9 @@
  */
 
 get_header(); ?>
+<div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
+	<?php the_post_thumbnail(); ?>
+	</div>
 <div class="row page-content">
 <div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
@@ -83,12 +86,16 @@ get_header(); ?>
 
 		</main><!-- #main -->
   <section class="section-divider">
-  <h2>Upcoming Events</h2>
+  <div class="row">
+   <div class="small-12 columns">
+    <h2 style="margin: 0 0 25px 0;">Upcoming Events</h2>
+   </div>
+  </div>
   <?php
    $presidentevents = '';
    $domain = 'http://' . $_SERVER['SERVER_NAME'];
    // ID of the President Category in MyLCCC (Production is 51)
-   $catId = 51;
+   $catId = 8;
    $presidentevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?event_categories=' . $catId . '&per_page=3');
    
    $multi = new MultiBlog( 1 );
@@ -109,7 +116,7 @@ get_header(); ?>
       echo ' </div>';
       echo ' <div class="small-12 large-11 columns">';
      ?>
-     <a href="<?php echo $event_post->link; ?>"><?php echo $event_post->title->rendered; ?></a><?php
+     <h2><a href="<?php echo $event_post->link; ?>"><?php echo $event_post->title->rendered; ?></a></h2><?php
 
       echo ' <p>' . $event_post->excerpt->rendered . '</p>' ;
       echo '</div>';
