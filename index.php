@@ -12,6 +12,7 @@
 
 get_header();
 
+//Checking to see if this is a home page like MyLCCC
 if ( is_front_page() && is_home() ){?>
 <div class="row page-content">
 
@@ -43,6 +44,7 @@ if ( function_exists( 'sharing_display' ) ) {
  ?>
 </div>
 <?php
+//Checking to see if this is a blog post index page like the President's site.
 } elseif( is_home() ){
  ?>
 <div class="row page-content">
