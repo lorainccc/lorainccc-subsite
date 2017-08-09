@@ -201,6 +201,7 @@ get_header(); ?>
        </div>
 	<?php } ?>  
     </div>
+    <p style="text-align:center;"><a href="news/" class="button">View more in the news</a></p>
    </section>
   <!-- End In the News Section -->
   </div><!-- #primary -->
