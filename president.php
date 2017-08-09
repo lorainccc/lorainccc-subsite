@@ -129,7 +129,11 @@ get_header(); ?>
   </section>
   <!-- Begin Social Media Grid -->
   <section class="section-divider">
-  <h2>Connect with the President</h2>
+   <div class="row">
+    <div class="small-12 columns">
+     <h2 style="margin: 0 0 25px 0;">Connect with the President</h2>
+    </div>
+   </div>
    <div class="row">
     <?php if ( is_active_sidebar( 'lccc-president-twitter-sidebar' ) ) { ?>
     <div class="small-12 columns">
@@ -175,6 +179,11 @@ get_header(); ?>
   <!-- End Social Media Grid -->
   </section>
   <section class="section-divider">
+  <div class="row">
+   <div class="small-12 columns">
+    <h2 style="margin: 0 0 25px 0;">President’s blog</h2>
+   </div>
+  </div>
   <!-- Start Blog Post List -->
   <?php
    $args = array(
