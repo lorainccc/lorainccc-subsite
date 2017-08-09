@@ -115,6 +115,7 @@ get_header(); ?>
       echo '</div>';
      echo '</div>';
     }
+    echo '<p style="text-align:center;"><a href="/mylccc/event-categories/president/" class="button">View all events</a></p>';
    }   
    
    ?>
