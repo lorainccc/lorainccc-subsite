@@ -95,7 +95,7 @@ get_header(); ?>
    $presidentevents = '';
    $domain = 'http://' . $_SERVER['SERVER_NAME'];
    // ID of the President Category in MyLCCC (Production is 51)
-   $catId = 8;
+   $catId = 51;
    $presidentevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?event_categories=' . $catId . '&per_page=3');
    
    $multi = new MultiBlog( 1 );
