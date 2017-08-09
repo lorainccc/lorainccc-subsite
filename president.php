@@ -115,7 +115,6 @@ get_header(); ?>
       echo '</div>';
      echo '</div>';
     }
-    
    }   
    
    ?>
