@@ -190,7 +190,10 @@ section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}figure{margin:0;padding:0}
 .gallery .gallery-caption{display:none}.gallery dl,.gallery dt{margin:0}.gallery br+br{display:none}
 .latest-tweets>ul{list-style-image:url("/wp-content/themes/lorainccc-subsite/images/icons/classic_twitter_bird.png")}.latest-tweets li a{word-break:break-all}
 .latest-tweets li{display:block;width:100%;border-bottom:1px solid #999;margin:0 5px;padding:7px}
-p.tweet-details{font-size:.9rem;font-weight:bold}/*!
+p.tweet-details{font-size:.9rem;font-weight:bold}.clink-links-shortcode{background-color:transparent;border:0}
+.clink-links-shortcode-header{background:transparent;border:0}.clink-links-list>ul>li{border:0}
+.clink-links-list>ul>li a{color:#007bbf}.clink-links-list>ul>li>a:hover{background:transparent;color:#007bbf}
+/*!
 Section 3: Body
 */body{font-size:1.1rem;font-family:"Open Sans",sans-serif;font-weight:500;line-height:1.5;color:#404040;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3,h4,h5,h6,h7{font-family:"Raleway",sans-serif}img.alignright{float:right;margin:0 0 1em 1em}
