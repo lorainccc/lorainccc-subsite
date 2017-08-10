@@ -187,8 +187,9 @@ section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}figure{margin:0;padding:0}
 .gallery-columns-3 .gallery-item{width:33%}.gallery-columns-4 .gallery-item{width:25%}
 .gallery img{padding:8px}.gallery img:hover{background:white}.gallery-columns-2 .attachment-medium{max-width:92%;height:auto}
 .gallery-columns-3 .attachment-thumbnail{max-width:90%;height:auto}.gallery-columns-4 .attachment-thumbnail{max-width:84%;height:auto}
-.gallery .gallery-caption{color:#888;font-size:12px;margin:0 0 12px}.gallery dl,.gallery dt{margin:0}
-.gallery br+br{display:none}.latest-tweets li a{word-break:break-all}.latest-tweets li{display:block;width:31%;float:left;border:1px solid #000;border-radius:10px;margin:0 5px;padding:7px;height:240px}
+.gallery .gallery-caption{display:none}.gallery dl,.gallery dt{margin:0}.gallery br+br{display:none}
+.latest-tweets>ul{list-style-image:url("/wp-content/themes/lorainccc-subsite/images/icons/classic_twitter_bird.png")}.latest-tweets li a{word-break:break-all}
+.latest-tweets li{display:block;width:100%;border-bottom:1px solid #999;margin:0 5px;padding:7px}
 p.tweet-details{font-size:.9rem;font-weight:bold}/*!
 Section 3: Body
 */body{font-size:1.1rem;font-family:"Open Sans",sans-serif;font-weight:500;line-height:1.5;color:#404040;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}

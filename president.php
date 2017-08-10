@@ -146,31 +146,31 @@ get_header(); ?>
     &nbsp;
    </div>
   </div>
-  <div class="row small-up-1 medium-up-2 large-up-4">
+  <div class="row small-up-1 medium-up-2 large-up-4"  style="background: #0055a5; border-radius: 20px;">
     <div class="column column-block small-centered">
      <a href="https://www.facebook.com/lorainccc" title="Follow LCCC on Facebook" target="_blank">
-      <div style="background: #0055a5; width: 100px; height: 100px; padding:15px; border-radius: 50px; margin:0 auto;">
+      <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
       <img src="/wp-content/themes/lorainccc-subsite/images/icons/facebook_white.svg" border="0" />
      </div>
      </a>
     </div>
     <div class="column column-block small-centered">
      <a href="https://twitter.com/presballinger" title="Follow the president on Twitter" target="_blank">
-       <div style="background: #0055a5; width: 100px; height: 100px; padding:15px; border-radius: 50px; margin:0 auto;">
+       <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
         <img src="/wp-content/themes/lorainccc-subsite/images/icons/twitter_white.svg" border="0" />
        </div>
       </a>
     </div>
     <div class="column column-block small-centered">
      <a href="https://www.instagram.com/presballinger/" title="Follow the president on Instagram" target="_blank">
-      <div style="background: #0055a5; width: 100px; height: 100px; padding:15px; border-radius: 50px; margin:0 auto;">
+      <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
        <img src="/wp-content/themes/lorainccc-subsite/images/icons/instagram_white.svg" border="0" />
       </div>
      </a>
     </div>
     <div class="column column-block small-centered">
      <a href="blog/" title="Follow the president's blog">
-      <div style="background: #0055a5; width: 100px; height: 100px; padding:20px 8px 0 10px; border-radius: 50px; margin:0 auto;">
+      <div style="background: #0055a5; width: 75px; height: 75px; padding:20px 8px 0 10px; border-radius: 20px; margin:0 auto;">
        <img src="/wp-content/themes/lorainccc-subsite/images/icons/lccc_white.svg" border="0" />
       </div>
      </a>
