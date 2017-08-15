@@ -108,11 +108,11 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 	<?php } ?>
 			<div class="small-12 medium-12 large-12 columns hide-for-print">
 			<h4>Select Event Type:</h4>
-			<select id="event_type" name="event_type" class="postform">
-				<option value="All">Select</option>
-								<option value="All">All</option>			
-								<option value="Athletics">Athletics</option>
-								<option value="Stocker">Stocker</option>				
+			<select id="event_type" name="event_type" class="postform" role="listbox">
+				<option value="All" role="listitem">Select</option>
+								<option value="All" role="listitem">All</option>			
+								<option value="Athletics" role="listitem">Athletics</option>
+								<option value="Stocker" role="listitem">Stocker</option>				
 			</select>
 		</div>
 		<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
