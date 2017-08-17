@@ -179,8 +179,8 @@ p.month{margin-bottom:0;margin-top:12px;margin-left:4px;width:100%;font-weight:b
 p.day{margin-bottom:0;margin-top:-10px;margin-left:9px;font-weight:bold;color:#003b76}
 div.mylccc-news-container img{margin-bottom:1rem}.gform_wrapper .gfield_radio li label,.gform_wrapper .gfield_checkbox li label{margin:2px 0 10px 4px}
 .gform_wrapper table.gfield_list td,.gform_wrapper table.gfield_list th{padding:4px}
-@media only screen and (max-width:45.813em){.sidebarcontainer{width:100%}.content-container{width:98%}
-}div.columns.event-details{margin-top:-0.4rem}div.columns.entry-content{margin-top:.25rem}
+.gform_wrapper legend.gfield_label{font-weight:700}@media only screen and (max-width:45.813em){.sidebarcontainer{width:100%}
+.content-container{width:98%}}div.columns.event-details{margin-top:-0.4rem}div.columns.entry-content{margin-top:.25rem}
 div.columns.nopadding.event-pagination a.button{margin-right:1rem}div.columns.nopadding.event-pagination a.button:last-child{margin-right:0}
 section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}figure{margin:0;padding:0}.gallery{margin:0 auto 18px;display:inline-block;width:100%}
 .gallery .gallery-item{float:left;margin-top:0;text-align:center;width:33%}.gallery-columns-2 .gallery-item{width:50%}
