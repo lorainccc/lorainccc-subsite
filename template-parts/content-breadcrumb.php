@@ -26,7 +26,11 @@
  echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > ";
      }elseif ( is_single() ) {
      // Single Post (most likely lccc_event)
-	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') . " > " . get_the_title()  ;
+     if(get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') != ''){
+     echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') . " > " . get_the_title()  ;
+      } else {
+     echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/blog/'> Blog </a> > " . get_the_title() ;
+     }
     }else {
      // Single Page
     	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_title() ;
