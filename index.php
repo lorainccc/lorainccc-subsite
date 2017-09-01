@@ -121,8 +121,11 @@ if ( function_exists( 'sharing_display' ) ) {
 				 get_template_part( 'template-parts/content', 'blog');
 
 			     endwhile; // end of the loop. ?>
+   
+   <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+   <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
-		</main><!-- #main -->
+  </main><!-- #main -->
 	</div><!-- #primary -->
 </div>
 <div class="small-12 medium-4 large-4 columns">
