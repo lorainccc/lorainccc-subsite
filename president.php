@@ -196,10 +196,16 @@ get_header(); ?>
   if ( $the_query->have_posts() ){
    while( $the_query->have_posts() ){
     $the_query->the_post();
-     echo '<div class="row">';
-     echo ' <div class="small-12 columns">';
-     echo '  <h2>' . get_the_title() . '</h2>';
+     echo '<div class="row section-divider-btm">';
+     echo ' <div class="medium-3 show-for-medium columns">';
+     echo ' <a href="' . get_the_permalink() . '">';
+     echo the_post_thumbnail( 'thumbnail' );
+     echo ' </a>';
+     echo ' </div>';
+     echo ' <div class="small-12 medium-9 columns">';
+     echo '  <h2><a href="' .get_the_permalink() . '">' . get_the_title() . '</a></h2>';
      echo '  <p>' . get_the_excerpt() . '</p>';
+     echo '  <p><a href="' .get_the_permalink() . '">Read more about ' . get_the_title() . '</a></p>';
      echo ' </div>';
      echo '</div>';
     }
