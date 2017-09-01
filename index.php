@@ -126,15 +126,6 @@ if ( function_exists( 'sharing_display' ) ) {
 	</div><!-- #primary -->
 </div>
 <div class="small-12 medium-4 large-4 columns">
-	<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
-			<div class="small-12 medium-12 large-12 columns hide-for-print">
-			<?php dynamic_sidebar( 'lccc-badges-sidebar' ); ?>
-			</div>
-	<?php } ?>
-			<?php if ( is_active_sidebar( 'lccc-events-sidebar' ) ) { ?>
-																							<?php dynamic_sidebar( 'lccc-events-sidebar' ); ?>
-																		<?php } ?>				
-	</div>
 	<?php
  //Jetpack Sharing Buttons
 if ( function_exists( 'sharing_display' ) ) {
