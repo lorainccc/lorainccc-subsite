@@ -188,10 +188,10 @@ section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}figure{margin:0;padding:0}
 .gallery img{padding:8px}.gallery img:hover{background:white}.gallery-columns-2 .attachment-medium{max-width:92%;height:auto}
 .gallery-columns-3 .attachment-thumbnail{max-width:90%;height:auto}.gallery-columns-4 .attachment-thumbnail{max-width:84%;height:auto}
 .gallery .gallery-caption{display:none}.gallery dl,.gallery dt{margin:0}.gallery br+br{display:none}
-@media screen and (min-width:40em){.latest-tweets li a{word-break:break-all}.latest-tweets li{display:block;width:31%;margin:0 4px;float:left;border:1px solid #d3d3d3;box-shadow:0 0 15px 2px #c8c8c8}
+@media screen and (min-width:40em){.latest-tweets li a{word-break:break-word}.latest-tweets li{display:block;width:31%;margin:0 4px;float:left;border:1px solid #d3d3d3;box-shadow:0 0 15px 2px #c8c8c8}
 p.tweet-text{margin:8px}p.tweet-details{font-size:.9rem;font-weight:bold;min-height:35px;background-color:#55acee;background-image:url("/wp-content/themes/lorainccc-subsite/images/icons/white-twitter-bird.svg");background-repeat:no-repeat;background-position:4px 0;padding:4px 8px 0 55px;display:block;border-bottom:2px solid #2795e9;margin:0}
 p.tweet-details a{color:#fff}}@media screen and (max-width:63.9375em){div.latest-tweets ul{margin:0;width:100%}
-.latest-tweets li a{word-break:break-all}.latest-tweets li{width:95%;display:block;border:1px solid #d3d3d3;box-shadow:0 0 15px 2px #c8c8c8;margin:15px 0}
+.latest-tweets li a{word-break:break-word}.latest-tweets li{width:95%;display:block;border:1px solid #d3d3d3;box-shadow:0 0 15px 2px #c8c8c8;margin:15px 0}
 p.tweet-text{margin:8px}p.tweet-details{font-size:.9rem;font-weight:bold;min-height:35px;background-color:#55acee;background-image:url("/wp-content/themes/lorainccc-subsite/images/icons/white-twitter-bird.svg");background-repeat:no-repeat;background-position:4px 0;padding:4px 2px 0 40px;display:block;border-bottom:2px solid #2795e9;margin:0}
 p.tweet-details a{color:#fff}}.clink-links-shortcode{background-color:transparent;border:0}
 .clink-links-shortcode-header{background:transparent;border:0}.clink-links-list>ul>li{border:0}
