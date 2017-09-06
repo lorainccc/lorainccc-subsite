@@ -74,7 +74,7 @@ get_header(); ?>
 							<?php //dynamic_sidebar( 'lccc-events-sidebar' ); ?>
 				<?php //} ?>
 	</div>-->
-   </div><!-- #primary -->
+
 	</div>
 	<div class="small-12 medium-8 large-8 columns">
 	<div id="primary" class="content-area">
@@ -229,7 +229,7 @@ get_header(); ?>
     <p style="text-align:center;"><a href="news/" class="button">View more in the news</a></p>
    </section>
   <!-- End In the News Section -->
-
+   </div><!-- #primary -->
 </div>
 <?php
  //Jetpack Sharing Buttons
