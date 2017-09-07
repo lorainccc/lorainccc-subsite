@@ -282,7 +282,7 @@ get_header(); ?>
      echo '<div class="row section-divider-btm">';
      echo ' <div class="small-12 medium-3 columns text-center">';
      echo ' <a href="' . get_the_permalink() . '">';
-     echo the_post_thumbnail( 'thumbnail' );
+     echo the_post_thumbnail();
      echo ' </a>';
      echo ' </div>';
      echo ' <div class="small-12 medium-9 columns">';
