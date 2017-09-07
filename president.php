@@ -149,35 +149,115 @@ get_header(); ?>
     &nbsp;
    </div>
   </div>
-  <div class="row small-up-2 medium-up-4"  style="background: #0055a5; border-radius: 20px;">
+  <div class="row show-for-medium medium-up-4"  style="background: #0055a5; border-radius: 20px;">
+   <?php 
+   $lc_facebook_link = get_option( 'lc_facebook_link', '' );
+   $lc_twitter_link = get_option( 'lc_twitter_link', '' );
+   $lc_instagram_link = get_option( 'lc_instagram_link', '' );
+   $lc_blog_link = get_option( 'lc_blog_link', '' );
+   
+   if ($lc_facebook_link != ''){
+   ?>
     <div class="column column-block small-centered">
-     <a href="https://www.facebook.com/lorainccc" title="Follow LCCC on Facebook" target="_blank">
+     <a href="<?php $lc_facebook_link ?>" title="Follow LCCC on Facebook" target="_blank">
       <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
       <img src="/wp-content/themes/lorainccc-subsite/images/icons/facebook_white.svg" border="0" />
      </div>
      </a>
     </div>
-    <div class="column column-block small-centered">
-     <a href="https://twitter.com/presballinger" title="Follow the president on Twitter" target="_blank">
+   <?php 
+    }
+   
+   if ($lc_twitter_link != ''){
+   ?>
+   
+    <div class="column-block small-centered column">
+     <a href="<?php $lc_twitter_link ?>" title="Follow the president on Twitter" target="_blank">
        <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
         <img src="/wp-content/themes/lorainccc-subsite/images/icons/twitter_white.svg" border="0" />
        </div>
       </a>
     </div>
-    <div class="column column-block small-centered">
-     <a href="https://www.instagram.com/presballinger/" title="Follow the president on Instagram" target="_blank">
+    <?php 
+    }
+   
+   if ($lc_instagram_link != ''){
+   ?> 
+    <div class="column-block small-centered column">
+     <a href="<?php $lc_instagram_link ?>" title="Follow the president on Instagram" target="_blank">
       <div style="background: #0055a5; width: 75px; height: 75px; padding:15px; border-radius: 20px; margin:0 auto;">
        <img src="/wp-content/themes/lorainccc-subsite/images/icons/instagram_white.svg" border="0" />
       </div>
      </a>
     </div>
-    <div class="column column-block small-centered">
-     <a href="blog/" title="Follow the president's blog">
+    <?php 
+    }
+   
+   if ($lc_blog_link != ''){
+   ?>    
+     <div class="column-block small-centered column">
+     <a href="<?php $lc_blog_link ?>" title="Follow the president's blog">
       <div style="background: #0055a5; width: 75px; height: 75px; padding:20px 8px 0 10px; border-radius: 20px; margin:0 auto;">
        <img src="/wp-content/themes/lorainccc-subsite/images/icons/lccc_white.svg" border="0" />
       </div>
      </a>
     </div>
+  </div>
+  <?php 
+   }  
+   ?>
+  <div class="row show-for-small-only small-up-2">
+   <?php
+   if ($lc_facebook_link != ''){
+   ?>
+    <div class="column-block small-centered column" style="margin: 10px 0;">
+     <a href="<?php $lc_facebook_link ?>" title="Follow LCCC on Facebook" target="_blank">
+      <!-- <div style="background: #0055a5; width: 125px; height: 125px; padding:20px; border-radius: 65px; margin:0 auto;"> -->
+      <div style="width: 125px; height: 125px; padding:20px; margin:0 auto;">
+      <img src="/wp-content/themes/lorainccc-subsite/images/icons/facebook_lc_blue.svg" border="0" />
+     </div>
+     </a>
+    </div>
+   <?php 
+    }
+   
+   if ($lc_twitter_link != ''){
+   ?>   
+    <div class="column-block small-centered column" style="margin: 10px 0;">
+     <a href="<?php $lc_twitter_link ?>" title="Follow the president on Twitter" target="_blank">
+      <div style="width: 125px; height: 125px; padding:20px; margin:0 auto;">
+        <img src="/wp-content/themes/lorainccc-subsite/images/icons/twitter_lc_blue.svg" border="0" />
+       </div>
+      </a>
+    </div>
+    <?php 
+    }
+   
+   if ($lc_instagram_link != ''){
+   ?> 
+    <div class="column-block small-centered column" style="margin: 10px 0;">
+     <a href="<?php $lc_instagram_link ?>" title="Follow the president on Instagram" target="_blank">
+       <div style="width: 125px; height: 125px; padding:20px; margin:0 auto;">
+       <img src="/wp-content/themes/lorainccc-subsite/images/icons/instagram_lc_blue.svg" border="0" />
+      </div>
+     </a>
+    </div>
+    <?php 
+    }
+   
+   if ($lc_blog_link != ''){
+   ?>    
+    <div class="column-block small-centered column" style="margin: 30px 0;">
+     <a href="<?php $lc_blog_link ?>" title="Follow the president's blog">
+      <div style="background: #0055a5; width: 85px; height: 85px; padding:15px 5px 0 5px; border-radius: 65px; margin:0 auto;">
+       <img src="/wp-content/themes/lorainccc-subsite/images/icons/lccc_white.svg" border="0" />
+      </div>
+     </a>
+    </div>
+  </div>
+  <?php 
+   }
+   ?>
   </div>
   <!-- End Social Media Grid -->
   </section>
