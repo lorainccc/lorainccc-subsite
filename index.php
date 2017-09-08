@@ -116,7 +116,10 @@ if ( function_exists( 'sharing_display' ) ) {
 	<div class="small-12 medium-8 large-8 columns">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-   <h1><?php bloginfo( 'name' ); ?></h1>
+   <?php 
+ if(get_option('lc_blog_archive_title') != ''){?>
+   <h1><?php echo get_option('lc_blog_archive_title'); ?></h1>
+ <?php } ?>
 		<?php while ( have_posts() ) : the_post();
 
 				 get_template_part( 'template-parts/content', 'blog');

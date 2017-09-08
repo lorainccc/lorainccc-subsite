@@ -112,7 +112,7 @@ get_header(); ?>
     foreach ( $event_posts as $event_post ){
      echo '<div class="row">';
       echo ' <div class="small-12 medium-12 large-1 columns calendar-small">';
-      $date = date_create($event_post->event_end_date);
+      $date = date_create($event_post->event_start_date);
       $post_month = date_format($date, 'm');
       echo ' <p class="month">'.$event_post->event_start_date_month.'</p>';
       echo ' <p class="day">'.$event_post->event_start_date_day.'</p>';
