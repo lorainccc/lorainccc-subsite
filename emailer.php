@@ -32,13 +32,13 @@
 	
 		<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="row">
-			<div class="small-12 medium-8 columns gateway-header hide-for-print">
+			<div class="row collapse">
+			<div class="small-12 medium-offset-2 medium-8 columns gateway-header hide-for-print">
 					<?php the_post_thumbnail(); ?>
 					</div>
 			</div>
-			<div class="row">
-				<div class="small-12 medium-8 columns">
+			<div class="row collapse">
+				<div class="small-12 medium-offset-2 medium-8 columns">
 					<?php while ( have_posts() ) : the_post();
 
 							get_template_part( 'template-parts/content', 'noimage' );
