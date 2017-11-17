@@ -14,7 +14,7 @@
 <?php wp_head(); ?>
 <style>
 	body {
-		background-color:#d7d7d7;}
+		background-image: url('/wp-content/themes/lorainccc-subsite/images/gray-white-grad-bg.jpg') repeat-x;}
 </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -37,7 +37,7 @@
 		<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row collapse">
-			<div class="small-12 medium-offset-2 medium-8 columns gateway-header hide-for-print">
+			<div class="small-12 medium-offset-2 medium-8 columns gateway-header hide-for-print" style="padding:5px;">
 					<?php the_post_thumbnail(); ?>
 					</div>
 			</div>
@@ -53,9 +53,7 @@
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-		</div>
-	
+</div>
 <?php wp_footer(); ?>
-
 </body>
 </html>
