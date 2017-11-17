@@ -38,12 +38,12 @@
 		<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row collapse">
-			<div class="small-12 medium-offset-2 medium-8 columns gateway-header hide-for-print" style="padding:5px;">
+			<div class="small-12 medium-offset-2 medium-8 columns gateway-header hide-for-print">
 					<?php the_post_thumbnail(); ?>
 					</div>
 			</div>
 			<div class="row collapse">
-				<div class="small-12 medium-offset-2 medium-8 columns">
+				<div class="small-12 medium-offset-2 medium-8 columns" style="padding:5px;">
 					<?php while ( have_posts() ) : the_post();
 
 							get_template_part( 'template-parts/content', 'noimage' );
