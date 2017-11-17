@@ -14,7 +14,8 @@
 <?php wp_head(); ?>
 <style>
 	body {
-		background-image: url('/wp-content/themes/lorainccc-subsite/images/gray-white-grad-bg.jpg') repeat-x;}
+		background-image: url('/wp-content/themes/lorainccc-subsite/images/gray-white-grad-bg.jpg');
+		background-repeat: repeat-x;}
 </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
