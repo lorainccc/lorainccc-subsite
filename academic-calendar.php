@@ -42,9 +42,9 @@ get_header(); ?>
 				$summer_end = date("Y-m-d",$summer_end_var); 
 				$summer_end_display = date("F d, Y",$summer_end_var); 
 				$summer_end_year = date("Y",$summer_end_var); 
-				if($summer_start_year == $summer_end_year){
+/*				if($summer_start_year == $summer_end_year){
 					$summer_end_year = $summer_end_year + 1; 
-				}
+				}*/
 				?>
 				<?php $fall_start = get_option( 'lccc_fall_semester_startdate', '' ); 
 				$fall_start_var = strtotime($fall_start);
@@ -57,9 +57,9 @@ get_header(); ?>
 				$fallend = date("Y-m-d",$fall_end_var); 
 				$fall_end_display = date("F d, Y",$fall_end_var); 
 					$fall_end_year = date("Y",$fall_end_var); 
-				if($fall_start_year == $fall_end_year){
+/*				if($fall_start_year == $fall_end_year){
 					$fall_end_year = $fall_end_year + 1; 
-				}
+				}*/
 				?>
 				<?php
 				$today = date("Y-m-d");
