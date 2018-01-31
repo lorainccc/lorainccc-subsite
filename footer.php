@@ -17,7 +17,7 @@
         <li><a href="http://facebook.com/lorainccc" title="Follow LCCC on Facebook" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/facebook_white.svg" height="30" width="30" alt="Follow LCCC on Facebook" /></a></li>
         <li><a href="http://twitter.com/lorainccc" title="Follow LCCC on Twitter" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/twitter_white.svg" height="30" width="30" alt="Follow LCCC on Twitter" /></a></li>
         <li><a href="http://www.linkedin.com/company/lorain-county-community-college" title="Follow LCCC on LinkedIn" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/linkedin_white.svg" height="30" width="30" alt="Follow LCCC on LinkedIn" /></a></li>
-        <!--<li><a href="#" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/pinterest_white.svg" height="30" width="30" alt="" /></a></li>-->
+        <!--<li><a href="#" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/pinterest_white.svg" height="30" width="30" alt="Follow LCCC on Pinterest" /></a></li>-->
         <li><a href="http://www.instagram.com/lorainccc" title="Follow LCCC on Instagram" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/instagram_white.svg" height="30" width="30" alt="Follow LCCC on Instagram" /></a></li>
       </ul>
       <a href="/campus-technology/lccc-mobile/" title="Download LCCC's Mobile App" target="_blank" class="clearfix mobile-app-link"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/smartphone_yellow.svg" heigth="33" width="20" alt="Download LCCC's Mobile App"/>
