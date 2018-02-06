@@ -68,23 +68,9 @@
 											?>
       <!-- This should be similar to what is generated when using Wordpress searchform.php -->
 					   <div class="large-9 medium-6 columns searchbox hide-for-print">
-          <?php if ( is_active_sidebar( 'lccc-search-sidebar' ) ) { ?>
-																<?php dynamic_sidebar( 'lccc-search-sidebar' ); ?>
-								<?php }else{
-															if ( class_exists( 'CustomGoogleSearch' ) ) {
-																// check for plugin using plugin name
-																// Plugin is activated
-																		if ( is_active_sidebar( 'lccc-four-o-four-sidebar' ) ) {
-
-																		}else{
-																			$instance = array(
-																			'display_results' => '3',
-																		);                                               the_widget('CGS_Widget', $instance);
-																			}
-															}else{
-																echo 'no widgets found';
-															}
-								}		?>
+        <?php 
+										the_widget('WP_Widget_Search');
+								?>
 					</div>
     </div>
   </div>
@@ -116,24 +102,12 @@
       </span> </div>
   </div>
   <div id="mobile-search" class="show-for-small-only hide-for-print">
-         			<?php if ( is_active_sidebar( 'lccc-search-sidebar' ) ) { ?>
-																<?php dynamic_sidebar( 'lccc-search-sidebar' ); ?>
-								<?php }else{
-															if ( class_exists( 'CustomGoogleSearch' ) ) {
-																// check for plugin using plugin name
-																// Plugin is activated
-																		if ( is_active_sidebar( 'lccc-four-o-four-sidebar' ) ) {
-																			echo 'sidebar active and plugin active';
-																		}else{
-																			$instance = array(
-																			'display_results' => '3',
-																		);                                               the_widget('CGS_Widget', $instance);
-																			}
-															}else{
-																echo 'no widgets found';
-															}
-								}		?>
+        <?php 
+										the_widget('WP_Widget_Search');
+								?>
   </div>
+		<?php //The div below breaks a float that is happening, which without the tag causes the menu to squash into the remaining space. ?>
+		<div style="clear:both;"></div>
   <div id="responsive-menu" class="show-for-small-only hide-for-print">
     <ul class="vertical menu" data-drilldown data-parent-link="true">
      <li><a href="/" alt="Link back to LCCC Home Page">Home</a></li>
