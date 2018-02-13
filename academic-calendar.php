@@ -137,7 +137,7 @@ get_header(); ?>
 							<div class="tabs-content" data-tabs-content="academic-calendar-tabs">
 						 <div class="tabs-panel <?php echo $springactive; ?>" id="spring-semester-calendar">
 									<div class="small-12 medium-12 columns nopadding">
-										<?php echo '<h2>' . $spring_display_category . '</h2>'; ?>
+										<?php echo '<h2 style="text-transform: capitalize;">' . $spring_display_category . '</h2>'; ?>
 								<?php
 								echo '<h3>'.$spring_start_display.' to '.$spring_end_display.'</h3>';?>
 								</div>
@@ -195,7 +195,7 @@ get_header(); ?>
   </div>
 						  <div class="tabs-panel  <?php echo $summeractive; ?>" id="summer-semester-calendar">
 										<div class="small-12 medium-12 columns nopadding">
-									<?php echo '<h2>'. $summer_display_category . '</h2>'; ?>
+									<?php echo '<h2 style="text-transform: capitalize;">'. $summer_display_category . '</h2>'; ?>
 											<?php
 								echo '<h3>'.$summer_start_display.' to '.$summer_end_display.'</h3>';?>
 									</div>
@@ -248,7 +248,7 @@ get_header(); ?>
   </div>
 						 <div class="tabs-panel  <?php echo $fallactive; ?>" id="fall-semester-calendar">
 								<div class="small-12 medium-12 columns nopadding">
-									<?php echo '<h2>' . $fall_display_category . '</h2>'; ?>								
+									<?php echo '<h2 style="text-transform: capitalize;">' . $fall_display_category . '</h2>'; ?>								
 									<?php
 								echo '<h3>'.$fall_start_display.' to '.$fall_end_display.'</h3>';?>
   					</div>
