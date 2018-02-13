@@ -18,7 +18,7 @@ get_header(); ?>
 				<?php 
 				$spring_category = get_option( 'lccc_spring_active_category', '' );
 				
-				if($spring_category !='none'){
+				if( $spring_category !='none' ){
 					$spring_start_date = strtotime(get_option( 'lccc_spring_semester_startdate', '' ) );
 					$spring_start = date("Y-m-d", $spring_start_date ); 
 					$spring_start_display = date("F d",$spring_start_date);
@@ -30,7 +30,7 @@ get_header(); ?>
 				}
 				
 				$summer_category = get_option( 'lccc_summer_active_category', '' );
-				if($summer_category != 'none'){
+				if( $summer_category != 'none' ){
 				$summer_start_date = strtotime( get_option( 'lccc_summer_semester_startdate', '' ) );
 				$summer_start = date("Y-m-d", $summer_start_date ); 
 	   $summer_start_display = date("F d",$summer_start_date);
@@ -42,7 +42,7 @@ get_header(); ?>
 				}
 					
 				$fall_category = get_option( 'lccc_fall_active_category', '' );
-				if($fall_category != 'none'){
+				if( $fall_category != 'none' ){
 				$fall_start_date = strtotime( get_option( 'lccc_fall_semester_startdate', '' ) );
 				$fall_start = date("Y-m-d", $fall_start_date );
 				$fall_start_display = date("F d",$fall_start_date);
@@ -102,7 +102,7 @@ get_header(); ?>
 													<li class="button tabs-title <?php echo $fallactive; ?>"><a href="#fall-semester-calendar" aria-selected="true"><?php echo $fall_display_category ?></a></li>
 													<li class="button tabs-title <?php echo $springactive; ?>"><a href="#spring-semester-calendar"><?php echo $spring_display_category ?></a>				
 													</li>
-													<?php if( $today_year != $summer_end_year && $today_year < $summer_end_year){?>
+													<?php if( $summer_category != 'none' ){?>
 													<li class="button tabs-title <?php echo $summeractive; ?>"><a href="#summer-semester-calendar"><?php echo $summer_display_category ?></a></li>
 													<?php } ?>
 								<?php
@@ -110,14 +110,14 @@ get_header(); ?>
 												<li class="button tabs-title <?php echo $springactive; ?>"><a href="#spring-semester-calendar" aria-selected="true"><?php echo $spring_display_category ?></a>				
 												</li>
 												<li class="button tabs-title <?php echo $summeractive; ?>"><a href="#summer-semester-calendar"><?php echo $summer_display_category ?></a></li>	
-												<?php if( $today_year != $fall_end_year && $today_year < $fall_end_year){?>
+												<?php if( $fall_category != 'none' ){?>
 												<li class="button tabs-title <?php echo $fallactive; ?>"><a href="#fall-semester-calendar"><?php echo $fall_display_category ?></a></li>
 												<?php } ?>
 									<?php }elseif( $summeractive = 'is-active' ){ ?>					
 									<li class="button tabs-title <?php echo $summeractive; ?>"><a href="#summer-semester-calendar"><?php echo $summer_display_category ?></a></li>
 						
 									<li class="button tabs-title <?php echo $fallactive; ?>"><a href="#fall-semester-calendar"><?php echo $fall_display_category ?></a></li>
-									<?php if( $today_year != $spring_end_year && $today_year < $spring_end_year){?>
+									<?php if( $spring_category !='none' ){?>
 									<li class="button tabs-title <?php echo $springactive; ?>"><a href="#spring-semester-calendar" aria-selected="true"><?php echo $spring_display_category ?></a>				
 										<?php } ?>
 								</li>
