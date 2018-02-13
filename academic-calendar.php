@@ -16,29 +16,42 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div class="small-12 medium-12 columns acevents-header">
 				<?php 
-				$spring_start = strtotime(get_option( 'lccc_spring_semester_startdate', '' ) ); 
-	   $spring_start_display = date("F d",$spring_start);
-				$spring_end = strtotime( get_option( 'lccc_spring_semester_enddate', '' ) ); 
-				$spring_end_year = date("Y",$spring_end);
-				$spring_end_display = date("F d, Y",$spring_end);
 				$spring_category = get_option( 'lccc_spring_active_category', '' );
-				$spring_display_category = str_replace( '-', ' - ', str_replace( 'spring-', 'Spring ', $spring_category ) );
 				
-				$summer_start = strtotime( get_option( 'lccc_summer_semester_startdate', '' ) ); 
-	   $summer_start_display = date("F d",$summer_start);
-				$summer_end = strtotime( get_option( 'lccc_summer_semester_enddate', '' ) );
-				$summer_end_year = date("Y",$summer_end);
-				$summer_end_display = date("F d, Y",$summer_end); 
+				if($spring_category !='none'){
+					$spring_start_date = strtotime(get_option( 'lccc_spring_semester_startdate', '' ) );
+					$spring_start = date("Y-m-d", $spring_start_date ); 
+					$spring_start_display = date("F d",$spring_start_date);
+					$spring_end_date = strtotime( get_option( 'lccc_spring_semester_enddate', '' ) );
+					$spring_end = date("Y-m-d", $spring_end_date ); 
+					$spring_end_year = date("Y",$spring_end_date);
+					$spring_end_display = date("F d, Y",$spring_end_date);
+					$spring_display_category = str_replace( '-', ' - ', str_replace( 'spring-', 'Spring ', $spring_category ) );
+				}
+				
 				$summer_category = get_option( 'lccc_summer_active_category', '' );
+				if($summer_category != 'none'){
+				$summer_start_date = strtotime( get_option( 'lccc_summer_semester_startdate', '' ) );
+				$summer_start = date("Y-m-d", $summer_start_date ); 
+	   $summer_start_display = date("F d",$summer_start_date);
+				$summer_end_date = strtotime( get_option( 'lccc_summer_semester_enddate', '' ) );
+				$summer_end = date("Y-m-d", $summer_end_date );
+				$summer_end_year = date("Y",$summer_end_date);
+				$summer_end_display = date("F d, Y",$summer_end_date); 
 				$summer_display_category = str_replace('-', ' - ', str_replace( 'summer-', 'Summer ', $summer_category ) );
-				
-				$fall_start = strtotime( get_option( 'lccc_fall_semester_startdate', '' ) );
-				$fall_start_display = date("F d",$fall_start);
-				$fall_end = strtotime( get_option( 'lccc_fall_semester_enddate', '' ) );
-				$fall_end_display = date("F d, Y",$fall_end);
-				$fall_end_year = date("Y",$fall_end);
+				}
+					
 				$fall_category = get_option( 'lccc_fall_active_category', '' );
+				if($fall_category != 'none'){
+				$fall_start_date = strtotime( get_option( 'lccc_fall_semester_startdate', '' ) );
+				$fall_start = date("Y-m-d", $fall_start_date );
+				$fall_start_display = date("F d",$fall_start_date);
+				$fall_end_date = strtotime( get_option( 'lccc_fall_semester_enddate', '' ) );
+				$fall_end = date("Y-m-d", $fall_end_date );
+				$fall_end_display = date("F d, Y",$fall_end_date);
+				$fall_end_year = date("Y",$fall_end_date);
 				$fall_display_category = str_replace( '-', ' - ', str_replace( 'fall-', 'Fall ', $fall_category ) );		
+				}				
 				
 				$today = date("Y-m-d");
 				$today_var = strtotime($today);
@@ -51,6 +64,9 @@ get_header(); ?>
 				}elseif($today >= $fall_start){
 				$activesemster = 'fall';
 				}
+
+				
+				
 				?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -75,14 +91,16 @@ get_header(); ?>
 										$fallactive = 'is-active';
 										break;					
 					}
-							?>
+			
+				
+				?>
+							
 								<ul class="tabs" data-tabs id="academic-calendar-tabs">
 								
 									<?php if($fallactive == 'is-active'){ 
 													?>
-													<li class="button tabs-title <?php echo $fallactive; ?>"><a href="#fall-semester-calendar"><?php echo $fall_display_category ?></a></li>
-									
-													<li class="button tabs-title <?php echo $springactive; ?>"><a href="#spring-semester-calendar" aria-selected="true"><?php echo $spring_display_category ?></a>				
+													<li class="button tabs-title <?php echo $fallactive; ?>"><a href="#fall-semester-calendar" aria-selected="true"><?php echo $fall_display_category ?></a></li>
+													<li class="button tabs-title <?php echo $springactive; ?>"><a href="#spring-semester-calendar"><?php echo $spring_display_category ?></a>				
 													</li>
 													<?php if( $today_year != $summer_end_year && $today_year < $summer_end_year){?>
 													<li class="button tabs-title <?php echo $summeractive; ?>"><a href="#summer-semester-calendar"><?php echo $summer_display_category ?></a></li>
@@ -126,10 +144,6 @@ get_header(); ?>
 																						<table>
 							<tbody>
 								<?php
-
-								$springcat = 'spring-semester-'.$spring_start_year.'-'.$spring_end_year;
-								$summercat = 'summer-semester-'.$summer_start_year.'-'.$summer_end_year;
-								$fallcat = 'fall-semester-'.$fall_start_year.'-'.$fall_end_year;
 							
 										$springeventargs=array(
             'post_type' => 'lccc_academicevent',
