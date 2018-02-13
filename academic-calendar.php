@@ -26,7 +26,7 @@ get_header(); ?>
 					$spring_end = date("Y-m-d", $spring_end_date ); 
 					$spring_end_year = date("Y",$spring_end_date);
 					$spring_end_display = date("F d, Y",$spring_end_date);
-					$spring_display_category = str_replace( '-', ' - ', str_replace( 'spring-', 'Spring ', $spring_category ) );
+					$spring_display_category = str_replace( '-', ' - ', $spring_category );
 				}
 				
 				$summer_category = get_option( 'lccc_summer_active_category', '' );
@@ -38,7 +38,7 @@ get_header(); ?>
 				$summer_end = date("Y-m-d", $summer_end_date );
 				$summer_end_year = date("Y",$summer_end_date);
 				$summer_end_display = date("F d, Y",$summer_end_date); 
-				$summer_display_category = str_replace('-', ' - ', str_replace( 'summer-', 'Summer ', $summer_category ) );
+				$summer_display_category = str_replace('-', ' - ', $summer_category  );
 				}
 					
 				$fall_category = get_option( 'lccc_fall_active_category', '' );
@@ -50,7 +50,7 @@ get_header(); ?>
 				$fall_end = date("Y-m-d", $fall_end_date );
 				$fall_end_display = date("F d, Y",$fall_end_date);
 				$fall_end_year = date("Y",$fall_end_date);
-				$fall_display_category = str_replace( '-', ' - ', str_replace( 'fall-', 'Fall ', $fall_category ) );		
+				$fall_display_category = str_replace( '-', ' - ', $fall_category );		
 				}				
 				
 				$today = date("Y-m-d");
