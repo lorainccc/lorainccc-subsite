@@ -38,8 +38,7 @@ $today = getdate();
 				}else{
 							$nextTwoDay = $currentDay;
 				}
-		$starteventdate = 
-			event_meta_box_get_meta('event_start_date');
+		$starteventdate = event_meta_box_get_meta('event_start_date');
 		$starteventtime = event_meta_box_get_meta('event_start_time');  
 		$endeventdate = event_meta_box_get_meta('event_end_date');
 		$endtime = event_meta_box_get_meta('event_end_time');
@@ -167,7 +166,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 							$currentmonthname = date("M");
 
 usort( $posts, function ( $a, $b) {
-return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
+return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_date_and_time );
 });
 				$eventcounter = 0;
 				$firstactive = '';

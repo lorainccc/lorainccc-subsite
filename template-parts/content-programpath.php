@@ -16,7 +16,7 @@ $programargs = array(
   $titleId = strtolower( str_replace( ' ', '_', $titleId ) );
 
     ?>
-        <section class="row programpaths" aria-labeledby="<?php echo $titleId; ?>">
+        <section class="row programpaths" aria-label="<?php echo $titleId; ?>" role="region">
 											<div class="small-12 medium-3 large-3 columns">
             <a href="<?php echo $linkvalue; ?>"><?php the_post_thumbnail(); ?></a>
 											</div>
