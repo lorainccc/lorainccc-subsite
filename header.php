@@ -81,7 +81,7 @@
 									<?php
           wp_nav_menu(array(
 											'container' => false,
-											'menu' => __( 'Primary', 'textdomain' ),
+											'menu' => __( 'Primary', 'lorainccc' ),
 											'menu_class' => 'dropdown menu hide-for-print',
 											'theme_location' => 'primary',
 											'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
