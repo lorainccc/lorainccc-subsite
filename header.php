@@ -27,7 +27,7 @@
 
 </script>
 	
-<!-- Hotjar Tracking Code for www.lorainccc.edu -->
+<!-- Hotjar Tracking Code for www.lorainccc.edu 2-->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
