@@ -77,5 +77,15 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+    window._mfq = window._mfq || [];
+    (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/b0946333-d3eb-43d7-9590-03d85da48b87.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+</script>
+
 </body>
 </html>
