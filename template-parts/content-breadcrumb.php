@@ -28,7 +28,13 @@
      // Single Post (most likely lccc_event)
      if(get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') != ''){
      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') . " > " . get_the_title()  ;
-      } else {
+						
+					// Single Post - Success Story Posts
+					}elseif($post->post_type == 'lc_success_story'){
+						echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/lc_success_story/'>Success Stories</a> > " . get_the_title() ;
+						
+					// Single Post Blog posts	
+					} else {
      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/blog/'> Blog </a> > " . get_the_title() ;
      }
     }else {
@@ -36,4 +42,10 @@
     	echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_title() ;
     };
    };
+
+	echo "<br/><br/><pre>";
+	var_dump($post);
+	echo "</pre>";
+
+	echo get_permalink($post->ID);
   ?>
