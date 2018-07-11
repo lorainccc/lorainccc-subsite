@@ -1,7 +1,7 @@
 /*!
  Theme Name: lorainccc-subsite
  Theme URI:    http://www.lorainccc.edu 
- Description:  Lorain County Community College Child Theme 
+ Description:  Lorain County Community College Theme 
  Author: LCCC Web Development Team 
  Author URI: http://www.lorainccc.edu 
  Template: lccc-framework 
@@ -64,7 +64,7 @@ div.row hr{margin:-80px auto 0;height:10px;padding:1rem 0;width:100%}div.mylccc-
 main.site-main table thead{background:#0055a5;color:#fff}.tabs{border:0}.tabs-panel{padding:0}
 .tabs-title{margin:.5rem .5rem .5rem 0}.tabs-content{border:0}table{border:2px solid #ddd}
 li.button.tabs-title,li.button.tabs-title.is-active{padding:0}li.button.tabs-title.is-active{background:#0055a5}
-li.button.tabs-title,li.button.tabs-title.is-active a{color:#fff}.academic-calender-content .tabs-title>a{color:#fff; text-transform: capitalize;}
+li.button.tabs-title,li.button.tabs-title.is-active a{color:#fff}.academic-calender-content .tabs-title>a{color:#fff}
 .academic-calender-content .tabs-title>a:hover{background:#555}.academic-calender-content .tabs-title>a:focus,.tabs-title>a[aria-selected='true']{background:0}
 .alignnone{margin:5px 20px 20px 0}.aligncenter,div.aligncenter{display:block;margin:5px auto 5px auto}
 .alignright{float:right;margin:5px 0 20px 20px}.alignleft{float:left;margin:5px 20px 20px 0}
@@ -166,10 +166,10 @@ p.month{margin-bottom:0;margin-top:12px;margin-left:4px;width:100%;font-weight:b
 p.day{margin-bottom:0;margin-top:-10px;margin-left:9px;font-weight:bold;color:#003b76}
 div.mylccc-news-container img{margin-bottom:1rem}.gform_wrapper .gfield_radio li label,.gform_wrapper .gfield_checkbox li label{margin:2px 0 10px 4px}
 .gform_wrapper table.gfield_list td,.gform_wrapper table.gfield_list th{padding:4px}
-.gform_wrapper legend.gfield_label{font-weight:700}div.columns.event-details{margin-top:-0.4rem}
-div.columns.entry-content{margin-top:.25rem}div.columns.nopadding.event-pagination a.button{margin-right:1rem}
-div.columns.nopadding.event-pagination a.button:last-child{margin-right:0}section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}
-figure{margin:0;padding:0}.gallery{margin:0 auto 18px;display:inline-block;width:100%}
+.gform_wrapper legend.gfield_label{font-weight:700}.button,.button:hover,.button:focus{background-color:#0055a5}
+div.columns.event-details{margin-top:-0.4rem}div.columns.entry-content{margin-top:.25rem}
+div.columns.nopadding.event-pagination a.button{margin-right:1rem}div.columns.nopadding.event-pagination a.button:last-child{margin-right:0}
+section.LCCC_Calendar_Event_Widget{margin-bottom:2rem}figure{margin:0;padding:0}.gallery{margin:0 auto 18px;display:inline-block;width:100%}
 .gallery .gallery-item{float:left;margin-top:0;text-align:center;width:33%}.gallery-columns-2 .gallery-item{width:50%}
 .gallery-columns-3 .gallery-item{width:33%}.gallery-columns-4 .gallery-item{width:25%}
 .gallery img{padding:8px}.gallery img:hover{background:white}.gallery-columns-2 .attachment-medium{max-width:92%;height:auto}
@@ -199,10 +199,7 @@ ul.bullet-arrow{list-style-type:none;margin:0}ul.bullet-arrow link{text-indent:-
 ul.bullet-arrow li{margin:5px 0 0 0;padding:0 0 15px 0}ul.bullet-arrow li:before{font-family:"Genericons";font-size:38px;content:"\f429";margin:-18px 0 0 0;color:#606060;float:left;width:1.4em}
 /*!
 Section 4: Header
-*/.searchbox{height:70px;padding:15px 0 15px 0}input#s,input#s:focus{max-width:260px;width:100%;height:35px;margin:0 15px 0 0;border-radius:20px;padding:.25rem .25rem .25rem 2.2rem;font-size:.75rem;font-weight:700;background-image:url(/wp-content/themes/lorainccc/images/icons/icon-search.png);background-repeat:no-repeat;background-position:.75rem .45rem;float:left}
-#searchsubmit{-webkit-box-shadow:inset 0 1px 0 0 #f9eca0;box-shadow:inset 0 1px 0 0 #f9eca0;background:-moz-linear-gradient(center top,#ffeba8 5%,#ffc800 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeba8',endColorstr='#ffc800');background-color:#ffeba8;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;text-indent:0;border:1px solid #e6b103;display:inline-block;color:#303030;font-family:Arial;font-size:15px;font-weight:bold;font-style:normal;text-decoration:none;text-align:center;text-shadow:1px 1px 0 #fff;padding:8px 18px;float:left}
-#searchsubmit:hover{background:-moz-linear-gradient(center top,#ffc800 5%,#ffeba8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc800',endColorstr='#ffeba8');background-color:#ffc800}
-#searchsubmit:active{position:relative;top:1px}div.searchbox table thead,table tbody,table tfoot{border:0}
+*/input[name=search],input[name=search]:focus{max-width:260px;width:100%;height:2rem;margin:.5rem 0 0 0;border-radius:20px;padding:.25rem .25rem .25rem 2.2rem;font-size:.75rem;font-weight:700;background-image:url(/wp-content/themes/lorainccc/images/icons/icon-search.png);background-repeat:no-repeat;background-position:.75rem .45rem}
 a.skip-link.screen-reader-text{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 a.skip-link.screen-reader-text:focus{position:static;width:auto;height:auto}.ql-icon{background-position:left center;background-repeat:no-repeat;background-size:.78125rem .78125rem}
 .ql-1{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-az_blue.svg)}.ql-2{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-faculty_blue.svg)}

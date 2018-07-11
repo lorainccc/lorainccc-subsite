@@ -118,6 +118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
   <div class="row show-for-small-only mobile-nav-bar hide-for-print">
     <div class="small-8 columns"> <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/lccclogo_white.svg" alt="" width="165" height="31.875" /></a> </div>
     <div class="small-2 columns clearfix"> <span data-responsive-toggle="mobile-search" data-hide-for="medium"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/magnifying-glass.svg" height="25" width="25" alt="" class="float-right" data-toggle/></span> </div>
@@ -135,6 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="responsive-menu" class="show-for-small-only hide-for-print">
     <ul class="vertical menu" data-drilldown data-parent-link="true">
      <li><a href="/" alt="Link back to LCCC Home Page">Home</a></li>
+
 					<?php 	wp_nav_menu(array(
 													'container' => false,
 													'menu' => __( 'Drill Menu', 'textdomain' ),
@@ -146,7 +148,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 													'walker' => new lc_drill_menu_walker(),
 												));
      ?>
+
      <li>&nbsp;</li>
+
      <?php
             wp_nav_menu(array(
 													'container' => false,
@@ -159,9 +163,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 													'walker' => new lc_drill_menu_walker(),
 												));
 					?>
+
     </ul>
   </div>
-
+		</nav>
 		</div>
 	</header><!-- #masthead -->
 
