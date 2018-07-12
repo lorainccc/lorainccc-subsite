@@ -26,14 +26,6 @@
   ga('send', 'pageview');
 
 </script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PWJL5TQ');</script>
-<!-- End Google Tag Manager -->
 	
 <!-- Hotjar Tracking Code for www.lorainccc.edu 2-->
 <script>
@@ -68,19 +60,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 <body <?php body_class(); ?>>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWJL5TQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text hide-for-print" href="#content"><?php esc_html_e( 'Skip to content', 'lccc-framework' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		  <div class="row show-for-medium">
-    <div class="large-6 medium-6 columns"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/LCCC-Logo.png" height="70" width="325" alt="Lorain County Community College Logo" /></a>  </div>
-    <div class="large-6 medium-6 columns">
+		<div class="grid-container">
+		  <div class="grid-x grid-margin-x show-for-medium">
+    <div class="large-6 medium-6 cell"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/LCCC-Logo.png" height="70" width="325" alt="Lorain County Community College Logo" /></a>  </div>
+    <div class="large-6 medium-6 cell">
      									<?php
           wp_nav_menu(array(
 											'container' => false,
@@ -91,16 +78,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 												));
 											?>
       <!-- This should be similar to what is generated when using Wordpress searchform.php -->
-					   <div class="large-9 medium-6 columns searchbox hide-for-print">
+					   <div class="large-9 medium-6 cell searchbox hide-for-print">
         <?php 
 										the_widget('WP_Widget_Search');
 								?>
 					</div>
     </div>
   </div>
+		</div>
 <div class="medium-blue-bg show-for-medium">
-    <div class="row">
-      <div class="large-12 columns">
+    <div class="grid-x grid-margin-x">
+      <div class="large-12 cell">
         <nav class="menu-centered">
 									<?php
           wp_nav_menu(array(
@@ -119,10 +107,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-  <div class="row show-for-small-only mobile-nav-bar hide-for-print">
-    <div class="small-8 columns"> <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/lccclogo_white.svg" alt="" width="165" height="31.875" /></a> </div>
-    <div class="small-2 columns clearfix"> <span data-responsive-toggle="mobile-search" data-hide-for="medium"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/magnifying-glass.svg" height="25" width="25" alt="" class="float-right" data-toggle/></span> </div>
-    <div class="small-2 columns"> <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <div class="grid-x grid-margin-x show-for-small-only mobile-nav-bar hide-for-print">
+    <div class="small-8 cell"> <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/lccclogo_white.svg" alt="" width="165" height="31.875" /></a> </div>
+    <div class="small-2 cell clearfix"> <span data-responsive-toggle="mobile-search" data-hide-for="medium"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/magnifying-glass.svg" height="25" width="25" alt="" class="float-right" data-toggle/></span> </div>
+    <div class="small-2 cell"> <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
       <button class="menu-icon" type="button" data-toggle></button>
       </span> </div>
   </div>
@@ -136,7 +124,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="responsive-menu" class="show-for-small-only hide-for-print">
     <ul class="vertical menu" data-drilldown data-parent-link="true">
      <li><a href="/" alt="Link back to LCCC Home Page">Home</a></li>
-
 					<?php 	wp_nav_menu(array(
 													'container' => false,
 													'menu' => __( 'Drill Menu', 'textdomain' ),
@@ -148,9 +135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 													'walker' => new lc_drill_menu_walker(),
 												));
      ?>
-
      <li>&nbsp;</li>
-
      <?php
             wp_nav_menu(array(
 													'container' => false,
@@ -163,7 +148,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 													'walker' => new lc_drill_menu_walker(),
 												));
 					?>
-
     </ul>
   </div>
 		</nav>
