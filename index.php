@@ -52,7 +52,6 @@ if ( function_exists( 'sharing_display' ) ) {
 //Checking to see if this is a blog post index page like the President's site.
 } elseif( is_home() ){
  ?>
-
 <div class="row page-content">
 <div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
@@ -122,23 +121,25 @@ if ( function_exists( 'sharing_display' ) ) {
 	<div class="small-12 medium-8 large-8 columns">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-   <?php 
- if(get_option('lc_blog_archive_title') != ''){?>
-   <h1><?php echo get_option('lc_blog_archive_title'); ?></h1>
- <?php } ?>
 		<?php while ( have_posts() ) : the_post();
 
 				 get_template_part( 'template-parts/content', 'blog');
 
 			     endwhile; // end of the loop. ?>
-   
-   <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-   <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
-  </main><!-- #main -->
+		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
 <div class="small-12 medium-4 large-4 columns">
+	<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
+			<div class="small-12 medium-12 large-12 columns hide-for-print">
+			<?php dynamic_sidebar( 'lccc-badges-sidebar' ); ?>
+			</div>
+	<?php } ?>
+			<?php if ( is_active_sidebar( 'lccc-events-sidebar' ) ) { ?>
+																							<?php dynamic_sidebar( 'lccc-events-sidebar' ); ?>
+																		<?php } ?>				
+	</div>
 	<?php
  //Jetpack Sharing Buttons
 if ( function_exists( 'sharing_display' ) ) {

@@ -43,9 +43,9 @@
     };
    };
 
-	echo "<br/><br/><pre>";
+/*	echo "<br/><br/><pre>";
 	var_dump($post);
 	echo "</pre>";
 
-	echo get_permalink($post->ID);
+	echo get_permalink($post->ID);*/
   ?>
