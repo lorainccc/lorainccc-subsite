@@ -150,8 +150,15 @@ get_header(); ?>
 		    						'posts_per_page' => -1,
 		    						'order' => 'ASC',
 												'event_categories' => $spring_category,
-    		    		'orderby'=> 'meta_value',
-    		    		'meta_key' => 'event_start_date',
+    		    		'orderby'=> 'spring_order_clause',
+													'meta_query' => array(
+														'spring_order_clause' => array(
+																'key' => 'event_start_date',
+																'type' => 'DATE',
+															),
+													),
+    		    		//'meta_key' => 'event_start_date',
+												//'meta_type' => 'DATE',
           );
 					
 					$spring_wp_query = new WP_Query($springeventargs);
@@ -207,8 +214,9 @@ get_header(); ?>
 		    						'posts_per_page' => -1,
 		    						'order'=> 'ASC',
 												'event_categories' => $summer_category,
-    		    		'orderby'=> 'meta_value',
+    		    		'orderby'=> 'event_start_date',
     		    		'meta_key' => 'event_start_date',
+												//'meta_type' => 'DATE',
           );
 					$summer_wp_query = new WP_Query($summereventargs);
 					if ( $summer_wp_query->have_posts() ) :
@@ -260,8 +268,15 @@ get_header(); ?>
 		    						'posts_per_page' => -1,
 		    						'order' => 'ASC',
 												'event_categories' => $fall_category,
-    		    		'orderby'=> 'meta_value',
-    		    		'meta_key' => 'event_start_date',
+    		    		'orderby'=> 'summer_order_clause',
+													'meta_query' => array(
+														'summer_order_clause' => array(
+																'key' => 'event_start_date',
+																'type' => 'DATE',
+															),
+													),
+    		    		//'meta_key' => 'event_start_date',
+												//'meta_type' => 'DATE',
           );
 					$wp_query = new WP_Query($eventargs);
 					if ( $wp_query->have_posts() ) :
