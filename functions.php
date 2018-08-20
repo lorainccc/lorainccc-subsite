@@ -259,9 +259,9 @@ function lorainccc_subsite_foundation_scripts() {
 
 		wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
 
-		wp_enqueue_script( 'lorainccc_subsite-function-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+	wp_enqueue_script( 'lorainccc_subsite-function-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
 
-		wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', array(
+wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
 	) );
@@ -495,12 +495,17 @@ function wpbeginner_numeric_posts_nav() {
 
 }
 
-/**
-* Add theme support for Responsive Videos.
-*/
-function jetpackme_responsive_videos_setup() {
-    add_theme_support( 'jetpack-responsive-videos' );
-}
-add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
+ /** Custom posts per page limit for Student News */
+
+	function lc_student_news_query( $query ){
+    if( ! is_admin()
+        && $query->is_post_type_archive( 'student_news' )
+        && $query->is_main_query() ){
+            $query->set( 'posts_per_page', 5 );
+    }
+	}
+	add_action( 'pre_get_posts', 'lc_student_news_query' );
+
+ /** End Custom posts per page limit for Student News */
 
 ?>
