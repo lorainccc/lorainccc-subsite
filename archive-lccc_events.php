@@ -136,7 +136,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 						
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
-							$domain = 'http://www.lorainccc.edu';
+							$domain = 'https://www.lorainccc.edu';
 					//Defining the endpoints
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
@@ -347,7 +347,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 						
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
-							$domain = 'http://www.lorainccc.edu';
+							$domain = 'https://www.lorainccc.edu';
 					//Defining the endpoints
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
