@@ -53,14 +53,14 @@ get_header(); ?>
 					<table>
 						<thead>
     				<tr>
-										<th width="5%">Report Month</th>
-										<th width="5%">Report Year</th>
-      				<th width="14%">Nature of Offense</th>
-      				<th width="17%">ALEIR Report Number</th>
-      				<th width="15%">Date/Time Reported</th>
-      				<th width="21%">Date/Time Offense Occurred</th>
+										<th scope="col" width="5%">Report Month</th>
+										<th scope="col" width="5%">Report Year</th>
+      				<th scope="col" width="14%">Nature of Offense</th>
+      				<th scope="col" width="17%">ALEIR Report Number</th>
+      				<th scope="col" width="15%">Date/Time Reported</th>
+      				<th scope="col" width="21%">Date/Time Offense Occurred</th>
 										<th width="13%">General Location</th>
-      				<th width="13%">Disposition</th>
+      				<th scope="col" width="13%">Disposition</th>
     				</tr>
   				</thead>
 										<tbody>
