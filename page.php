@@ -62,6 +62,7 @@ get_header(); ?>
 					) );
 				?>
 			</nav><!-- .main-navigation -->
+			<div>&nbsp;</div>
 				<?php endif; ?>
 		<?php endif; ?>
   <?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
