@@ -53,7 +53,8 @@ h2.cta-h2{text-transform:uppercase}p{font-size:1rem}div.entry-content h3{line-he
 Section 1: Foundation
 *//*!
 Section 2: Content
-*/span.event_entries article{box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-moz-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-webkit-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);padding-top:2.5rem;padding-bottom:2.5rem}
+*/div.content table thead,table tbody,table tfoot{border:0}
+span.event_entries article{box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-moz-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-webkit-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);padding-top:2.5rem;padding-bottom:2.5rem}
 div.columns.mylccc-news-container:first-child{padding-top:0}div.columns.mylccc-news-container{padding-top:2.5rem}
 div.columns.nopadding.event-pagination{padding-top:2.5rem}div.columns.mylccc-news-container div.row hr{margin:-80px auto 0;height:10px;padding:1rem 0;width:100%}
 .site-main table thead{background:#dcdcdc;color:#fff}div.columns.archive-events-container{padding-top:4rem}
