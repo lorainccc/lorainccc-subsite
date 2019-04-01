@@ -45,4 +45,5 @@ a.blue-button{
     border-radius: 0.25em;
     padding: 10px;
     color: #fff;
+    display: inline-block;
 }
