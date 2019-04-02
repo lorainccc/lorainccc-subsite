@@ -136,7 +136,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 						
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
-							$domain = 'https://www.lorainccc.edu';
+							$domain = 'http://www.lorainccc.edu';
 					//Defining the endpoints
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
@@ -347,7 +347,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 						
 					//defining the domain variable
 				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
-							$domain = 'https://www.lorainccc.edu';
+							$domain = 'http://www.lorainccc.edu';
 					//Defining the endpoints
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
@@ -413,7 +413,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 							foreach ( $posts as $post ){
                                 if(	$icounter<$posts_per_page){
 								?>
-								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id->rendered; ?>" >
+								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id; ?>" >
 						
 										<header class="entry-header">
 												<a href="<?php echo $post->link; ?>">
@@ -423,7 +423,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 									<?php
 									echo '<div class="small-12 medium-12 large-12 columns nopadding">';
    									
-									echo '</div>';	
+									echo '</div>';
 								?>
 										<div class="small-12 medium-12 large-12 columns entry-content nopadding">
 												<?php
