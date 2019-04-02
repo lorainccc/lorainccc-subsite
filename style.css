@@ -225,7 +225,7 @@ a.skip-link.screen-reader-text:focus{position:static;width:auto;height:auto}.ql-
 .main-navigation ul ul li a{color:#0055a5 !important}ul{margin-top:0 !important}td.gsc-clear-button{display:none}
 table.gsc-search-box tbody{background:transparent;border:0}/*!
 Section 5: Navigation
-*/header nav a,header nav a:hover{color:#fefefe;font-size:.875rem;font-weight:600}
+*/header nav a,header nav a:hover,header nav a:focus{color:#fefefe;font-size:.875rem;font-weight:600}
 header ul#header-menu li a{font-size:.78125rem;color:#0055a5;font-weight:700}header .menu:not(#menu-header-shortcuts):not(.vertical) li:hover,header .dropdown.menu .submenu{background:#0c3b78;border:0}
 header li.is-submenu-item{padding:.5rem 0;border-top:1px solid #0055a5}header .submenu{margin-top:-1px}
 header .submenu li{text-align:left}header .dropdown.menu .submenu li:hover{background:#fefefe !important;border-top:1px solid #0055a5 !important}
