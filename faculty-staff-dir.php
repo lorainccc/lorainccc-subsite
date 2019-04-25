@@ -63,7 +63,7 @@ get_header(); ?>
 					$alphabet[] = $term->slug;
 				}
 			}
-			set_transient( 'lc_archive_alphabet', $alphabet );
+			set_transient( 'lc_archive_alphabet', $alphabet, 86400 );
 		} 
 		
 		echo '<div class="row">';
@@ -84,7 +84,7 @@ get_header(); ?>
 		echo '</div>';
 
 		if($directory_display == 'List'){
-			
+
 			echo '<div class="row">';
 			echo ' <div class="small-12 columns">&nbsp;</div>';
 			echo '</div>';

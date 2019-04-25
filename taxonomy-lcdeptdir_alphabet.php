@@ -63,7 +63,7 @@ get_header(); ?>
                     $alphabet[] = $term->slug;
                 }
             }
-            set_transient( 'lc_archive_alphabet', $alphabet );
+			set_transient( 'lc_archive_alphabet', $alphabet, 86400 );
         } 
         
         echo '<div class="row">';
