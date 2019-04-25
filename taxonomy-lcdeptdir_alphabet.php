@@ -82,7 +82,7 @@ get_header(); ?>
         echo '  </ul>';
         echo ' </div>';
         echo '</div>';
-        echo '<div class="row"><div class="small-12 columns text-right"><a href="/mylccc/faculty-staff-directory/">Return to Main Directory</a></div></div>';
+        echo '<div class="row"><div class="small-12 columns text-right"><a href="/mylccc/faculty_staff_dir/">Return to Main Directory</a></div></div>';
         
         if($directory_display == 'List'){
 			
