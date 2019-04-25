@@ -98,8 +98,10 @@
 
 		}
 
-		echo '<div class="row">';
-		echo '	<div class="small-12 columns" style="padding:0 60px;">';
+		if($directory_display == 'Photo'){
+			echo '<div class="row">';
+			echo '	<div class="small-12 columns" style="padding:0 60px;">';
+		}
 		while ( $facdir_query->have_posts() ) : $facdir_query->the_post();
 
 		if($directory_display == 'Photo'){
@@ -115,9 +117,13 @@
 			get_template_part( 'template-parts/content', 'facdirectory' );
 
 		}
-		endwhile; // end of the loop. ?>
+		endwhile; // end of the loop. 
+		if($directory_display == 'Photo'){?>
 			</div>
 		</div>
+		<?php
+		}
+		?>
 		<div class="row">
 			<div class="small-6 columns text-left">
 				<?php previous_posts_link('Previous', $facdir_query->max_num_pages) ?>
