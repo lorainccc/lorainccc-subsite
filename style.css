@@ -193,7 +193,9 @@ li.facdir-list-lg{float:left;width:22%}li.facdir-list-heading{background:#0055a5
 .fac-dir-breaktext{white-space:nowrap}.facdir-content{list-style-type:none;padding:3px 5px}
 .fac-dir-list{padding:3px 5px}.fac-dir-list:nth-child(even){background:#CCC}.facdir-header{background-color:#0055a5;padding:3px 5px}
 .facdir-heading{height:60px;text-transform:uppercase;color:#fff;font-weight:700;padding:20px 5px}
-/*!
+ul.facdir-alpha-index{margin:10px auto;display:inline-block}ul.facdir-alpha-index li.az-characters{list-style:none;float:left;margin:0 5px}
+.current-alpha-character a{font-size:1.2em;font-weight:700;text-decoration:underline;vertical-align:middle}
+.alpha-character a{font-size:1em;font-weight:400;vertical-align:middle}/*!
 Section 3: Body
 */body{font-size:1.1rem;font-family:"Open Sans",sans-serif;font-weight:500;line-height:1.5;color:#404040;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3,h4,h5,h6,h7{font-family:"Raleway",sans-serif}img.alignright{float:right;margin:0 0 1em 1em}

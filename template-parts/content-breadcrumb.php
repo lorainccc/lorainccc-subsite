@@ -17,13 +17,15 @@
      } elseif ( is_post_type_archive() ) {	
       // Other Archive Page
      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > "; post_type_archive_title();
-					} else {
-						// Other Archive Page
+     } elseif( is_tax( 'lcdeptdir_alphabet' ) ){
+      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='" . get_bloginfo('url') . "/faculty-staff-directory/'>Faculty/Staff Directory</a> > " . single_cat_title( '', false ) ;
+     } else {
+	  // Other Archive Page
      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
      }
     } elseif ( is_tax() ) {
-     // Taxonomy 
-        echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
+     // Taxonomy
+     echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
     }elseif ( is_page() && $post->post_parent != 0 ) {
      // Page is a Subpage
      echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_permalink( $post->post_parent ) ."' title='Return to " . get_the_title( $post->post_parent ) . "'>" . get_the_title( $post->post_parent ) . "</a>" . " > " . get_the_title() ;
