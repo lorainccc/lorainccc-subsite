@@ -184,13 +184,16 @@ figure{margin:0;padding:0}.gallery{margin:0 auto 18px;display:inline-block;width
 p.tweet-details{font-size:.9rem;font-weight:bold}.clink-links-shortcode{background-color:transparent;border:0}
 .clink-links-shortcode-header{background:transparent;border:0}.clink-links-list>ul>li{border:0}
 .clink-links-list>ul>li a{color:#007bbf}.clink-links-list>ul>li>a:hover{background:transparent;color:#007bbf}
-.fac-dir{width:240px;float:left;margin:10px 10px 0 0}.facdir{position:relative}.facdir-entry-title{font-size:1.1rem;color:#fff}
+.fac-dir{width:240px;float:left;margin:10px 30px 0 0}.facdir{position:relative}.facdir-entry-title{font-size:1.1rem;color:#fff}
 .facdir-footer{position:absolute;bottom:0;left:0;right:0;background:#0c3b78;height:35px;margin:0;padding:2px;text-align:center;width:100%;-webkit-transition:.5s ease;transition:.5s ease;overflow:hidden}
-.facdir:hover .facdir-footer{height:115px}.facdir-addtl-info p{margin:2px 0 0 0}.facdir-entry-title:hover{-webkit-transform:none;transform:none}
+.facdir:hover .facdir-footer{height:135px}.facdir-addtl-info p{margin:2px 0 0 0}.facdir-entry-title:hover{-webkit-transform:none;transform:none}
 ul.facdir-listing-headings,ul.facdir-listing-content{width:100%;margin:0;padding:0}
-li.facdir-list-sm{list-style-type:none;float:left;width:10%}li.facdir-list-lg{list-style-type:none;float:left;width:22%}
-li.facdir-list-heading{background:#0055a5;color:#fff;font-weight:700;font-size:1.2rem;padding:3px 5px}
-.facdir-content{padding:3px 5px}/*!
+ul.facdir-listing-content li{display:inline-block;margin:5px 0}li.facdir-list-sm{float:left;width:10%}
+li.facdir-list-lg{float:left;width:22%}li.facdir-list-heading{background:#0055a5;color:#fff;font-weight:700;font-size:1.2rem;padding:3px 5px}
+.fac-dir-breaktext{white-space:nowrap}.facdir-content{list-style-type:none;padding:3px 5px}
+.fac-dir-list{padding:3px 5px}.fac-dir-list:nth-child(even){background:#CCC}.facdir-header{background-color:#0055a5;padding:3px 5px}
+.facdir-heading{height:60px;text-transform:uppercase;color:#fff;font-weight:700;padding:20px 5px}
+/*!
 Section 3: Body
 */body{font-size:1.1rem;font-family:"Open Sans",sans-serif;font-weight:500;line-height:1.5;color:#404040;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3,h4,h5,h6,h7{font-family:"Raleway",sans-serif}img.alignright{float:right;margin:0 0 1em 1em}
@@ -228,11 +231,11 @@ a.skip-link.screen-reader-text:focus{position:static;width:auto;height:auto}.ql-
 .main-navigation ul ul li a{color:#0055a5 !important}ul{margin-top:0 !important}td.gsc-clear-button{display:none}
 table.gsc-search-box tbody{background:transparent;border:0}/*!
 Section 5: Navigation
-*/header nav a,header nav a:hover,header nav a:focus{color:#fefefe;font-size:.875rem;font-weight:600}
+*/header nav a,header nav a:hover,header nav a:focus{color:#fff;font-size:.875rem;font-weight:600}
 header ul#header-menu li a{font-size:.78125rem;color:#0055a5;font-weight:700}header .menu:not(#menu-header-shortcuts):not(.vertical) li:hover,header .dropdown.menu .submenu{background:#0c3b78;border:0}
 header li.is-submenu-item{padding:.5rem 0;border-top:1px solid #0055a5}header .submenu{margin-top:-1px}
 header .submenu li{text-align:left}header .dropdown.menu .submenu li:hover{background:#fefefe !important;border-top:1px solid #0055a5 !important}
-header .dropdown.menu .submenu li:hover a{color:#0c3b78}header li.is-submenu-item:not(.is-drilldown-submenu-item) a{color:#fefefe;font-size:.85rem}
+header .dropdown.menu .submenu li:hover a{color:#0c3b78}header li.is-submenu-item:not(.is-drilldown-submenu-item) a,header li.is-submenu-item:not(.is-drilldown-submenu-item) a:hover,header li.is-submenu-item:not(.is-drilldown-submenu-item) a:focus{color:#fff;font-size:.85rem}
 header li.is-drilldown-submenu-item{padding:0}header .dropdown.menu .submenu.first-sub{left:-1rem}
 header .dropdown.menu>li.is-dropdown-submenu-parent>a{padding-right:1rem}header .dropdown.menu>li.is-dropdown-submenu-parent>a::after{display:none}
 .medium-blue-bg{width:100%;background:#0055a5}li.divider:after{content:"|";color:#5593db}
@@ -270,12 +273,12 @@ Section 6: Footer
 */footer{margin-top:5rem;background:#0c3b78;padding:2rem 0 4rem 0;font-size:.75rem}
 footer h2{font-size:.75rem;color:#ffc600;text-transform:uppercase;font-weight:700}
 footer .menu>li>a{padding:0 .25rem 0 0}footer a,footer p{color:#fefefe;font-size:.75rem}
-footer a:hover{color:#fff}footer .footer-logo{margin-bottom:2.5rem}footer ul{list-style:none;margin-left:0}
-footer ul li{margin-bottom:.75rem}footer .underline>li>a{text-decoration:none}footer .underline>li>a:hover,a:hover{text-decoration:underline}
-.footer-sm-links{margin-bottom:2rem}.website-feedback{margin:10px 0;float:left;width:100%}
-.website-feedback a{text-decoration:none}.website-feedback a:hover{text-decoration:underline}
-li.current-menu-ancestor,li.current-menu-item{background:#dcdcdc}.main-navigation ul>li.current-menu-ancestor>ul>li{border-top:1px solid #fff}
-.main-navigation ul>li.current-menu-ancestor>ul>li.current-menu-item>a{font-weight:bold}
+footer a:hover,footer a:focus{color:#fff}footer .footer-logo{margin-bottom:2.5rem}
+footer ul{list-style:none;margin-left:0}footer ul li{margin-bottom:.75rem}footer .underline>li>a{text-decoration:none}
+footer .underline>li>a:hover,a:hover{text-decoration:underline}.footer-sm-links{margin-bottom:2rem}
+.website-feedback{margin:10px 0;float:left;width:100%}.website-feedback a{text-decoration:none}
+.website-feedback a:hover{text-decoration:underline}li.current-menu-ancestor,li.current-menu-item{background:#dcdcdc}
+.main-navigation ul>li.current-menu-ancestor>ul>li{border-top:1px solid #fff}.main-navigation ul>li.current-menu-ancestor>ul>li.current-menu-item>a{font-weight:bold}
 /*! Section 7: IE Specific Rules *//*! Section 8: Calendar */calendar{float:left;display:block;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-box-sizing:border-box;background:white;width:300px;border:solid 1px #CCC;margin-bottom:10px;border-radius:2px}
 calendar div.header{float:left;width:100%;background:#2875c7;height:40px;color:white}
 calendar div.header *{height:40px;line-height:40px !important;display:inline-block;vertical-align:middle}
