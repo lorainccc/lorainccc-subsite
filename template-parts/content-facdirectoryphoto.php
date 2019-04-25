@@ -58,7 +58,10 @@ $sched_appt = get_post_meta( $post_id, 'lc_fac_staff_dir_advisor_schedule_field'
 						}
 						if($office_loc <> ''){
 							echo ' | '. $office_loc .'<br/>';
+						}else{
+							echo '<br/>';
 						}
+
 					 echo '<a href="mailto:' . $email_addr . '">' . $email_addr . '</a>'; 
 						if ($sched_appt != ''){
 							echo '<br/>';
