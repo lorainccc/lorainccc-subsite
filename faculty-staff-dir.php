@@ -19,7 +19,7 @@ get_header(); ?>
 			$directory_display = get_option( 'lccc_dept_directory_display', '' );
 			$department_id = get_option( 'lccc_dept_directory_department', '' );
 
-			$domain = 'http://' . $_SERVER['HTTP_HOST'];
+			$domain = 'https://' . $_SERVER['HTTP_HOST'];
 			
 			$request = wp_remote_get( $domain . '/mylccc/wp-json/wp/v2/lccc_directory?filter[orderby]=lc_fac_staff_dir_lastname_field&order=asc&lcdeptdir_deptartments=' . $department_id . '&per_page=100');
 
