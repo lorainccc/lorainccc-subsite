@@ -563,7 +563,7 @@ add_filter( 'posts_orderby' , 'lc_facstaff_directory_order' );
 //create array from existing posts for faculty staff directory
 function lc_run_once(){
 
-	$taxonomy = 'lcdeptdir_alphabet';
+/* 	$taxonomy = 'lcdeptdir_alphabet';
 	$alphabet = array();
 
 	$posts = get_posts(array('numberposts' => -1, 'post_type' => 'faculty_staff_dir') );
@@ -586,10 +586,23 @@ function lc_run_once(){
 
 	wp_set_post_terms( $p->ID, strtoupper(substr($last_name, 0, 1)), $taxonomy, true );
 	//echo strtoupper(substr($last_name, 0, 1)) . '<br/>';
-	endforeach;
+	endforeach; */
 
+/* 	$args = array(
+		'post_type'			=> 'faculty_staff_dir',
+		'posts_per_page'	=> -1,
+		'post_status'		=> 'publish',
+	);
 
+	$update_query = new WP_Query( $args );
+
+	while ( $update_query->have_posts() ) : $update_query->the_post();
+		$position = wp_get_post_terms($update_query->post->ID, 'lcdeptdir_positiontype', 'names');
+		update_post_meta( $update_query->post->ID, 'lc_fac_staff_dir_position_field', esc_attr( $position[0]->name ) );
+
+	endwhile;	
+	wp_reset_postdata(); */
 }
-//add_action('init','lc_run_once', 0 );
+add_action('init','lc_run_once', 0 );
 
 ?>

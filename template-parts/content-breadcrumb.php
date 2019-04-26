@@ -43,6 +43,10 @@
 					// Single Post - Student News Posts
 					}elseif($post->post_type == 'student_news'){
 						echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/student_news/'>Student News</a> > " . get_the_title() ;
+               
+               // Single Post - Faculty Staff Directory Posts
+					}elseif($post->post_type == 'faculty_staff_dir'){
+						echo lccc_breadcrumb() . "<a href='" . get_bloginfo('url') . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/faculty_staff_dir/'>Faculty/Staff Directory</a> > " . get_the_title() ;
 						
 					// Single Post Blog posts	
 					} else {

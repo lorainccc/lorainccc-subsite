@@ -16,115 +16,67 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
-		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			$directory_display = get_option( 'lccc_dept_directory_display', '' );
+			$department_id = get_option( 'lccc_dept_directory_department', '' );
 
-		$directory_display = get_option( 'lccc_dept_directory_display', '' );
+			$domain = 'http://' . $_SERVER['HTTP_HOST'];
+			
+			$request = wp_remote_get( $domain . '/mylccc/wp-json/wp/v2/lccc_directory?filter[orderby]=lc_fac_staff_dir_lastname_field&order=asc&lcdeptdir_deptartments=' . $department_id . '&per_page=100');
 
-		if ( get_query_var($taxonomy) ){
-			$facdir_vars = array(
-				'post_type' 		=> 'faculty_staff_dir',
-				'posts_per_page' 	=> -1,
-				'meta_key' 			=> 'lc_fac_staff_dir_lastname_field',
-				'orderby'			=> 'meta_value',
-				'order' 			=> 'ASC',
-				'tax_query' => array(
-						array(
-							'taxonomy' 	=> 'lcdeptdir_alphabet',
-							'field'		=> 'slug',
-							'terms'		=>	get_query_var($taxonomy),
-						),
-				),
-			);
-		} else {
-			$facdir_vars = array(
-				'post_type' 		=> 'faculty_staff_dir',
-				'posts_per_page' 	=> 20,
-				'paged'				=> $paged,
-				'meta_key' 			=> 'lc_fac_staff_dir_lastname_field',
-				'orderby'			=> 'meta_value',
-				'order' 			=> 'ASC',
-			);
-		}
+			if( is_wp_error( $request ) ){
+			return false;
+			}
 
+
+
+			$body = wp_remote_retrieve_body( $request );
+
+			$posts = json_decode( $body );
+			if(! empty( $posts ) ) {
+			
+				if($directory_display == 'List'){
+
+					echo '<div class="row">';
+					echo ' <div class="small-12 columns">&nbsp;</div>';
+					echo '</div>';
+					echo '<div class="row medium-up-7 facdir-header hide-for-small-only">';
+					echo ' <div class="columns facdir-heading">Last Name</div>';
+					echo ' <div class="columns facdir-heading">First Name</div>';
+					echo ' <div class="columns facdir-heading">Title</div>';
+					echo ' <div class="columns facdir-heading">Office Location</div>';
+					echo ' <div class="columns facdir-heading">Phone Number</div>';
+					echo ' <div class="columns facdir-heading">Email</div>';
+					echo ' <div class="columns facdir-heading">&nbsp;</div>';
+					echo '</div>';
 		
-
-		$facdir_query = new WP_Query( $facdir_vars );
-	
-		$taxonomy = 'lcdeptdir_alphabet';
-
-		// save the terms that have posts in an array as a transient
-		if ( false === ( $alphabet = get_transient( 'lc_archive_alphabet' ) ) ) {
-			// It wasn't there, so regenerate the data and save the transient
-			$terms = get_terms($taxonomy);
-
-			$alphabet = array();
-			if($terms){
-				foreach ($terms as $term){
-					$alphabet[] = $term->slug;
 				}
-			}
-			set_transient( 'lc_archive_alphabet', $alphabet, 86400 );
-		} 
 		
-		echo '<div class="row">';
-		echo ' <div class="small-12 columns text-center">';
-		echo '  <ul class="facdir-alpha-index">';
-		foreach (range('a', 'z') as $char) {
-			$current = ($char == get_query_var($taxonomy)) ? "current-alpha-character" : "alpha-character";
+				if($directory_display == 'Photo'){
+					echo '<div class="row">';
+					echo '	<div class="small-12 columns" style="padding:0 60px;">';
+				}
+				foreach( $posts as $post ){
+					if($directory_display == 'Photo'){
 			
-			if( in_array( $char, $alphabet ) ){
-				
-				printf( '<li class="az-characters %s"><a href="%s">%s</a></li>', $current, get_term_link( $char, $taxonomy), strtoupper($char) );
-			}else {
-				printf( '<li class="az-characters %s"><a href="%s">%s</a></li>', $current, strtoupper($char) );
+						get_template_part( 'template-parts/content', 'rest_facdirectoryphoto' );
+			
+					}elseif($directory_display == 'List'){
+						
+						get_template_part( 'template-parts/content', 'rest_facdirectory' );
+			
+					}else{
+			
+						get_template_part( 'template-parts/content', 'rest_facdirectory' );
+			
+					}
+				} // end of the loop.
 			}
-		}
-		echo '  </ul>';
-		echo ' </div>';
-		echo '</div>';
+				if($directory_display == 'Photo'){
+				 echo '	</div>';
+				 echo '</div>';				
+				}
 
-		if($directory_display == 'List'){
-
-			echo '<div class="row">';
-			echo ' <div class="small-12 columns">&nbsp;</div>';
-			echo '</div>';
-			echo '<div class="row medium-up-6 facdir-header hide-for-small-only">';
-			echo ' <div class="columns facdir-heading">Last Name</div>';
-			echo ' <div class="columns facdir-heading">First Name</div>';
-			echo ' <div class="columns facdir-heading">Department</div>';
-			echo ' <div class="columns facdir-heading" style="width:125px; padding: 5px;">Office Location</div>';
-			echo ' <div class="columns facdir-heading">Phone Number</div>';
-			echo ' <div class="columns facdir-heading">Email</div>';
-			echo '</div>';
-
-		}
-
-		echo '<div class="row">';
-		echo '	<div class="small-12 columns" style="padding:0 60px;">';
-		while ( $facdir_query->have_posts() ) : $facdir_query->the_post();
-
-		if($directory_display == 'Photo'){
-
-			get_template_part( 'template-parts/content', 'facdirectoryphoto' );
-
-		}elseif($directory_display == 'List'){
-			
-			get_template_part( 'template-parts/content', 'facdirectory' );
-
-		}else{
-
-			get_template_part( 'template-parts/content', 'facdirectory' );
-
-		}
-		endwhile; // end of the loop. ?>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-6 columns text-left">
-				<?php previous_posts_link('Previous', $facdir_query->max_num_pages) ?>
-			</div>
-			<div class="small-6 columns text-right">
-				<?php next_posts_link('Next', $facdir_query->max_num_pages) ?>
+			?>
 			</div>
 		</div>
 		</main><!-- #main -->
