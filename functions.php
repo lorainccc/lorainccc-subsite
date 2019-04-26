@@ -588,7 +588,7 @@ function lc_run_once(){
 	//echo strtoupper(substr($last_name, 0, 1)) . '<br/>';
 	endforeach; */
 
-	$args = array(
+/* 	$args = array(
 		'post_type'			=> 'faculty_staff_dir',
 		'posts_per_page'	=> -1,
 		'post_status'		=> 'publish',
@@ -601,7 +601,7 @@ function lc_run_once(){
 		update_post_meta( $update_query->post->ID, 'lc_fac_staff_dir_position_field', esc_attr( $position[0]->name ) );
 
 	endwhile;	
-	wp_reset_postdata();
+	wp_reset_postdata(); */
 }
 add_action('init','lc_run_once', 0 );
 
