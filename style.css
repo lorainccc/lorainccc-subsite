@@ -296,10 +296,10 @@ calendar div.week span.day:first-child{border-left:0}calendar div.week span.day.
 calendar div.week span.day.different-month{color:silver}calendar div.week span.day.selected{background:#2875c7;color:white}
 calendar div.week.names>span{color:#2875c7;font-weight:bold}table.outerformtablerows{border:0;background:#fff}
 table.outerformtablerows tbody{border:0}.fieldtr,.fieldtitle{background:#fff}.eformstext{display:none}
-div.afnavbuttons input[type=submit]{margin:0 10px 0 0}a.add-to-google,a.add-to-google:focus,a.add-to-google:hover{background:#068795;font-size:1.1rem;font-weight:700;vertical-align:baseline}
-.add-to-calendar,.add-to-calendar:focus,.add-to-calendar:hover{display:inline-block;text-align:center;line-height:1;cursor:pointer;-webkit-appearance:none;-webkit-transition:background-color .25s ease-out,color .25s ease-out;transition:background-color .25s ease-out,color .25s ease-out;vertical-align:middle;border:1px solid transparent;border-radius:0;padding:.85em 1em;margin:0 0 1rem 0;font-size:.9rem;background:#e36000;color:#fff;font-size:1.1rem;font-weight:700;vertical-align:baseline}
-@media screen and (min-width:40em){.mobile-app-link img{margin-right:.75rem}.service-box-copy{padding-left:0}
-.service-box-image{padding-right:0}.service-box .button{position:absolute;bottom:1rem;left:63.5px}
+div.afnavbuttons input[type=submit]{margin:0 10px 0 0}a.add-to-google,a.add-to-google:focus,a.add-to-google:hover{background:#068795;font-weight:700;vertical-align:baseline}
+.add-to-calendar,.add-to-calendar:focus,.add-to-calendar:hover{display:inline-block;text-align:center;line-height:1;cursor:pointer;-webkit-appearance:none;-webkit-transition:background-color .25s ease-out,color .25s ease-out;transition:background-color .25s ease-out,color .25s ease-out;vertical-align:middle;border:1px solid transparent;border-radius:0;padding:.85em 1em;margin:0 0 1rem 0;font-size:.9rem;background:#e36000;color:#fff;font-weight:700;vertical-align:baseline}
+.add-to-calendar:focus,.add-to-calendar:hover{text-decoration:underline}@media screen and (min-width:40em){.mobile-app-link img{margin-right:.75rem}
+.service-box-copy{padding-left:0}.service-box-image{padding-right:0}.service-box .button{position:absolute;bottom:1rem;left:63.5px}
 .service-box-container{height:100%}aside.columns{padding-right:0;padding-left:0}.gateway-main,.home-left{padding-right:5rem}
 .main-right{padding-left:5rem}header{padding-top:1.5rem}.mobile-app-link img,.mobile-app-link h2{float:left}
 }@media screen and (min-width:1074px){nav.menu-centered{height:36px}}@media only screen and (max-width:40em){footer ul{margin:0}
