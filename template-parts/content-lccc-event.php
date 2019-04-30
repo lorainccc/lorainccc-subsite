@@ -133,7 +133,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 		<?php
 			the_content();
 		if(function_exists('lc_addToGoogleCalendar')){
-			$event_excerpt = str_replace('[…]', '', get_the_excerpt());
+			$event_excerpt = str_replace('[...]', '', get_the_excerpt());
 		?>
 			<form method="post" action="<?php echo get_stylesheet_directory_uri() ?>/inc/lc-download-ics.php">
 			<input type="hidden" name="date_start" value="<?php echo $eventstartdate . ' ' . $starttime;?>">
