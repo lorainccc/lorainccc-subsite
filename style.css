@@ -184,7 +184,7 @@ figure{margin:0;padding:0}.gallery{margin:0 auto 18px;display:inline-block;width
 p.tweet-details{font-size:.9rem;font-weight:bold}.clink-links-shortcode{background-color:transparent;border:0}
 .clink-links-shortcode-header{background:transparent;border:0}.clink-links-list>ul>li{border:0}
 .clink-links-list>ul>li a{color:#007bbf}.clink-links-list>ul>li>a:hover{background:transparent;color:#007bbf}
-.fac-dir{width:240px;float:left;margin:20px 15px}.facdir{position:relative}.facdir-entry-title{font-size:1.1rem;color:#fff}
+.fac-dir{width:240px;float:left;margin:10px 30px 0 0}.facdir{position:relative}.facdir-entry-title{font-size:1.1rem;color:#fff}
 .facdir-footer{position:absolute;bottom:0;left:0;right:0;background:#0c3b78;height:35px;margin:0;padding:2px;text-align:center;width:100%;-webkit-transition:.5s ease;transition:.5s ease;overflow:hidden}
 .facdir:hover .facdir-footer{height:135px}.facdir-addtl-info p{margin:2px 0 0 0}.facdir-entry-title:hover{-webkit-transform:none;transform:none}
 ul.facdir-listing-headings,ul.facdir-listing-content{width:100%;margin:0;padding:0}
@@ -193,9 +193,7 @@ li.facdir-list-lg{float:left;width:22%}li.facdir-list-heading{background:#0055a5
 .fac-dir-breaktext{white-space:nowrap}.facdir-content{list-style-type:none;padding:3px 5px}
 .fac-dir-list{padding:3px 5px}.fac-dir-list:nth-child(even){background:#CCC}.facdir-header{background-color:#0055a5;padding:3px 5px}
 .facdir-heading{height:60px;text-transform:uppercase;color:#fff;font-weight:700;padding:20px 5px}
-ul.facdir-alpha-index{margin:10px auto;display:inline-block}ul.facdir-alpha-index li.az-characters{list-style:none;float:left;margin:0 5px}
-.current-alpha-character a{font-size:1.2em;font-weight:700;text-decoration:underline;margin:0 5px;vertical-align:middle}
-.alpha-character a{font-size:1em;font-weight:400;vertical-align:middle}/*!
+/*!
 Section 3: Body
 */body{font-size:1.1rem;font-family:"Open Sans",sans-serif;font-weight:500;line-height:1.5;color:#404040;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3,h4,h5,h6,h7{font-family:"Raleway",sans-serif}img.alignright{float:right;margin:0 0 1em 1em}
