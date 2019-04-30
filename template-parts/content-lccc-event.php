@@ -9,6 +9,8 @@
 
 ?>
 <?php 
+
+
 $whattodisplay = 'lccc-events';
 				$today = getdate();
 				$currentDay = $today['mday'];
@@ -132,20 +134,8 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
         <div class="small-12 medium-12large-12 columns nopadding">
 		<?php
 			the_content();
-		if(function_exists('lc_addToGoogleCalendar')){
-			$event_content = str_replace('<p>', '', str_replace('</p>', '', get_the_content()));
+			echo lc_add_to_calendar_buttons(get_the_title(), $eventstartdate . ' ' . $starttime, $endeventdate . ' ' . $endeventtime, $location, get_the_excerpt(), get_the_permalink());
 		?>
-			<form method="post" action="<?php echo get_stylesheet_directory_uri() ?>/inc/lc-download-ics.php">
-			<input type="hidden" name="date_start" value="<?php echo $eventstartdate . ' ' . $starttime;?>">
-			<input type="hidden" name="date_end" value="<?php echo $endeventdate . ' ' . $endeventtime;?>">
-			<input type="hidden" name="location" value="<?php echo $location;?>">
-			<input type="hidden" name="description" value="<?php echo $event_content;?>">
-			<input type="hidden" name="summary" value="<?php echo get_the_title();?>">
-			<input type="hidden" name="url" value="<?php echo the_permalink()?>">
-			<a href="<?php echo lc_addToGoogleCalendar(get_the_title(), $eventstartdate . ' ' . $starttime, $endeventdate . ' ' . $endeventtime, $location, $event_content); ?>" target="_blank" class="button add-to-google">Add to my Google Calendar</a> 
-			<input type="submit" class="add-to-calendar" value="Add to my Calendar">
-			</form>
-			<?php } ?>
         </div>
         <div class="small-12 medium-4 large-4 columns nopadding">
        <?php echo '<br /> <br /> <a class="button" href="'.get_post_type_archive_link( 'lccc_events' ).'">Back To All Events </a>';?>

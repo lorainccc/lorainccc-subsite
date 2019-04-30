@@ -313,6 +313,8 @@ require get_stylesheet_directory() . '/inc/customizer.php';
  */
 require get_stylesheet_directory() . '/inc/jetpack.php';
 
+require get_stylesheet_directory() . '/inc/lc-calendar-add-buttons.php';
+
 /* Use Paste As Text by default in the editor
 ----------------------------------------------------------------------------------------*/
 add_filter('tiny_mce_before_init', 'lc_tinymce_paste_as_text');
@@ -604,5 +606,6 @@ function lc_run_once(){
 	wp_reset_postdata(); */
 }
 add_action('init','lc_run_once', 0 );
+
 
 ?>
