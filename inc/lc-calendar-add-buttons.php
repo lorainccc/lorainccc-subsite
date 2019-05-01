@@ -1,7 +1,7 @@
 <?php
 /*
  *
- * 
+ * Adds button to calendar post output
  * 
  * 
  * 
