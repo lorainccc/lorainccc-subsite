@@ -245,6 +245,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 													echo '<div class="small-12 medium-12 large-12 columns">';
 														echo '<p>' . $post->excerpt->rendered . '</p>' ;
 														echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+														// Inserts buttons for ics calendar download and google calendar add template link
 														echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
 														echo '</div>';
 															echo '</div>';
@@ -266,6 +267,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
 															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
 															echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+															// Inserts buttons for ics calendar download and google calendar add template link
 															echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
 															echo '</div>';	
 														}
@@ -462,6 +464,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 													echo '<div class="small-12 medium-12 large-12 columns">';
 														echo '<p>' . $post->excerpt->rendered . '</p>' ;
 														echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+														// Inserts buttons for ics calendar download and google calendar add template link
 														echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
 														echo '</div>';
 															echo '</div>';
@@ -483,7 +486,7 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
 															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
 															echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
-															
+															// Inserts buttons for ics calendar download and google calendar add template link
 															echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
 
 															?>
