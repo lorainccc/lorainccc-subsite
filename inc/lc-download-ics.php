@@ -8,11 +8,10 @@
 
 include 'lc-ics.php';
 
-$filename = 'LCCC-Event-' . str_replace(' ', '-', $_POST['summary']) . '.ics';
-
+$filename = 'LCCC-Event-' . str_replace(' ', '-', $_POST['summary']);
 header('Content-Type: text/calendar; charset=utf-8');
-//header('Content-Disposition: attachment; filename=' . $filename);
-header('Content-Disposition: attachment; filename=event.ics');
+header('Content-Disposition: attachment; filename=' . $filename . '.ics');
+
 $ics = new ICS(array(
   'location' => $_POST['location'],
   'description' => $_POST['description'],

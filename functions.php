@@ -234,7 +234,8 @@ add_action( 'widgets_init', 'lorainccc_subsite_widgets_init' );
  * Enqueue google fonts.
  */
 function add_google_fonts() {
-wp_enqueue_style( 'open-sans-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic', false );
+wp_enqueue_style( 'open-sans-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic', false );
+wp_enqueue_style( 'open-sans-bold-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', false );
 wp_enqueue_style( 'raleway-google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,700', false );
 
 }
@@ -311,6 +312,22 @@ require get_stylesheet_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_stylesheet_directory() . '/inc/jetpack.php';
+
+require get_stylesheet_directory() . '/inc/lc-calendar-add-buttons.php';
+
+/* Use Paste As Text by default in the editor
+----------------------------------------------------------------------------------------*/
+add_filter('tiny_mce_before_init', 'lc_tinymce_paste_as_text');
+function lc_tinymce_paste_as_text( $init ) {
+	$init['paste_as_text'] = true;
+	return $init;
+}
+
+/* Adding Editor Style Support */
+
+add_editor_style( 'css/editor-style.css' );
+
+
 
 /* Menu Functions */
 
@@ -516,5 +533,79 @@ function wpbeginner_numeric_posts_nav() {
 	add_action( 'pre_get_posts', 'lc_student_news_query' );
 
  /** End Custom posts per page limit for Student News */
+
+ /** Custom posts per page limit for Faculty Staff Directory */
+
+function lc_facstaff_directory_query( $query ){
+    if( ! is_admin()
+        && $query->is_post_type_archive( 'faculty_staff_dir' )
+        && $query->is_main_query() ){
+            $query->set( 'posts_per_page', 25 );
+    }
+	}
+add_action( 'pre_get_posts', 'lc_facstaff_directory_query' );
+
+function lc_facstaff_directory_order( $orderby ) {
+	global $wpdb;
+	
+	// Check if the query is for an archive
+	if ( is_archive() && get_query_var("post_type") == "faculty_staff_dir" ) {
+		// Query was for archive, then set order
+		return "$wpdb->posts.post_title ASC";
+	}
+	
+	return $orderby;
+}
+
+add_filter( 'posts_orderby' , 'lc_facstaff_directory_order' );
+
+
+ /** End Custom posts per page limit for Student News */
+
+//create array from existing posts for faculty staff directory
+function lc_run_once(){
+
+/* 	$taxonomy = 'lcdeptdir_alphabet';
+	$alphabet = array();
+
+	$posts = get_posts(array('numberposts' => -1, 'post_type' => 'faculty_staff_dir') );
+
+	foreach( $posts as $p ) :
+	//set term as first letter of post title, lower case
+	$title = $p->post_title;
+	//echo $title . '<br/>';
+	$title_array = explode(" ", $title);
+
+	//echo '1: ' . $title_array[0] . '<br/>';
+	//echo '2: ' . $title_array[1] . '<br/>';
+	//echo '3: ' . $title_array[2] . '<br/>';
+	
+	if(count($title_array) > 2){
+		$last_name = $title_array[2];
+	}else{
+		$last_name = $title_array[1];	
+	}
+
+	wp_set_post_terms( $p->ID, strtoupper(substr($last_name, 0, 1)), $taxonomy, true );
+	//echo strtoupper(substr($last_name, 0, 1)) . '<br/>';
+	endforeach; */
+
+/* 	$args = array(
+		'post_type'			=> 'faculty_staff_dir',
+		'posts_per_page'	=> -1,
+		'post_status'		=> 'publish',
+	);
+
+	$update_query = new WP_Query( $args );
+
+	while ( $update_query->have_posts() ) : $update_query->the_post();
+		$position = wp_get_post_terms($update_query->post->ID, 'lcdeptdir_positiontype', 'names');
+		update_post_meta( $update_query->post->ID, 'lc_fac_staff_dir_position_field', esc_attr( $position[0]->name ) );
+
+	endwhile;	
+	wp_reset_postdata(); */
+}
+add_action('init','lc_run_once', 0 );
+
 
 ?>
