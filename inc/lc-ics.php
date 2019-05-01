@@ -121,8 +121,10 @@ class ICS {
   }
 
   private function format_timestamp($timestamp) {
-    $dt = new DateTime($timestamp);
-    return $dt->format(self::DT_FORMAT);
+    //$dt = new DateTime($timestamp);
+    $dt = date('Ymd\THis', strtotime($timestamp));
+    return $dt;
+    //return $dt->format(self::DT_FORMAT);
   }
 
   private function escape_string($str) {

@@ -1,9 +1,17 @@
 <?php
 
+/* 
+ *
+ *  Creates the .ics file for Outlook and other Calendars to import
+ * 
+ */
+
 include 'lc-ics.php';
 
+$filename = 'LCCC-Event-' . str_replace(' ', '-', $_POST['summary']) . '.ics';
+
 header('Content-Type: text/calendar; charset=utf-8');
-header('Content-Disposition: attachment; filename=invite.ics');
+header('Content-Disposition: attachment; filename=' . $filename);
 
 $ics = new ICS(array(
   'location' => $_POST['location'],
