@@ -10,6 +10,8 @@
 get_header(); ?>
 	<div class="row main">
 <?php
+
+
 $today = getdate();
 				$currentDay = $today['mday'];
 				$month = $today['mon'];
@@ -84,7 +86,6 @@ $today = getdate();
 $location = event_meta_box_get_meta('event_meta_box_event_location');  
 $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 	$eventsubheading = event_meta_box_get_meta('event_meta_box_sub_heading');
-
 ?>
 <div class="small-12 medium-12 large-12 columns contentdiv">
 
@@ -200,6 +201,8 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
                  }		  
 						//$posts will be an array of all posts sorted by post date
 							foreach ( $posts as $post ){
+								$event_start_date = date("Y-m-d h:i a", strtotime($post->event_start_date . ' ' . $post->event_start_time));
+								$event_end_date = date("Y-m-d h:i a", strtotime($post->event_end_date . ' ' . $post->event_end_time));
                                 if(	$icounter<$posts_per_page){
 								?>
 								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id; ?>" >
@@ -242,7 +245,8 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 													echo '<div class="small-12 medium-12 large-12 columns">';
 														echo '<p>' . $post->excerpt->rendered . '</p>' ;
 														echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
-													echo '</div>';
+														echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
+														echo '</div>';
 															echo '</div>';
 														}else{
 															echo '<div class="small-12 medium-12 large-12 columns event-details nopadding">';
@@ -261,9 +265,11 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
 															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
-																echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+															echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+															echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
 															echo '</div>';	
 														}
+
 												?>
 										</div>
 										<div class="column row">
@@ -351,7 +357,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 					//Defining the endpoints
 							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
 							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
-							$stockerevents = new Endpoint( 'http://sites.lorainccc.edu/stocker/wp-json/wp/v2/lccc_events?per_page=100' );
+							$stockerevents = new Endpoint( '/stocker/wp-json/wp/v2/lccc_events?per_page=100' );
 						
 						//Create instance
 							$multi = new MultiBlog( 1 );
@@ -411,6 +417,9 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
                  }		  
 						//$posts will be an array of all posts sorted by post date
 							foreach ( $posts as $post ){
+								$event_start_date = date("Y-m-d h:i a", strtotime($post->event_start_date . ' ' . $post->event_start_time));
+								$event_end_date = date("Y-m-d h:i a", strtotime($post->event_end_date . ' ' . $post->event_end_time));
+			
                                 if(	$icounter<$posts_per_page){
 								?>
 								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id; ?>" >
@@ -453,7 +462,8 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 													echo '<div class="small-12 medium-12 large-12 columns">';
 														echo '<p>' . $post->excerpt->rendered . '</p>' ;
 														echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
-													echo '</div>';
+														echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
+														echo '</div>';
 															echo '</div>';
 														}else{
 															echo '<div class="small-12 medium-12 large-12 columns event-details nopadding">';
@@ -472,11 +482,17 @@ return strtotime( $a->event_start_date ) - strtotime( $b->event_start_date );
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
 															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
-																echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
-															echo '</div>';	
+															echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+															
+															echo lc_add_to_calendar_buttons($post->title->rendered, $event_start_date, $event_end_date, $location, $post->excerpt->rendered, $post->link);
+
+															?>
+															<?php
+																echo '</div>';	
 														}
+
 												?>
-										</div>
+									</div>
 										<div class="column row">
 												<hr>
 										</div>
