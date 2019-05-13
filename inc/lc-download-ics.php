@@ -1,5 +1,11 @@
 <?php
 
+/* 
+ *
+ *  Creates the .ics file for Outlook and other Calendars to import
+ * 
+ */
+
 include 'lc-ics.php';
 
 $filename = 'LCCC-Event-' . str_replace(' ', '-', $_POST['summary']) . '.ics';
