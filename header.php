@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </span> </div>
   </div>
 		<div class="row">
-    <div class="hide-for-small-only large-6 medium-6 columns"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/LCCC-Logo.png" height="70" width="325" alt="Lorain County Community College Logo" /></a>  </div>
+    <div class="hide-for-small-only large-6 medium-6 columns"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/LCCC-Logo.png" height="70" width="325" alt="Lorain County Community College Home" /></a>  </div>
     <div id="responsive-shortcuts" class="hide-for-small large-6 medium-6 columns">
 			<div class="row">
 				<div class="hide-for-small-only medium-12 columns">
