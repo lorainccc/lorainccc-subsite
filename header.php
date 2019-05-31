@@ -30,7 +30,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="small-8 columns"> <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/lccclogo_white.svg" alt="Lorain County Community College Home" width="165" height="31.875" /></a> </div>
     <div class="small-2 columns clearfix"> <button data-responsive-toggle="mobile-search" data-hide-for="medium"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/magnifying-glass.svg" height="25" width="25" alt="Toggle LCCC Website Search" class="float-right" data-toggle/></button> </div>
     <div class="small-2 columns"> <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle>Toggle Menu</button>
+      <button class="menu-icon" type="button" data-toggle>Toggle Main Menu</button>
       </span> </div>
   </div>
 		<div class="row">
