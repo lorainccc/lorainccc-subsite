@@ -16,7 +16,7 @@ get_header(); ?>
  <div class="small-12 medium-12 large-12 columns nopadding">
   <div class="row show-for-small-only sub-mobile-menu-row hide-for-print" style="background:#000;">
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
-     <button class="menu-icon" type="button" data-toggle></button>
+     <button class="menu-icon" type="button" data-toggle>Toggle Sidebar Menu</button>
      </span> </div>
    <div class="small-10 columns nopadding hide-for-print">
     <h3 class="sub-mobile-menu-header" style="padding-top: 6px;
