@@ -148,7 +148,7 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;-webkit-box-shadow:
 blockquote{border:0;background:#0055a4;font-size:18pt;padding:2%;text-align:center}
 blockquote p{color:#fff}
 blockquote a{color:#ffc700}
-blockquote a.focus{color:#ffc700;text-decoration:underline}
+blockquote a.focus{text-decoration-color:#ffc700;text-decoration:underline}
 .content-area a:hover{text-decoration:underline}.error-content input[name=search],input[name=search]:focus{max-width:100%}
 .entry-content li{font-size:1rem}.entry-content table{margin:0 0 1em 0;width:100%;border:1px solid #ccc;border-top:0;display:table}
 .entry-content table th{padding:.5em .75em;vertical-align:top;font-weight:bold;text-align:left;background:#0055a5;color:#fff;text-transform:capitalize;font-size:1.1em}
