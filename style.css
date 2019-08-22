@@ -54,8 +54,9 @@ h3 a{font-weight:600;color:#0055a5}/*!
 Section 1: Foundation
 *//*!
 Section 2: Content
-*/a:focus{text-decoration:underline}
-div.content table thead,table tbody,table tfoot{border:0}span.event_entries article{box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-moz-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-webkit-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);padding-top:2.5rem;padding-bottom:2.5rem}
+*/div.entry-content a,a:focus{text-decoration:underline}
+div.entry-content a.blue-button{text-decoration:none}div.content table thead,table tbody,table tfoot{border:0}
+span.event_entries article{box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-moz-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);-webkit-box-shadow:0 -20px 20px -20px rgba(216,216,216,0.8);padding-top:2.5rem;padding-bottom:2.5rem}
 div.columns.mylccc-news-container:first-child{padding-top:0}div.columns.mylccc-news-container{padding-top:2.5rem}
 div.columns.nopadding.event-pagination{padding-top:2.5rem}div.columns.mylccc-news-container div.row hr{margin:-80px auto 0;height:10px;padding:1rem 0;width:100%}
 .site-main table thead{background:#dcdcdc;color:#fff}div.columns.archive-events-container{padding-top:4rem}
@@ -147,7 +148,7 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;-webkit-box-shadow:
 .callout .map-link{margin-top:4.45rem}ul,ol{margin:.3rem 0 1rem 2.5rem}blockquote{border:0}
 .content-area a:hover{text-decoration:underline}.error-content input[name=search],input[name=search]:focus{max-width:100%}
 .entry-content li{font-size:1rem}.entry-content table{margin:0 0 1em 0;width:100%;border:1px solid #ccc;border-top:0;display:table}
-.entry-content table th{padding:.5em .75em;vertical-align:top;font-weight:bold;text-align:left;background:#0055a5;color:#fff;text-transform:capitalize;font-size:1.1em}
+.entry-content table th{padding:.5em .75em;vertical-align:top;font-weight:bold;text-align:left;background:#0055a5;color:#fff;text-transform:uppercase;font-size:1.1em}
 .entry-content table th[scope=row]{padding:.5em .75em;font-weight:bold;text-align:left;background:#f6f6f6;color:#000}
 .entry-content table td{border-top:1px solid #ccc;padding:.3em .75em;vertical-align:top}
 .entry-content table.outerformtablerows{border:0;background:#fff}.entry-content table.outerformtablerows tbody{border:0}
@@ -209,6 +210,9 @@ td.day a{text-decoration:underline}td.day span.day-date{font-size:14pt;font-weig
 th.header{background-color:#003972;color:#fff;font-size:14pt;padding:5px}.not-month{background-color:#a6c3df}
 td.today{background-color:#0062c5;color:#fff}td.today a{color:#fff;text-decoration:underline}
 td.day span.today-date{font-size:16pt}.todayseventslist{padding:0;list-style:none;margin-bottom:0;margin-left:0}
+a.blue-button{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff;display:inline-block;text-align:center}
+a.blue-button-250{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff;display:inline-block;min-width:250px;max-width:250px;text-align:center}
+a.blue-button-300{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff;display:inline-block;min-width:300px;max-width:300px;text-align:center}
 ul.bullet-clipboard{list-style-type:none;margin:0}ul.bullet-clipboard link{text-indent:-1.4em}
 ul.bullet-clipboard li{margin:5px 0 0 0;padding:0 0 15px 0}ul.bullet-clipboard li:before{font-family:"Genericons";font-size:38px;content:"\f425";margin:-18px 0 0 0;color:#606060;float:left;width:1.4em}
 ul.bullet-arrow{list-style-type:none;margin:0}ul.bullet-arrow link{text-indent:-1.4em}
@@ -273,14 +277,13 @@ ul.sub-menu{padding-top:15px}li.current-menu-ancestor,li.current-menu-item{backg
 .main-navigation ul>li.current-menu-ancestor>ul>li{border-top:1px solid #fff}.main-navigation ul>li.current-menu-ancestor>ul>li.current-menu-item>a{font-weight:bold}
 .dropdown .menu-item{z-index:50}/*!
 Section 6: Footer
-*/footer{margin-top:5rem;background:#0c3b78;padding:2rem 0 4rem 0;font-size:.75rem}
+*/footer a{text-decoration:underline}
+footer{margin-top:5rem;background:#0c3b78;padding:2rem 0 4rem 0;font-size:.75rem}
 footer h2{font-size:.75rem;color:#ffc600;text-transform:uppercase;font-weight:700}
 footer .menu>li>a{padding:0 .25rem 0 0}footer a,footer p{color:#fefefe;font-size:.75rem}
 footer a:hover,footer a:focus{color:#fff}footer .footer-logo{margin-bottom:2.5rem}
-footer ul{list-style:none;margin-left:0}footer ul li{margin-bottom:.75rem}footer .underline>li>a{text-decoration:none}
-footer .underline>li>a:hover,a:hover{text-decoration:underline}.footer-sm-links{margin-bottom:2rem}
-.website-feedback{margin:10px 0;float:left;width:100%}.website-feedback a{text-decoration:none}
-.website-feedback a:hover{text-decoration:underline}li.current-menu-ancestor,li.current-menu-item{background:#dcdcdc}
+footer ul{list-style:none;margin-left:0}footer ul li{margin-bottom:.75rem}.footer-sm-links{margin-bottom:2rem}
+.website-feedback{margin:10px 0;float:left;width:100%}li.current-menu-ancestor,li.current-menu-item{background:#dcdcdc}
 .main-navigation ul>li.current-menu-ancestor>ul>li{border-top:1px solid #fff}.main-navigation ul>li.current-menu-ancestor>ul>li.current-menu-item>a{font-weight:bold}
 /*! Section 7: IE Specific Rules *//*! Section 8: Calendar */calendar{float:left;display:block;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-box-sizing:border-box;background:white;width:300px;border:solid 1px #CCC;margin-bottom:10px;border-radius:2px}
 calendar div.header{float:left;width:100%;background:#2875c7;height:40px;color:white}
