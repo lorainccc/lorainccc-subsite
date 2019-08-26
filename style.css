@@ -81,8 +81,8 @@ a img.alignleft{float:left;margin:5px 20px 20px 0}a img.aligncenter{display:bloc
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,0.6);box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 .eventcontainer .eventhumbnail{padding-top:12px;padding-left:0;padding-right:.5rem}
 .entry-footer{background:#fff}article{background:#fff}.gateway-header{padding:0}.sidebar-widget{padding-top:2.7rem}
-.breadcrumb-container{padding-top:20px;padding-left:2rem}a.button{margin:0 0 1rem 0}
-.lccc_event_header{background:#0c3b78;color:#fefefe;margin-top:0;padding:0 0 .5rem 1.5rem}
+.breadcrumb-container{padding-top:20px;padding-left:2rem}.breadcrumb-container a{text-decoration:underline}
+a.button{margin:0 0 1rem 0}.lccc_event_header{background:#0c3b78;color:#fefefe;margin-top:0;padding:0 0 .5rem 1.5rem}
 #home-news h2.headertext{margin:0}.home-hero{width:100%;background-image:url(/wp-content/themes/lorainccc/images/lccc_diningbookstore.jpg);background-position:center center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover;height:450px}
 .hero-image{width:100%;background-position:center center;background-repeat:no-repeat;background-attachment:scroll;background-size:cover}
 .nopadding{padding:0}.gateway{background-image:url(/wp-content/themes/lorainccc/images/lccc_diningbookstore.jpg)}.white-panel{padding:2rem 2rem 4rem 2rem;background:rgba(255,255,255,0.9)}
