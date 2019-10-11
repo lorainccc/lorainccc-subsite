@@ -361,8 +361,8 @@ grade point average and are not applicable to graduation requirements. An audit
 cannot be reversed once the semester is in session. Courses taken for audit are not covered by Financial Aid or used for calculating course load.
 </p>
 <p>				
-**** A student may elect the S/U grading option in no more than three courses for
-the associate’s degree and not more than one course a semester. The S/U option cannot be reversed to a letter grade once the semester is in session. The S/U option for credit may be used only for electives within a degree or certificate program. S means satisfactory and indicates credit was earned. U means unsatisfactory and indicates no credit was earned.
+**** A student may elect the Satisfactory/Unsatisfactory (S/U) grading option in no more than three courses for
+the associate degree and not more than one course a semester. The S/U option cannot be reversed to a letter grade once the semester is in session. The S/U option for credit may be used only for electives within a degree or certificate program. S means satisfactory and indicates credit was earned. U means unsatisfactory and indicates no credit was earned.
 </p>
 <p>				
 ****** Failure to withdraw from a course or courses will result in an F grade(s).
