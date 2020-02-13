@@ -249,18 +249,18 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 function lorainccc_subsite_foundation_scripts() {
  
   // Add Genericons, used in the main stylesheet.
-	 wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
  
-	 wp_enqueue_style( 'foundation-app',  get_template_directory_uri() . '/foundation/css/app.css' );
-		wp_enqueue_style( 'foundation-normalize', get_template_directory_uri() . '/foundation/css/normalize.css' );
-		wp_enqueue_style( 'foundation',  get_template_directory_uri() . '/foundation/css/foundation.css' );
+	wp_enqueue_style( 'foundation-app',  get_template_directory_uri() . '/foundation/css/app.css' );
+	wp_enqueue_style( 'foundation-normalize', get_template_directory_uri() . '/foundation/css/normalize.css' );
+	wp_enqueue_style( 'foundation',  get_template_directory_uri() . '/foundation/css/foundation.css' );
 
-		wp_enqueue_script( 'lc-mobile-nav-js', get_stylesheet_directory_uri() . '/js/mobile-nav.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script( 'lc-mobile-nav-js', get_stylesheet_directory_uri() . '/js/mobile-nav.js', array( 'jquery' ), '1', true );
 
-		wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/vendor/foundation.js', array( 'jquery' ), '1', true );
-		wp_enqueue_script( 'foundation-whatinput', get_template_directory_uri() . '/foundation/js/vendor/what-input.js', array( 'jquery' ), '1', true);
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/vendor/foundation.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script( 'foundation-whatinput', get_template_directory_uri() . '/foundation/js/vendor/what-input.js', array( 'jquery' ), '1', true);
 
-		wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
 
 	wp_enqueue_script( 'lorainccc_subsite-function-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
 	wp_enqueue_script( 'lc_menu-cleanup-script', get_stylesheet_directory_uri() . '/js/menu-cleanup.js', array( 'jquery' ), '20190329', true );
@@ -317,17 +317,12 @@ require get_stylesheet_directory() . '/inc/lc-calendar-add-buttons.php';
 
 /* Use Paste As Text by default in the editor
 ----------------------------------------------------------------------------------------*/
-add_filter('tiny_mce_before_init', 'lc_tinymce_paste_as_text');
-function lc_tinymce_paste_as_text( $init ) {
-	$init['paste_as_text'] = true;
-	return $init;
+add_filter('tiny_mce_before_init', 'lc_tinymce_paste_as_text', 1, 2);
+
+function lc_tinymce_paste_as_text( $mceInit, $editor_id ) {
+	$mceInit['paste_as_text'] = true;
+	return $mceInit;
 }
-
-/* Adding Editor Style Support */
-
-add_editor_style( 'css/editor-style.css' );
-
-
 
 /* Menu Functions */
 
@@ -557,15 +552,17 @@ function lc_facstaff_directory_order( $orderby ) {
 	return $orderby;
 }
 
-add_filter( 'posts_orderby' , 'lc_facstaff_directory_order' );
+if(is_admin()){
+	add_filter( 'posts_orderby' , 'lc_facstaff_directory_order' );
+}
 
 
- /** End Custom posts per page limit for Student News */
+ /** End Custom posts per page limit for Faculty Staff Directory */
 
 //create array from existing posts for faculty staff directory
-function lc_run_once(){
+/*function lc_run_once(){
 
-/* 	$taxonomy = 'lcdeptdir_alphabet';
+ 	$taxonomy = 'lcdeptdir_alphabet';
 	$alphabet = array();
 
 	$posts = get_posts(array('numberposts' => -1, 'post_type' => 'faculty_staff_dir') );
@@ -603,9 +600,6 @@ function lc_run_once(){
 		update_post_meta( $update_query->post->ID, 'lc_fac_staff_dir_position_field', esc_attr( $position[0]->name ) );
 
 	endwhile;	
-	wp_reset_postdata(); */
+	wp_reset_postdata(); 
 }
-add_action('init','lc_run_once', 0 );
-
-
-?>
+add_action('init','lc_run_once', 0 );*/

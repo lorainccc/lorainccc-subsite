@@ -1,10 +1,13 @@
 <?php
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-$episodes = array(
-    'post_type' => 'lccc_podcasts',
-	'post_status' => 'publish',
+$episodes_args = array(
+  'post_type' => 'lccc_podcasts',
+  'post_status' => 'publish',
+  'posts_per_page' => 10,
+  'paged' => $paged
   );
-  $episodes = new WP_Query($episodes);
+  $episodes = new WP_Query($episodes_args);
 					if ( $episodes->have_posts() ) :
         while ( $episodes->have_posts() ) : $episodes->the_post();
 
@@ -33,6 +36,16 @@ $episodes = array(
 
     <?php
         endwhile;
+        ?>
+        <div class="row">
+        <div class="small-6 columns text-left">
+          <?php previous_posts_link('Previous', $episodes->max_num_pages) ?>
+        </div>
+        <div class="small-6 columns text-right">
+          <?php next_posts_link('Next', $episodes->max_num_pages) ?>
+        </div>
+      </div>
+      <?php
 					endif;
  wp_reset_query();
 
