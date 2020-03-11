@@ -7,6 +7,9 @@
  * @since Lorainccc 1.0
  */
 get_header(); ?>
+<div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
+	<?php the_post_thumbnail(); ?>
+</div>
 <div class="row page-content">
 <div class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>

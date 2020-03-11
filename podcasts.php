@@ -9,7 +9,7 @@
 get_header(); ?>
 <div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
 	<?php the_post_thumbnail(); ?>
-	</div>
+</div>
 <div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
   <div class="row show-for-small-only sub-mobile-menu-row hide-for-print" style="background:#000;">
