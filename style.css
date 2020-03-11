@@ -276,8 +276,8 @@ ul.nav-menu li.current-menu-item ul.sub-menu{display:block}.main-navigation ul .
 ul.sub-menu{padding-top:15px}li.current-menu-ancestor,li.current-menu-item{background:#dcdcdc}
 .main-navigation ul>li.current-menu-ancestor>ul>li{border-top:1px solid #fff}.main-navigation ul>li.current-menu-ancestor>ul>li.current-menu-item>a{font-weight:bold}
 .dropdown .menu-item{z-index:50}.top-button-nav-wrap{border-top:1px solid #999;border-bottom:1px solid #999;width:100%;min-height:65px;max-height:65px;margin:20px 0}
-.top-button-nav ul{list-style:none;display:inline-block}.top-button-nav ul#menu-top-button-nav li{margin:8px 10px;float:left}
-.top-button-nav ul#menu-top-button-nav li a{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff !important;display:inline-block;text-align:center}
+.top-button-nav ul{list-style:none;display:inline-block}.top-button-nav ul li{margin:8px 10px;float:left}
+.top-button-nav ul li a{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff !important;display:inline-block;text-align:center}
 /*!
 Section 6: Footer
 */footer a{text-decoration:underline}footer{margin-top:5rem;background:#0c3b78;padding:2rem 0 4rem 0;font-size:.75rem}
