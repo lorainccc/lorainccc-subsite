@@ -14,8 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 	<?php if ( has_nav_menu( 'page-top-buttons' ) ) : ?>
-		<div class="top-button-nav-wrap">
-			<nav id="site-navigation" class="menu-centered top-button-nav" role="navigation">
+		<div class="top-button-nav-wrap menu-centered">
 				<?php
 					// Top Button Navigation Menu.
 					wp_nav_menu( array(
@@ -23,7 +22,6 @@
 						'theme_location' => 'page-top-buttons',
 					) );
 				?>
-			</nav><!-- .main-navigation -->
 			<div style="clear:both;"></div>
 		</div>
 	<?php endif; ?>	
