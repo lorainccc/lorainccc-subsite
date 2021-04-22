@@ -13,7 +13,11 @@
 	<header class="entry-header" role="presentation">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	<?php if ( has_nav_menu( 'page-top-buttons' ) ) : ?>
+	<?php 
+        $lcEnableTopButtonMenu = get_post_meta( $post->ID, 'lc_microsite_enable_top_button_menu' , true);
+
+    if( $lcEnableTopButtonMenu == 1 ):
+        if ( has_nav_menu( 'page-top-buttons' ) ) : ?>
 		<div class="top-button-nav-wrap menu-centered">
 				<?php
 					// Top Button Navigation Menu.
@@ -24,7 +28,30 @@
 				?>
 			<div style="clear:both;"></div>
 		</div>
-	<?php endif; ?>	
+	<?php 
+        endif;
+    endif;
+    ?>	
+
+	<?php
+    $lcEnableSecondaryTopMenu = get_post_meta( $post->ID, 'lc_microsite_enable_secondary_top_menu' , true);
+
+    if( $lcEnableSecondaryTopMenu == 1):
+        if ( has_nav_menu( 'page-top-second-menu' ) ) : ?>
+		<div class="top-secondary-menu-nav-wrap menu-centered">
+				<?php
+					// Top Button Navigation Menu.
+					wp_nav_menu( array(
+						'menu_class'     => 'top-secondary-menu',
+						'theme_location' => 'page-top-second-menu',
+					) );
+				?>
+			<div style="clear:both;"></div>
+		</div>
+	<?php 
+        endif;
+    endif;
+    ?>	
 	<div class="entry-content">
 		<?php
 			the_content();
