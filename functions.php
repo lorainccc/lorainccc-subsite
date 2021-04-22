@@ -52,6 +52,7 @@ function lorainccc_subsite_setup() {
   		'header-shortcuts' => esc_html__( 'Header Shortcuts Menu', 'lorainccc' ),
 		'mobile-header-shortcuts' => esc_html__( 'Mobile Header Shortcuts Menu', 'lorainccc' ),
 		'page-top-buttons' => esc_html__( 'Page Top Buttons Menu', 'lorainccc' ),
+		'page-top-second-menu' => esc_html__( 'Page Top Secondary Menu', 'lorainccc' ),
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments

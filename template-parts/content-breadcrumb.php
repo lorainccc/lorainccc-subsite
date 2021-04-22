@@ -30,27 +30,29 @@
      // Page is a Subpage
      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_permalink( $post->post_parent ) ."' title='Return to " . get_the_title( $post->post_parent ) . "'>" . get_the_title( $post->post_parent ) . "</a>" . " > " . get_the_title() ;
     }elseif ( is_page() && $post->post_parent > 0 ) {
- echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > ";
-     }elseif ( is_single() ) {
+     echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > ";
+   }elseif ( is_single() ) {
      // Single Post (most likely lccc_event)
      if(get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') != ''){
      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . get_the_term_list( $post->ID, 'event_categories','', ' , ' , '') . " > " . get_the_title()  ;
 						
-					// Single Post - Success Story Posts
-					}elseif($post->post_type == 'lc_success_story'){
-						echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/lc_success_story/'>Success Stories</a> > " . get_the_title() ;
-						
-					// Single Post - Student News Posts
-					}elseif($post->post_type == 'student_news'){
-						echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/student_news/'>Student News</a> > " . get_the_title() ;
-               
-               // Single Post - Faculty Staff Directory Posts
-					}elseif($post->post_type == 'faculty_staff_dir'){
-						echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/faculty_staff_dir/'>Faculty/Staff Directory</a> > " . get_the_title() ;
-						
-					// Single Post Blog posts	
-					} else {
-     echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/blog/'> Blog </a> > " . get_the_title() ;
+      // Single Post - Success Story Posts
+      }elseif($post->post_type == 'lc_success_story'){
+         echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/lc_success_story/'>Success Stories</a> > " . get_the_title() ;
+         
+      // Single Post - Student News Posts
+      }elseif($post->post_type == 'student_news'){
+         echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/student_news/'>Student News</a> > " . get_the_title() ;
+      
+      // Single Post - Faculty Staff Directory Posts
+      }elseif($post->post_type == 'faculty_staff_dir'){
+         echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/faculty_staff_dir/'>Faculty/Staff Directory</a> > " . get_the_title() ;
+      
+      }elseif($post->post_type == 'lccc_podcasts'){
+         echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/lccc_podcasts/'>Podcasts</a> > " . get_the_title() ;
+      // Single Post Blog posts	
+      } else {
+      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/blog/'> Blog </a> > " . get_the_title() ;
      }
     }else {
      // Single Page

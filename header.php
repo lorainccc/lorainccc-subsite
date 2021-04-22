@@ -138,22 +138,26 @@
   .lc-status .lc-status-button-info a, .lc-status .lc-status-button-info-alt a{
   color:#fff;
  } 
- .lc-notify-image{
-	border:0;
- }
+ 
 </style>
 </head>
 <body <?php body_class(); ?>>
 
+<?php 
+
+$post_id = get_the_ID();
+$campaign_code = get_post_meta( $post_id, 'lc_campaign_tracking_code_field', true );
+
+if($campaign_code != ''){
+	echo $campaign_code;
+}
+
+?>
+
 <!-- LCCC Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWJL5TQ"
+<noscript><iframe title="LCCCGoogleTag" src="https://www.googletagmanager.com/ns.html?id=GTM-PWJL5TQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End LCCC Google Tag Manager (noscript) -->
-
-<!-- Advance Ohio Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7W5SBC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Advance Ohio Google Tag Manager (noscript) -->
 
 <div id="page" class="hfeed site">
 	<a class="show-on-focus hide-for-print" href="#content"><?php esc_html_e( 'Skip to content', 'lccc-framework' ); ?></a>
@@ -215,12 +219,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div ng-controller="lcStatusCtrl">
 				<div class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
 					<div class="show-for-medium large-2 columns lc-status">
-						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" class="lc-notify-image" />
+						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" />
 					</div>
 					<div class="small-12 large-10 columns lc-status">
 						<span class="headline {{notify.type}}">{{notify.headline}}</span>
 						<p>{{notify.text}}</p>
-						<p><a href="{{notify.url}}" title="Learn more about LCCC Campus Status" target="_blank" class="lc-status-button-{{notify.type}}">Learn More</a></p>
+						<p><a href="{{notify.url}}" title="{{notify.buttontext}}" target="_blank" class="lc-status-button-{{notify.type}}">{{notify.buttontext}}</a></p>
 					</div>
 					<!-- Spacer -->
 					<div style="height:4px; width:100%; display:inline-block;">&nbsp;</div>
