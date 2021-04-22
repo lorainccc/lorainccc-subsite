@@ -211,16 +211,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</header><!-- #masthead -->
 
 	<div id="content" tabindex="0" class="site-content">
-		<div ng-app="app">
+	<div ng-app="app">
 			<div ng-controller="lcStatusCtrl">
 				<div class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
 					<div class="show-for-medium large-2 columns lc-status">
-						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" class="lc-notify-image" />
+						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" />
 					</div>
 					<div class="small-12 large-10 columns lc-status">
 						<span class="headline {{notify.type}}">{{notify.headline}}</span>
 						<p>{{notify.text}}</p>
-						<p><a href="{{notify.url}}" title="Learn more about LCCC Campus Status" target="_blank" class="lc-status-button-{{notify.type}}">Learn More</a></p>
+						<p><a href="{{notify.url}}" title="{{notify.buttontext}}" target="_blank" class="lc-status-button-{{notify.type}}">{{notify.buttontext}}</a></p>
 					</div>
 					<!-- Spacer -->
 					<div style="height:4px; width:100%; display:inline-block;">&nbsp;</div>
