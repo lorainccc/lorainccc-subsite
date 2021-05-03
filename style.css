@@ -129,6 +129,7 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;-webkit-box-shadow:
 .section-divider-btm{padding-top:2rem;margin-bottom:2rem;box-shadow:0 20px 20px -10px rgba(216,216,216,0.8);-moz-box-shadow:0 20px 20px -10px rgba(216,216,216,0.8);-webkit-box-shadow:0 20px 20px -10px rgba(216,216,216,0.8);display:inline-block;width:100%}
 .gateway-links h2{font-size:1.5rem;margin-bottom:0}.gateway-links .menu>li>a{font-size:.75rem;color:#5593db;text-decoration:underline;padding:.5rem 0}
 .gateway-links img{margin-top:.5rem;margin-bottom:.5rem;width:100%;height:auto}.gateway-links a{font-size:1.1rem;text-decoration:underline;font-weight:800}
+section.row.gateway-links:first-child{-webkit-box-shadow:none;box-shadow:none}section.single-content-group{border-top:1px solid #999;border-bottom:1px solid #999;padding:10px;margin:15px 0}
 .programpathlinks{font-size:1.1rem;font-weight:800}.row .row.lccc-badge{padding-top:1.25rem;padding-bottom:1.25rem;font-size:.75rem;color:#fefefe;margin:1rem 0 0 0}
 .row .row.lccc-badge h3{font-weight:600;font-size:1.25rem;color:#fefefe;margin-bottom:.25rem}
 .row .row.lccc-badge .icon{margin-top:.5rem}.crumbs{padding-top:2rem;padding-bottom:2rem;font-size:1.1rem}
@@ -280,7 +281,7 @@ ul.sub-menu{padding-top:15px}li.current-menu-ancestor,li.current-menu-item{backg
 .dropdown .menu-item{z-index:50}.top-button-nav-wrap{border-top:1px solid #999;border-bottom:1px solid #999;width:100%;margin:20px 0}
 .top-button-nav-wrap ul{list-style:none;display:inline-block;margin:0}.top-button-nav-wrap ul li{margin:8px 10px;float:left}
 .top-button-nav-wrap ul li a{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#1790e0),color-stop(50%,#1583cc),color-stop(51%,#147cc2),to(#1376b8));background:linear-gradient(to bottom,#1790e0 0,#1583cc 50%,#147cc2 51%,#1376b8 100%);font-weight:500;line-height:1.5;letter-spacing:.05em;border-radius:.25em;padding:10px;color:#fff !important;display:inline-block;text-align:center}
-.top-secondary-menu-nav-wrap{margin:10px 0 25px 0}.top-secondary-menu-nav-wrap>.menu-page-top-secondary-container{background-color:#f6f6f6;padding:0;margin:0;height:50px;min-height:50px;max-height:50px}
+.top-secondary-menu-nav-wrap{margin:10px 0 25px 0}div.top-secondary-menu-nav-wrap div[class$="-container"]{background-color:#f6f6f6;padding:0;margin:0;height:50px;min-height:50px;max-height:50px}
 ul.top-secondary-menu{list-style:none;display:inline-block;margin:0;padding:0}ul.top-secondary-menu li{float:left;font-family:"Open Sans",sans-serif;font-weight:500}
 ul.top-secondary-menu li:not(li.current-menu-item){margin:0 15px 0 0;padding:13px}
 ul.top-secondary-menu li.current-menu-item{border-top:4px solid #ffc600;position:relative;background-color:#0055a5;color:#fff;height:50px;padding:8px 13px;margin:0 15px 0 0}

@@ -6,6 +6,11 @@
  *
  * @package lorainccc
  */
+
+$lcEnableContentGroupDisplay = get_post_meta( $post->ID, 'lc_microsite_enable_content_group_display' , true);
+
+if( $lcEnableContentGroupDisplay == 1 ):
+
 ?>
 <div class="small-12 medium-12 large-12 columns">
 	<?php 
@@ -36,3 +41,8 @@
 
 	?>
 </div>
+<?php
+
+endif;
+
+?>
