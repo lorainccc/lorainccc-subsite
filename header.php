@@ -215,8 +215,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div ng-controller="lcStatusCtrl">
 				<div class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
 					<div class="show-for-medium large-2 columns lc-status">
-						<!--<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" />-->
-						<img alt="LCCC Prepared" src="/wp-content/themes/lorainccc/images/campus-status-info.png">
+						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" />
+						<!--<img alt="LCCC Prepared" src="/wp-content/themes/lorainccc/images/campus-status-info.png">-->
 					</div>
 					<div class="small-12 large-10 columns lc-status">
 						<span class="headline {{notify.type}}">{{notify.headline}}</span>
