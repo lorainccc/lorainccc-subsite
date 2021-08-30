@@ -232,6 +232,7 @@ Section 4: Header
 a.skip-link.screen-reader-text:focus{position:static;width:auto;height:auto}.ql-icon{background-position:left center;background-repeat:no-repeat;background-size:.78125rem .78125rem}
 .ql-1{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-az_blue.svg)}.ql-2{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-faculty_blue.svg)}
 .ql-3{background-image:url(/wp-content/themes/lorainccc/images/icons/icon_canvas.svg)}.ql-4{background-image:url(/wp-content/themes/lorainccc/images/icons/icon_my-campus.svg)}
+.ql-5{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-calendar.svg)}.ql-6{background-image:url(/wp-content/themes/lorainccc/images/icons/icon-covid-19-virus.svg)}
 /*! Ryan's Updated Menu Styling */.breadcrumb-container{padding:2rem .9375rem !important}
 .sidebar-widget{padding-top:0 !important;margin:1rem 0 3rem 0 !important}header.entry-header{padding-top:0 !important}
 .main-navigation ul:not(.sub-menu)>li{border:1px solid #dcdcdc !important;-webkit-box-shadow:inset 0 0 10px #dcdcdc !important;box-shadow:inset 0 0 10px #dcdcdc !important;padding:.75rem 2rem .75rem 1rem !important}
