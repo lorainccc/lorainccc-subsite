@@ -1,0 +1,66 @@
+{
+	"version": 2,
+	"settings": {
+		"color": {
+            "defaultPalette": false,
+			"custom": false,
+			"palette": [
+				{
+					"slug": "teal",
+					"color": "#008290",
+					"name": "Teal"
+				},
+				{
+					"slug": "orange",
+					"color": "#ba4c00",
+					"name": "Orange"
+				},
+				{
+					"slug": "green",
+					"color": "#2a8000",
+					"name": "Green"
+				},
+				{
+					"slug": "purple",
+					"color": "#67296e",
+					"name": "Purple"
+				},
+				{
+					"slug": "blue",
+					"color": "#0055a5",
+					"name": "Blue"
+				},
+				{
+					"slug": "dark-blue",
+					"color": "#0556a4",
+					"name": "Medium Blue"
+				},
+				{
+					"slug": "light-blue",
+					"color": "#2f8ccc",
+					"name": "Light Blue"
+				},
+				{
+					"slug": "gray",
+					"color": "#6d6d6d",
+					"name": "Gray"
+				},
+				{
+					"slug": "white",
+					"color": "#fff",
+					"name": "White"
+				},
+				{
+					"slug": "black",
+					"color": "#000",
+					"name": "Black"
+				},
+                {
+					"slug": "transparent",
+					"color": "transparent",
+					"name": "Transparent"
+				}
+			]
+		}
+	}
+}
