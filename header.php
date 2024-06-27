@@ -142,6 +142,21 @@
 	border:0;
  }
 </style>
+
+<?php 
+global $post;
+
+if( is_page() OR is_singular() ){
+
+	$lc_campaign_tracking_code = get_post_meta( $post->ID, 'lc_campaign_tracking_code_field', true );
+
+	if( $lc_campaign_tracking_code != ''){
+		echo $lc_campaign_tracking_code;
+	}
+}
+
+?>
+
 </head>
 <body <?php body_class(); ?>>
 
@@ -215,8 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div ng-controller="lcStatusCtrl">
 				<div class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
 					<div class="show-for-medium large-2 columns lc-status">
-						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" />
-						<!--<img alt="LCCC Prepared" src="/wp-content/themes/lorainccc/images/campus-status-info.png">-->
+						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" class="lc-notify-image" />
 					</div>
 					<div class="small-12 large-10 columns lc-status">
 						<span class="headline {{notify.type}}">{{notify.headline}}</span>
