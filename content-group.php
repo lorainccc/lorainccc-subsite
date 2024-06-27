@@ -21,6 +21,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'template-parts/content', 'cntgrouppage' ); ?>
+					
 					<?php get_template_part( 'template-parts/content', 'cntgroup' ); ?>
 				
 
@@ -31,7 +32,7 @@ get_header(); ?>
 	</div>
 	<div class="small-12 medium-12 large-12 columns hide-for-print">
 		<div class="small-12 medium-12 large-12 columns">
-			<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
+			<?php if ( is_active_sidebar( 'lccc-cgbadges-sidebar' ) ) { ?>
 							<?php dynamic_sidebar( 'lccc-badges-sidebar' ); ?>
 				<?php } ?>
 		</div>
