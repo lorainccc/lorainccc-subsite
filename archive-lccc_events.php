@@ -129,50 +129,23 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 		<main id="main" class="site-main" role="main">
 			<div id="lccc-event-listings" class="small-12 medium-12 large-12 columns">
 			<?php
-					//Defining variables for endpoints
-						$lcccevents = '';
-						$stockerevents = '';
-						$athleticevents = '';
-						
-					//defining the domain variable
-				 //	$domain = 'http://' . $_SERVER['SERVER_NAME'];
-							$domain = 'http://www.lorainccc.edu';
-					//Defining the endpoints
-							$lcccevents = new Endpoint( $domain . '/mylccc/wp-json/wp/v2/lccc_events?per_page=100' );
-							$athleticevents = new Endpoint( $domain . '/athletics/wp-json/wp/v2/lccc_events?per_page=100' );
-							$stockerevents = new Endpoint( $domain . '/stocker/wp-json/wp/v2/lccc_events?per_page=100' );
-						
-						//Create instance
-							$multi = new MultiBlog( 1 );
-				
-						//Adding endpoints to multi array
-							$multi->add_endpoint ( $lcccevents );
-							$multi->add_endpoint ( $athleticevents );
-							$multi->add_endpoint ( $stockerevents );
-							
-						//Fetch Posts from Endpoints
-							$posts = $multi->get_posts();
-						    $count = count($posts);
-						//Test to see if any events exist 
-							if(empty($posts)){
-									echo 'No Posts Found!';
-							}
-							$icounter = 0;
-							$pagecounter = 1;						
-							$posts_per_page = 10;
-   				            $currentdate = date("Y-m-d");
-							$currentday = date("d");
-							$currentmonth = date("m");
-							$currentmonthname = date("M");
+				// Call to Pre-Existing Transient in LCCC MyLCCC Info Feed Plugin
+				$posts = get_site_transient('LCCC_All_Events');
 
-usort( $posts, function ( $a, $b) {
-return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_date_and_time );
-});
+				$count = count($posts);
+				$icounter = 0;
+				$pagecounter = 1;						
+				$posts_per_page = 10;
+				$currentdate = date("Y-m-d");
+				$currentday = date("d");
+				$currentmonth = date("m");
+				$currentmonthname = date("M");
 				$eventcounter = 0;
 				$firstactive = '';
                 
 				foreach ( $posts as $post ){
-							if( $post->event_end_date >= $currentdate ){
+		
+							if( $post['event_end_date'] >= $currentdate ){
 										$firstactive = $eventcounter;
 										break;
 							}
@@ -201,12 +174,13 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 						//$posts will be an array of all posts sorted by post date
 							foreach ( $posts as $post ){
                                 if(	$icounter<$posts_per_page){
+									if( $post['event_end_date'] >= $currentdate ){
 								?>
-								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post->id; ?>" >
+								<div class="small-12 medium-12 large-12 columns mylccc-news-container" id="post-<?php echo $post['id']; ?>" >
 						
 										<header class="entry-header">
-												<a href="<?php echo $post->link; ?>">
-													<?php echo '<h1 class="entry-title">'.$post->title->rendered.'</h1>'; ?>
+												<a href="<?php echo $post['link']; ?>">
+													<?php echo '<h1 class="entry-title">'.$post['title']['rendered'].'</h1>'; ?>
 											</a>
 										</header><!-- .entry-header -->
 									<?php
@@ -217,51 +191,56 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 										<div class="small-12 medium-12 large-12 columns entry-content nopadding">
 												<?php
 														//set the variable to see if a featured image exists
-														$featured = $post->featured_media;
-												
+														$featured = $post['featured_media'];
+														
 														//Test to see if image exists. If the vaule is equal zero then no image exists
 														if($featured != 0){
 																echo '<div class="small-12 medium-3 large-3 columns nopadding">';
-																	echo '<img src="'.$post->better_featured_image->media_details->sizes->medium->source_url.'" alt="'.$post->better_featured_image->alt_text.'">';
+																	echo '<img src="'.$post['better_featured_image']['media_details']['sizes']['medium']['source_url'].'" alt="'.$post['better_featured_image']['alt_text'].'">';
 																echo '</div>';
 															echo '<div class="small-12 medium-9 large-9 columns">';
 												echo '<div class="small-12 medium-12 large-12 columns event-details">';
-															$eventdate = $post->event_start_date;
-															if($eventdate !=''){
-															$newDate = date("F j, Y", strtotime($eventdate));
-															echo '<p>'.'Date: '.$newDate.'</p>';
+															$eventdate = $post['event_start_date'];
+															if( $eventdate < $currentdate && $post['event_end_date'] >= $currentdate ){
+																$newDate = date("F j, Y", strtotime($currentdate));
+																echo '<p>'.'Date: '.$newDate.'</p>';
+															}else{
+																$newDate = date("F j, Y", strtotime($eventdate));
+																echo '<p>'.'Date: '.$newDate.'</p>';
 															}
 															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
+															echo '<p>'.'Time: '.$post['event_start_time'].'</p>';	
 															}
-															$location = $post->event_location;
+															$location = $post['event_location'];
 															if ( $location != ''){
 																echo '<p>Location: '.$location.'</p>';
 															}
 													echo '</div>';
 													echo '<div class="small-12 medium-12 large-12 columns">';
-														echo '<p>' . $post->excerpt->rendered . '</p>' ;
-														echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+														echo '<p>' . $post['excerpt']['rendered'] . '</p>' ;
+														echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More Information</a>';
 													echo '</div>';
 															echo '</div>';
 														}else{
 															echo '<div class="small-12 medium-12 large-12 columns event-details nopadding">';
-															$eventdate = $post->event_start_date;
-																	if($eventdate !=''){
-															$newDate = date("F j, Y", strtotime($eventdate));
-															echo '<p>'.'Date: '.$newDate.'</p>';
+															$eventdate = $post['event_start_date'];
+															if( $eventdate < $currentdate && $post['event_end_date'] >= $currentdate ){
+																$newDate = date("F j, Y", strtotime($currentdate));
+																echo '<p>'.'Date: '.$newDate.'</p>';
+															}else{
+																$newDate = date("F j, Y", strtotime($eventdate));
+																echo '<p>'.'Date: '.$newDate.'</p>';
+															}															if($post['event_start_time'] !=''){
+															echo '<p>'.'Time: '.$post['event_start_time'].'</p>';	
 															}
-															if($post->event_start_time !=''){
-															echo '<p>'.'Time: '.$post->event_start_time.'</p>';	
-															}
-															$location = $post->event_location;
+															$location = $post['event_location'];
 															if ( $location != ''){
 																echo '<p>Location: '.$location.'</p>';
 															}
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-															echo ' <p>' . $post->excerpt->rendered . '</p>' ; 	
-																echo '<a class="button" href="'.$post->link.'" title="Click for more information about' . $post->title->rendered . '">More Information</a>';
+															echo ' <p>' . $post['excerpt']['rendered'] . '</p>' ; 	
+																echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More Information</a>';
 															echo '</div>';	
 														}
 												?>
@@ -273,7 +252,7 @@ return strtotime( $a->event_start_date_and_time ) - strtotime( $b->event_start_d
 									<?php
 											$icounter ++;			
 										}
-								
+									}	
 							}
                             //$count = $count - $firstactive;
 							$pagecount = ceil($count/$posts_per_page);
