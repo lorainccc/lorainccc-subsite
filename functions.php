@@ -111,7 +111,7 @@ function lorainccc_subsite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-			register_sidebar( array(
+		register_sidebar( array(
 		'name'          => esc_html__( 'Calendar Sidebar', 'lorainccc_subsite' ),
 		'id'            => 'calendar-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
@@ -120,7 +120,6 @@ function lorainccc_subsite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
 		register_sidebar( array(
 		'name'          => esc_html__( 'Sub Site Announcement Sidebar', 'lorainccc_subsite' ),
 		'id'            => 'sub-site-announcements-sidebar',
@@ -131,33 +130,6 @@ function lorainccc_subsite_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 		register_sidebar( array(
-		'name'          => esc_html__( 'Dashboard Icons Sidebar', 'lorainccc_subsite' ),
-		'id'            => 'cta-icons-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'LCCC Spotlights Sidebar', 'lorainccc_subsite' ),
-		'id'            => 'lccc-spotlights-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-		register_sidebar( array(
-		'name'          => esc_html__( 'LCCC Highlights Sidebar', 'lorainccc_subsite' ),
-		'id'            => 'lccc-highlights-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-			register_sidebar( array(
 		'name'          => esc_html__( 'LCCC Events Sidebar', 'lorainccc_subsite' ),
 		'id'            => 'lccc-events-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
@@ -166,7 +138,7 @@ function lorainccc_subsite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-			register_sidebar( array(
+		register_sidebar( array(
 		'name'          => esc_html__( 'LCCC Announcements Sidebar', 'lorainccc_subsite' ),
 		'id'            => 'lccc-announcements-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
@@ -175,9 +147,18 @@ function lorainccc_subsite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-			register_sidebar( array(
+		register_sidebar( array(
 		'name'          => esc_html__( 'LCCC Badges Sidebar', 'lorainccc_subsite' ),
 		'id'            => 'lccc-badges-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+		register_sidebar( array(
+		'name'          => esc_html__( 'LCCC Content Group Badges Sidebar', 'lorainccc_subsite' ),
+		'id'            => 'lccc-cgbadges-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'lorainccc_subsite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -229,6 +210,15 @@ function lorainccc_subsite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'President Sidebar', 'lorainccc' ),
+		'id'            => 'lccc-president-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'lorainccc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'lorainccc_subsite_widgets_init' );
 
@@ -238,7 +228,7 @@ add_action( 'widgets_init', 'lorainccc_subsite_widgets_init' );
 function add_google_fonts() {
 wp_enqueue_style( 'open-sans-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&dispay=swap', false );
 wp_enqueue_style( 'raleway-google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:400,700&dispay=swap', false );
-
+wp_enqueue_style( 'icons-google-fonts', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined', false );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
@@ -250,7 +240,7 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 function lorainccc_subsite_foundation_scripts() {
  
   // Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+	//wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
  
 	wp_enqueue_style( 'foundation-app',  get_template_directory_uri() . '/foundation/css/app.css' );
 	wp_enqueue_style( 'foundation-normalize', get_template_directory_uri() . '/foundation/css/normalize.css' );
@@ -267,19 +257,21 @@ function lorainccc_subsite_foundation_scripts() {
 
 	wp_enqueue_script( 'lorainccc_subsite-function-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
 	wp_enqueue_script( 'lc_menu-cleanup-script', get_stylesheet_directory_uri() . '/js/menu-cleanup.js', array( 'jquery' ), '20190329', true );
-		//Adds Google Analytics, Google Tag, Hotjar and Eloqua to header
+	
+	//Adds Google Analytics, Google Tag, Hotjar and Eloqua to header
 	wp_enqueue_script( 'lc-eloqua-scripts', get_stylesheet_directory_uri() . '/js/lc-eloqua.js', array(), '20180828', false);
-	wp_enqueue_script( 'lc-google-analytics-scripts', get_stylesheet_directory_uri() . '/js/lc-google-analytics.js', array(), '20180828', false);
+	wp_enqueue_script( 'lc-google-analytic-parent-async', 'https://www.googletagmanager.com/gtag/js?id=G-Z27HB3ECDG', array(), '20221117', false); 
+	wp_enqueue_script( 'lc-google-analytics-scripts', get_stylesheet_directory_uri() . '/js/lc-google-analytics.js', array( 'lc-google-analytic-parent' ), '20180828', false);
 	wp_enqueue_script( 'lc-google-tag-scripts', get_stylesheet_directory_uri() . '/js/lc-google-tag.js', array(), '20180828', false);
-	wp_enqueue_script( 'lc-hotjar-scripts', get_stylesheet_directory_uri() . '/js/lc-hotjar.js', array(), '20180828', false);
 	wp_enqueue_script( 'lc-siteimprove-scripts', get_stylesheet_directory_uri() . '/js/lc-siteimprove.js', array(), '20180828', false);
 	
-wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
-	) );
+	
+	wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', array(
+			'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
+		) );
 
-}
+	}
 add_action( 'wp_enqueue_scripts', 'lorainccc_subsite_foundation_scripts' );
 
 function lorainccc_subsite_scripts() {
@@ -290,6 +282,35 @@ function lorainccc_subsite_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'lorainccc_subsite_scripts', 99 );
+
+
+/**
+* Add async or defer attributes to script enqueues
+* @author Mike Kormendy
+* @param  String  $tag     The original enqueued <script src="...> tag
+* @param  String  $handle  The registered unique name of the script
+* @return String  $tag     The modified <script async|defer src="...> tag
+*/
+// only on the front-end
+if(!is_admin()) {
+    function lc_add_asyncdefer_attribute($tag, $handle) {
+        // if the unique handle/name of the registered script has 'async' in it
+        if (strpos($handle, 'async') !== false) {
+            // return the tag with the async attribute
+            return str_replace( '<script ', '<script async ', $tag );
+        }
+        // if the unique handle/name of the registered script has 'defer' in it
+        else if (strpos($handle, 'defer') !== false) {
+            // return the tag with the defer attribute
+            return str_replace( '<script ', '<script defer ', $tag );
+        }
+        // otherwise skip
+        else {
+            return $tag;
+        }
+    }
+    add_filter('script_loader_tag', 'lc_add_asyncdefer_attribute', 10, 2);
+}
 
 /**
  * Implement the Custom Header feature.
@@ -563,7 +584,7 @@ if(is_admin()){
  /** End Custom posts per page limit for Faculty Staff Directory */
 
 //create array from existing posts for faculty staff directory
-/*function lc_run_once(){
+/* function lc_run_once(){
 
  	$taxonomy = 'lcdeptdir_alphabet';
 	$alphabet = array();
@@ -588,9 +609,9 @@ if(is_admin()){
 
 	wp_set_post_terms( $p->ID, strtoupper(substr($last_name, 0, 1)), $taxonomy, true );
 	//echo strtoupper(substr($last_name, 0, 1)) . '<br/>';
-	endforeach; */
+	endforeach; 
 
-/* 	$args = array(
+ 	$args = array(
 		'post_type'			=> 'faculty_staff_dir',
 		'posts_per_page'	=> -1,
 		'post_status'		=> 'publish',
@@ -605,4 +626,22 @@ if(is_admin()){
 	endwhile;	
 	wp_reset_postdata(); 
 }
-add_action('init','lc_run_once', 0 );*/
+add_action('init','lc_run_once', 0 ); */
+
+// Add closing Divs to make row layout block expand full page then add div code back to continue the responsive framework
+function lc_full_page_block( $block_content, $block ){
+
+	if( $block['blockName'] === 'kadence/rowlayout'){
+		$content = '</div></div>';
+		$content .= '<div class="lc-full-row">';
+		$content .= $block_content;
+		$content .= '</div>';
+		$content .= '<div class="row page-content">';
+		$content .= '<div class="small-12 medium-12 large-12 columns">';
+		
+		return $content;
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block', 'lc_full_page_block', 10, 2);
