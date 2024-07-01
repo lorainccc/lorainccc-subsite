@@ -57,7 +57,7 @@ get_header(); ?>
 										<th scope="col" width="5%">Report Year</th>
       				<th scope="col" width="14%">Nature of Offense</th>
       				<th scope="col" width="17%">ALEIR Report Number</th>
-      				<th scope="col" width="15%">Date/Time Reported</th>
+      				<th scope="col" width="15%">Date Reported</th>
       				<th scope="col" width="21%">Date/Time Offense Occurred</th>
 										<th width="13%">General Location</th>
       				<th scope="col" width="13%">Disposition</th>
@@ -66,8 +66,11 @@ get_header(); ?>
 										<tbody>
 														<?php
 																		$args = array(
-																			'post_type' => 'crime_log',
-																			'posts_per_page' => -1,
+																			'post_type' 		=> 'crime_log',
+																			'posts_per_page' 	=> -1,
+																			'meta_key'			=> 'details_of_the_crime_date_reported',
+																			'orderby'			=> 'details_of_the_crime_date_reported',
+																			'order'				=> 'DESC',
 																		);
 																$i=1;
 																// The Query
@@ -105,7 +108,7 @@ get_header(); ?>
 																			echo '</td>';
 																			echo '<td>'.$natureoffence.'</td>';
 																			echo '<td>' . get_the_title() . '</td>';
-																			echo '<td>'.$reported_date.' '.$reported_time.'</td>';
+																			echo '<td>'.$reported_date.'</td>';
 																			//if unknown date checkbox is checked
 																			if( $unkown_dates == 'true' ){
 																							echo '<td> Unknown </td>';
