@@ -23,12 +23,21 @@
 
 	<div class="entry-content">
   <div class="row">
+	<?php 
+  		if( has_post_thumbnail() ) { ?>
    <div class="small-12 medium-2 columns">
     <a href="<?php echo get_the_permalink() ?>">
-    <?php the_post_thumbnail( 'thumbnail' ); ?> 
+    <?php 
+			the_post_thumbnail( 'thumbnail' ); 
+	?> 
    </div>
    <div class="small-12 medium-10 columns">
-		<?php
+ <?php } else { ?>
+
+	<div class="small-12 medium-12 columns">
+
+	<?php
+ 	}
 			the_excerpt( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'lorainccc' ), array( 'span' => array( 'class' => array() ) ) ),
