@@ -5,7 +5,13 @@
    //LCCC Custom Breadcrumb Display Code
   if (function_exists('lccc_breadcrumb')){
     if (is_home() || is_front_page()) {
-     echo lccc_breadcrumb() . get_bloginfo('name') ;
+      $lc_blog_url = get_bloginfo('url');
+      if (  $lc_blog_url == 'https://www.lorainccc.edu/president' ){
+       echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a>";
+      }else{
+       echo lccc_breadcrumb() . get_bloginfo('name') ;
+   }
+
     } elseif ( is_category() ) {
      // Display Category Name
     	echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title() ;
@@ -18,7 +24,9 @@
       // Other Archive Page
      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > "; post_type_archive_title();
      } elseif( is_tax( 'lcdeptdir_alphabet' ) ){
-      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='" . get_bloginfo('url') . "/faculty-staff-directory/'>Faculty/Staff Directory</a> > " . single_cat_title( '', false ) ;
+      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='" . get_bloginfo('url') . "/faculty_staff_dir/'>Faculty/Staff Directory</a> > " . single_cat_title( '', false ) ;
+     } elseif( is_tax( 'lcdeptdir_deptartments' ) ){
+        echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='" . get_bloginfo('url') . "/faculty_staff_dir/'>Faculty/Staff Directory</a> > " . single_cat_title( '', false ) ;
      } else {
 	  // Other Archive Page
      echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . single_cat_title( '', false ) ;
@@ -50,7 +58,8 @@
       
       }elseif($post->post_type == 'lccc_podcasts'){
          echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > <a href='"  . get_bloginfo('url') . "/lccc_podcasts/'>Podcasts</a> > " . get_the_title() ;
-      // Single Post Blog posts	
+         
+         // Single Post Blog posts	
       } else {
       echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a> > " . "<a href='" . get_bloginfo('url') . "/blog/'> Blog </a> > " . get_the_title() ;
      }
