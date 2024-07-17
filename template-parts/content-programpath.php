@@ -18,10 +18,18 @@ $programargs = array(
     ?>
         <section class="row programpaths">
 											<div class="small-12 medium-3 large-3 columns">
+            <?php 
+                if( has_post_thumbnail() ) { ?>
             <a href="<?php echo $linkvalue; ?>"><?php the_post_thumbnail( 'thumbnail', array( 'alt' => get_the_title() ) ); ?></a>
-											</div>
+            <?php
+                }
+                ?> 						    </div>
 											<div class="small-12 medium-9 large-9 columns gtwymenu-content">
+                                                <?php if( $linkvalue != ""){ ?>
 													<a href="<?php echo $linkvalue; ?>"><h2 id="<?php echo $titleId; ?>"><?php the_title();?></h2></a>
+                                                <?php }else{ ?>
+                                                    <h2 id="<?php echo $titleId; ?>"><?php the_title();?></h2>
+                                                <?php } ?>
 													<?php the_content('<p>','</p>'); ?>
              <a href="<?php echo $linkvalue; ?>" class="programpathlinks"><?php echo $linklabel; ?></a>
 									</div>
