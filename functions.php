@@ -636,3 +636,19 @@ function lc_full_page_block( $block_content, $block ){
 	return $block_content;
 }
 add_filter( 'render_block', 'lc_full_page_block', 10, 2);
+
+//Disable block editor for LCCC Custom Post Types
+
+if ( is_admin() ):
+    add_filter( 'use_block_editor_for_post', 'lc_disable_block_for_post_type', 10, 2 );
+endif;
+
+function lc_disable_block_for_post_type( $bool, $post ) {
+	$lc_posttypes = array('lccc_events', 'lccc_announcement', 'sponsor', 'lc_program_paths', 'badges', 'lc_success_story', 'lccc_podcasts', 'content_group', 'gateway_menu', 'faculty_staff_dir', 'lc_content_tile', 'crime_log' );
+
+    if ( in_array($post->post_type, $lc_posttypes ) ):
+        return false;
+    endif;
+
+    return $bool;
+}
