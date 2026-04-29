@@ -15,7 +15,7 @@ get_header(); ?>
 	<img src="<?php echo $featured_image[0] ?>" width="<?php echo $featured_image[1] ?>" height="<?php echo $featured_image[2] ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image">	
 	</div>
 <div class="row page-content">
-<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
 	<div class="small-12 medium-8 large-8 columns">		

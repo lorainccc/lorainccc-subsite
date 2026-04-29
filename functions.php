@@ -249,13 +249,14 @@ function lorainccc_subsite_foundation_scripts() {
 
 	wp_enqueue_script( 'lorainccc_subsite-function-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
 	wp_enqueue_script( 'lc_menu-cleanup-script', get_stylesheet_directory_uri() . '/js/menu-cleanup.js', array( 'jquery' ), '20190329', true );
-		//Adds Google Analytics, Google Tag, Hotjar and Eloqua to header
+
+	//Adds Google Analytics, Google Tag, Hotjar and Eloqua to header
 	wp_enqueue_script( 'lc-eloqua-scripts', get_stylesheet_directory_uri() . '/js/lc-eloqua.js', array(), '20180828', false);
 	wp_enqueue_script( 'lc-google-analytic-parent-async', 'https://www.googletagmanager.com/gtag/js?id=G-Z27HB3ECDG', array(), '20221117', false); 
-	wp_enqueue_script( 'lc-google-analytics-scripts', get_stylesheet_directory_uri() . '/js/lc-google-analytics.js', array( 'lc-google-analytic-parent' ), '20180828', false);
+	wp_enqueue_script( 'lc-google-analytics-scripts', get_stylesheet_directory_uri() . '/js/lc-google-analytics.js', array( 'lc-google-analytic-parent-async' ), '20180828', false);
 	wp_enqueue_script( 'lc-google-tag-scripts', get_stylesheet_directory_uri() . '/js/lc-google-tag.js', array(), '20180828', false);
 	wp_enqueue_script( 'lc-siteimprove-scripts', get_stylesheet_directory_uri() . '/js/lc-siteimprove.js', array(), '20180828', false);
-	
+
 	
 	wp_localize_script( 'lorainccc_subsite-function-script', 'screenReaderText', array(
 			'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
@@ -273,7 +274,6 @@ function lorainccc_subsite_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'lorainccc_subsite_scripts', 99 );
-
 
 /**
 * Add async or defer attributes to script enqueues
@@ -415,7 +415,7 @@ function lccc_custom_taxonomy_dropdown( $taxonomy ) {
 	);
 	$terms = get_terms( $taxonomy , $args );
 	if ( $terms ) {
-		printf( '<select name="%s" class="postform" onchange="location = this.options[this.selectedIndex].value;">', esc_attr( $taxonomy ) );
+		printf( '<select id="' . $taxonomy . '" name="%s" class="postform" onchange="location = this.options[this.selectedIndex].value;">', esc_attr( $taxonomy ) );
 		printf('<option value="/security/daily-crime-log/">Select</option>');
 		foreach ( $terms as $term ) {
 			printf( '<option value="'.get_bloginfo('url').'/'.str_replace('_', '-', $taxonomy).'/%s">%s</option>', esc_attr( $term->slug ), esc_html( $term->name ) );
@@ -652,3 +652,38 @@ function lc_disable_block_for_post_type( $bool, $post ) {
 
     return $bool;
 }
+
+/** Block Editor Style Theme Support
+ * 
+ *  Added support for front-end styles in Block Editor
+ *  Also adds padding around content to make editing easier.
+ * 
+ */
+function lc_block_editor_theme_support(){
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'css/editor-styles.css' );
+}
+
+add_action( 'admin_init', 'lc_block_editor_theme_support' );
+
+/** Disable Legacy Markup in Gravity Forms
+*
+*	Having Legacy Markup enabled causes accessibility issues,
+*	namely the "other" option in a radio button list becomes unlabeled and causes an issue.
+*
+*	Added by JAQ 9/2024
+*	https://docs.gravityforms.com/gform_enable_legacy_markup/
+*/
+
+add_filter( 'gform_enable_legacy_markup', '__return_false' );
+
+/** Disable Caching of RankMath Sitemaps
+*
+*	RankMath SiteMap files are being cached in transients in the WordPress Database
+*	adding the filter below removes the files from cache.
+*
+*	Added by JAQ 2/2026
+*	https://rankmath.com/kb/exclude-sitemaps-from-caching/
+*/
+
+add_filter( 'rank_math/sitemap/enable_caching', '__return_false');

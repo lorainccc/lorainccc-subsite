@@ -42,7 +42,7 @@ $today = getdate();
 		$starteventtime = event_meta_box_get_meta('event_start_time');  
 		$endeventdate = event_meta_box_get_meta('event_end_date');
 		$endtime = event_meta_box_get_meta('event_end_time');
-		
+		$lc_learn_more_label = event_meta_box_get_meta('event_meta_box_learn_more');
 
 										$starttimevar=strtotime($starteventtime);
 										$starttime=	date("h:i a",$starttimevar);
@@ -106,12 +106,12 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 			</div>
 	<?php } ?>
 			<div class="small-12 medium-12 large-12 columns hide-for-print">
-			<h4>Select Event Type:</h4>
-			<select id="event_type" name="event_type" class="postform" role="listbox">
-				<option value="All" role="listitem">Select</option>
-								<option value="All" role="listitem">All</option>			
-								<option value="Athletics" role="listitem">Athletics</option>
-								<option value="Stocker" role="listitem">Stocker</option>				
+			<label for="event_type"><h4>Select Event Type:</h4></label>
+			<select id="event_type" name="event_type" class="postform">
+				<option value="All">Select</option>
+				<option value="All">All</option>			
+				<option value="Athletics">Athletics</option>
+				<option value="Stocker">Stocker</option>				
 			</select>
 		</div>
 		<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
@@ -218,7 +218,13 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 													echo '</div>';
 													echo '<div class="small-12 medium-12 large-12 columns">';
 														echo '<p>' . $post['excerpt']['rendered'] . '</p>' ;
-														echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More Information</a>';
+														
+														if($lc_learn_more_label != ''){
+															echo '<a class="button" href="'.$post['link'].'" title="' . $lc_learn_more_label . '">' . $lc_learn_more_label . '</a>'; ;
+														}else{
+															echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More About ' . $post['title']['rendered'] . '</a>';
+														}
+
 													echo '</div>';
 															echo '</div>';
 														}else{
@@ -239,8 +245,13 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 															}
 													echo '</div>';
 															echo '<div class="small-12 medium-12 large-12 columns nopadding">';
-															echo ' <p>' . $post['excerpt']['rendered'] . '</p>' ; 	
-																echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More Information</a>';
+															echo ' <p>' . $post['excerpt']['rendered'] . '</p>' ;
+															if($lc_learn_more_label != ''){
+																echo '<a class="button" href="'.$post['link'].'" title="' . $lc_learn_more_label . '">' . $lc_learn_more_label . '</a>'; ;
+															}else{
+																echo '<a class="button" href="'.$post['link'].'" title="Click for more information about' . $post['title']['rendered'] . '">More About ' . $post['title']['rendered'] . '</a>';
+															}
+
 															echo '</div>';	
 														}
 												?>

@@ -39,7 +39,7 @@ get_header(); ?>
 					</div>
  </div>
 </div><!--End Mobile Side Menu -->
-	<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+	<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
  	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>

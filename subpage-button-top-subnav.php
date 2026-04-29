@@ -7,7 +7,7 @@
  * @since Lorainccc 1.0
  */
 get_header(); ?>
-<div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
+<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
 	<?php the_post_thumbnail(); ?>
 </div>
 <div class="row page-content">

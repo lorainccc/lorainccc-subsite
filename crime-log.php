@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 <div class="row page-content">
-<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
 			
@@ -21,10 +21,10 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 		
 		</div>
-		<div class="row">
+		<!--<div class="row">
   <div class="small-6 medium-4 large-4 columns">
-			<h4>Select Report Month:</h4>
-			<select name="report_month" class="postform" onchange="location = this.options[this.selectedIndex].value;">
+			<label for="report_month"><h4>Select Report Month:</h4></label>
+			<select id="report_month" name="report_month" class="postform" onchange="location = this.options[this.selectedIndex].value;">
 				<option value="/security/daily-crime-log/">Select</option>
 								<option value="/security/report-month/january">January</option>			
 								<option value="/security/report-month/february">February</option>
@@ -41,26 +41,26 @@ get_header(); ?>
 			</select>
 		</div>
   <div class="medium-4 large-4 columns show-for-medium">
-						<!-- ... -->	
+							
 		</div>
   <div class="small-6 medium-4 large-4 columns">
-			<h4>Select Report Year:</h4>
-					<?php lccc_custom_taxonomy_dropdown( 'report_year' ); ?>	
-	</div>
-</div>
+	<label for="report_year"><h4>Select Report Year:</h4></label>
+	<?php //lccc_custom_taxonomy_dropdown( 'report_year' ); ?>	
+  </div>
+</div>-->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 					<table>
 						<thead>
     				<tr>
-										<th scope="col" width="5%">Report Month</th>
-										<th scope="col" width="5%">Report Year</th>
-      				<th scope="col" width="14%">Nature of Offense</th>
-      				<th scope="col" width="17%">ALEIR Report Number</th>
-      				<th scope="col" width="15%">Date Reported</th>
-      				<th scope="col" width="21%">Date/Time Offense Occurred</th>
-										<th width="13%">General Location</th>
-      				<th scope="col" width="13%">Disposition</th>
+						<th scope="col" width="5%">Report Month</th>
+						<th scope="col" width="5%">Report Year</th>
+						<th scope="col" width="14%">Nature of Offense</th>
+						<th scope="col" width="17%">ALEIR Report Number</th>
+						<th scope="col" width="15%">Date Reported</th>
+						<th scope="col" width="21%">Date/Time Offense Occurred</th>
+						<th width="13%">General Location</th>
+						<th scope="col" width="13%">Disposition</th>
     				</tr>
   				</thead>
 										<tbody>
@@ -238,6 +238,7 @@ get_header(); ?>
 																		wp_reset_postdata();
 																	} else {
 																		// no posts found
+																		echo '<tr><td colspan="8" align="center"><h3>The LCCC Crime Log is currently empty.</h3></td></tr>';
 																	}
 															?>
 										</tbody>

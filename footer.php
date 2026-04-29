@@ -7,6 +7,20 @@
  * @package LCCC Framework
  */
 ?>
+<?php 
+global $post;
+
+if( is_page() OR is_singular() ){
+
+	$lc_footer_campaign_tracking_code = get_post_meta( $post->ID, 'lc_footer_campaign_tracking_code_field', true );
+
+	if( $lc_footer_campaign_tracking_code != ''){
+		echo $lc_footer_campaign_tracking_code;
+	}
+}
+
+?>
+
 	</div><!-- #content -->
 
 	<footer id="colophon" class="small-12 medium-12 large-12 columns site-footer hide-for-print" role="contentinfo">
@@ -15,8 +29,7 @@
       <h2>Connect with LCCC</h2>
       <ul class="menu footer-sm-links">
         <li><a href="http://facebook.com/lorainccc" title="Follow LCCC on Facebook" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/facebook_white.svg" height="30" width="30" alt="Follow LCCC on Facebook" /></a></li>
-        <li><a href="http://twitter.com/lorainccc" title="Follow LCCC on Twitter" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/twitter_white.svg" height="30" width="30" alt="Follow LCCC on Twitter" /></a></li>
-        <li><a href="http://www.linkedin.com/company/lorain-county-community-college" title="Follow LCCC on LinkedIn" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/linkedin_white.svg" height="30" width="30" alt="Connect with LCCC on LinkedIn" /></a></li>
+        <li><a href="http://x.com/lorainccc" title="Follow LCCC on X" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/x_white.svg" height="30" width="30" alt="Follow LCCC on X" /></a></li>        <li><a href="http://www.linkedin.com/company/lorain-county-community-college" title="Follow LCCC on LinkedIn" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/linkedin_white.svg" height="30" width="30" alt="Connect with LCCC on LinkedIn" /></a></li>
         <!--<li><a href="#" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/pinterest_white.svg" height="30" width="30" alt="" /></a></li>-->
         <li><a href="http://www.instagram.com/lorainccc" title="Follow LCCC on Instagram" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/instagram_white.svg" height="30" width="30" alt="Follow LCCC on Instagram" /></a></li>
       </ul>
@@ -75,12 +88,12 @@
 
 <?php
   switch($_SERVER['SERVER_ADDR']){
-    case "172.25.1.181":
-      echo "<!-- Prod 1a | 22.04-->";
+    case "172.25.1.201":
+      echo "<!-- Prod 1a | 24.04-->";
     break;
 
-    case "172.25.7.181":
-      echo "<!-- Prod 1b | 22.04-->";
+    case "172.25.7.211":
+      echo "<!-- Prod 1b | 24.04-->";
     break;
 
     default:

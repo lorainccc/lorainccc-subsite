@@ -6,14 +6,25 @@
  *
  * @package lorainccc
  */
+
+ $lcHideH1Headline = get_post_meta( $post->ID, 'lc_microsite_hide_h1_headline' , true);
+
+if( $lcHideH1Headline == 1 ){
+	/*echo '<div class="row page-content">';
+		echo '<div class="small-12 medium-12 large-12 columns">';
+		echo '&nbsp;';
+		echo '</div>';
+	echo '</div>';*/
+} else {
+	echo '<div class="row page-content">';
+		echo '<div class="small-12 medium-12 large-12 columns">';
+			echo '<header class="entry-header" role="presentation">';
+				    the_title( '<h1 class="entry-title">', '</h1>' );
+			echo '</header><!-- .entry-header -->';
+		echo '</div>';
+	echo '</div>';
+}
 ?>
-	<div class="row page-content">
-		<div class="small-12 medium-12 large-12 columns">
-			<header class="entry-header" role="presentation">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->
-		</div>
-	</div>	
 	<div class="row page-content">
 		<div class="small-12 medium-12 large-12 columns">
 <?php

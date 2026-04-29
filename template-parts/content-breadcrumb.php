@@ -4,7 +4,7 @@
 
    //LCCC Custom Breadcrumb Display Code
   if (function_exists('lccc_breadcrumb')){
-    if (is_home() || is_front_page()) {
+    if (is_home() || is_front_page()) {      
       $lc_blog_url = get_bloginfo('url');
       if (  $lc_blog_url == 'https://www.lorainccc.edu/president' ){
        echo lccc_breadcrumb() . "<a href='" . trailingslashit(get_bloginfo('url')) . "' title='Return to " . get_bloginfo('name') . " home'>" . get_bloginfo('name') . "</a>";

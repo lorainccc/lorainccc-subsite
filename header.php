@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 <style>
@@ -156,6 +155,16 @@ if( is_page() OR is_singular() ){
 }
 
 ?>
+<script src="https://js.ipredictive.com/viant_universal_pixel.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new ViantUniversalPixel(115292, 'https://ad.ipredictive.com/d/track/event',
+    {
+  "ps": "0"
+}).fire();
+</script>
+<noscript>
+    <img src="https://ad.ipredictive.com/d/track/event?upid=115292&url=[url]&cache_buster=[timestamp]&ps=1" height="1" width="1" style="display:none" />
+</noscript>
 
 </head>
 <body <?php body_class(); ?>>

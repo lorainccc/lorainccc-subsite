@@ -36,6 +36,11 @@
 					"name": "Medium Blue"
 				},
 				{
+					"slug": "gold",
+					"color": "#FFC600",
+					"name": "Gold"
+				},
+				{
 					"slug": "light-blue",
 					"color": "#2f8ccc",
 					"name": "Light Blue"

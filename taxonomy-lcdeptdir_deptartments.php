@@ -8,7 +8,7 @@
 get_header(); ?>
 <a name="#top">
 <div class="row page-content">
-	<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+	<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 	</div>
 		
@@ -51,7 +51,7 @@ get_header(); ?>
 		$selectedDepartment = "/mylccc/lcdeptdir_deptartments/" . get_query_var($taxonomy);
 		
 		echo '<div class="row">';
-        echo '<div class="small-12 medium-6 columns">By Department: <select name="lc_department_name" id="lc_department_name" class="postform" style="width:360px;" onchange="location = this.options[this.selectedIndex].value;">';
+        echo '<div class="small-12 medium-6 columns"><label for="lc_department_name">By Department:</label> <select name="lc_department_name" id="lc_department_name" class="postform" style="width:360px;" onchange="location = this.options[this.selectedIndex].value;">';
 		echo '<option value="" id=""> -- Please select a department to continue -- </option>';
         foreach ( $departmentlist as $department ) {
 			$dept_path = "/mylccc/lcdeptdir_deptartments/" . $department->slug;

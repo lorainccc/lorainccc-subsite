@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 <div class="row page-content">
-<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
 	<div class="small-12 medium-12 large-12 columns">		
@@ -23,7 +23,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
 					<div class="row">
   <div class="small-6 medium-4 large-4 columns">
-			<h4>Select Report Year:</h4>
+			<label for="report_year"><h4>Select Report Year:</h4></label>
 					<?php lccc_custom_taxonomy_dropdown( 'report_year' ); ?>		
 		</div>
   <div class="medium-4 large-4 columns show-for-medium">
