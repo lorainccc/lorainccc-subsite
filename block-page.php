@@ -16,6 +16,7 @@ get_header(); ?>
 	<?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 	</div>
 </div>
+<main id="main" class="site-main" role="main">
 <?php while ( have_posts() ) : the_post();
 
 get_template_part( 'template-parts/content', 'block' );

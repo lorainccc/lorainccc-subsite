@@ -16,7 +16,7 @@ get_header(); ?>
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
      <button class="menu-icon" type="button" data-toggle>Toggle Sidebar Menu</button>
      </span> </div>
-   <div class="small-10 columns nopadding hide-for-print">
+   <div class="small-10 columns nopadding hide-for-print" aria-label="Side Menu">
     <h3 class="sub-mobile-menu-header" style="padding-top: 6px;
    padding-left: 8px;color:#ffffff ;"><?php echo bloginfo('the-title'); ?></h3></div>
   </div>
@@ -43,7 +43,25 @@ get_header(); ?>
  <div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
-<div class="medium-4 large-4 columns hide-for-small-only">
+
+<div class="small-12 medium-8 large-8 medium-push-4 large-push-4 columns">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+		<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+			<?php endwhile; // end of the loop. ?>
+
+   <div class="row">&nbsp;</div>
+
+   <?php get_template_part( 'template-parts/content', 'programpath' ); ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div>
+
+<div class="medium-4 large-4 medium-pull-8 large-pull-8 columns hide-for-small-only"  role="region" aria-label="Side Menu">
 	<div class="small-12 medium-12 large-12 columns sidebar-widget">
 	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>
 	 <div class="small-12 medium-12 large-12 columns sidebar-menu-header hide-for-print">
@@ -71,23 +89,9 @@ get_header(); ?>
 	</div>
 	</div>
 </div>
-	<div class="small-12 medium-8 large-8 columns">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
-
-   <div class="row">&nbsp;</div>
-
-   <?php get_template_part( 'template-parts/content', 'programpath' ); ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div>
-	<div class="medium-12 large-12 columns hide-for-print">&nbsp;</div>
+<div class="medium-12 large-12 columns hide-for-print">&nbsp;</div>
 	<div class="small-12 columns hide-for-medium hide-for-print">
 
 	<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>

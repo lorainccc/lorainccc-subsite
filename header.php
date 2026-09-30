@@ -180,9 +180,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Advance Ohio Google Tag Manager (noscript) -->
 
 <div id="page" class="hfeed site">
-	<a class="show-on-focus hide-for-print" href="#content"><?php esc_html_e( 'Skip to content', 'lccc-framework' ); ?></a>
-
 	<header id="masthead" class="site-header" role="banner">
+	<a class="show-on-focus hide-for-print" href="#content"><?php esc_html_e( 'Skip to content', 'lccc-framework' ); ?></a>
 	<div class="row show-for-small-only mobile-nav-bar">
     <div class="small-8 columns"> <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/lccclogo_white.svg" alt="LCCC Logo" width="165" height="31.875" /></a> </div>
     <div class="small-2 columns clearfix"> <span data-responsive-toggle="mobile-search" data-hide-for="medium"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icons/magnifying-glass.svg" height="25" width="25" alt="Search the LCCC Website" class="float-right" data-toggle/></span> </div>
@@ -236,18 +235,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<div id="content" tabindex="0" class="site-content">
 	<div ng-app="app">
-			<div ng-controller="lcStatusCtrl">
-				<div class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
-					<div class="show-for-medium large-2 columns lc-status">
-						<img src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" class="lc-notify-image" />
-					</div>
-					<div class="small-12 large-10 columns lc-status">
-						<span class="headline {{notify.type}}">{{notify.headline}}</span>
-						<p>{{notify.text}}</p>
-						<p><a href="{{notify.url}}" title="{{notify.buttontext}}" target="_blank" class="lc-status-button-{{notify.type}}">{{notify.buttontext}}</a></p>
-					</div>
-					<!-- Spacer -->
-					<div style="height:4px; width:100%; display:inline-block;">&nbsp;</div>
+		<div ng-controller="lcStatusCtrl">
+			<div ng-if="notify.active == '1'" class="row" ng-class="notify.active == '1' ? 'lc-active' : 'lc-inactive'">
+				<div class="show-for-medium large-2 columns lc-status">
+				<img ng-src="/wp-content/themes/lorainccc/images/campus-status-{{notify.type}}.png" alt="{{notify.headline}}" class="lc-notify-image" />
 				</div>
+				<div class="small-12 large-10 columns lc-status">
+				<span class="headline {{notify.type}}">{{notify.headline}}</span>
+				<p>{{notify.text}}</p>
+				<p><a href="{{notify.url}}" title="{{notify.buttontext}}" target="_blank" class="lc-status-button-{{notify.type}}">{{notify.buttontext}}</a></p>
+				</div>
+								<!-- Spacer -->
+						<div style="height:4px; width:100%; display:inline-block;">&nbsp;</div>
 			</div>
 		</div>
+	</div>

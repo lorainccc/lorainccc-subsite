@@ -14,7 +14,7 @@ get_header(); ?>
 <div class="medium-4 large-4 columns hide-for-small-only hide-for-print">
 	<div class="small-12 medium-12 large-12 columns sidebar-widget">
 	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>
-		<div class="small-12 medium-12 large-12 columns sidebar-menu-header">
+		<div class="small-12 medium-12 large-12 columns sidebar-menu-header" aria-label="Side Menu">
    <h3><?php echo bloginfo('the-title'); ?></h3>
   </div>
   <div id="secondary" class="secondary">

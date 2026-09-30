@@ -66,6 +66,12 @@ get_header(); ?>
 			set_transient( 'lc_archive_alphabet', $alphabet, 86400 );
         } 
         
+		echo '<div class="row">';
+		echo ' <div class="small-12 columns text-center">';
+		echo '   <h1>Faculty/Staff Directory</h1>';
+		echo ' </div>';
+		echo '</div>';
+		
         echo '<div class="row">';
         echo ' <div class="small-12 columns text-center">';
         echo '  <ul class="facdir-alpha-index">';

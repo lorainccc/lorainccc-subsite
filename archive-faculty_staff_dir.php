@@ -49,6 +49,12 @@
 		
 		echo '<div class="row">';
 		echo ' <div class="small-12 columns text-center">';
+		echo '   <h1>Faculty/Staff Directory</h1>';
+		echo ' </div>';
+		echo '</div>';
+
+		echo '<div class="row">';
+		echo ' <div class="small-12 columns text-center">';
 		echo '  <ul class="facdir-alpha-index">';
 		foreach (range('a', 'z') as $char) {
 			$current = ($char == get_query_var($taxonomy)) ? "current-alpha-character" : "alpha-character";

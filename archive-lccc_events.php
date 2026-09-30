@@ -106,7 +106,7 @@ $cost = event_meta_box_get_meta('event_meta_box_ticket_price_s_');
 			</div>
 	<?php } ?>
 			<div class="small-12 medium-12 large-12 columns hide-for-print">
-			<label for="event_type"><h4>Select Event Type:</h4></label>
+			<label for="event_type"><h2>Select Event Type:</h2></label>
 			<select id="event_type" name="event_type" class="postform">
 				<option value="All">Select</option>
 				<option value="All">All</option>			

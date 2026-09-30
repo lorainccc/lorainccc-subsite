@@ -51,6 +51,12 @@ get_header(); ?>
 		$selectedDepartment = "/mylccc/lcdeptdir_deptartments/" . get_query_var($taxonomy);
 		
 		echo '<div class="row">';
+		echo ' <div class="small-12 columns text-center">';
+		echo '   <h1>Faculty/Staff Directory</h1>';
+		echo ' </div>';
+		echo '</div>';
+
+		echo '<div class="row">';
         echo '<div class="small-12 medium-6 columns"><label for="lc_department_name">By Department:</label> <select name="lc_department_name" id="lc_department_name" class="postform" style="width:360px;" onchange="location = this.options[this.selectedIndex].value;">';
 		echo '<option value="" id=""> -- Please select a department to continue -- </option>';
         foreach ( $departmentlist as $department ) {

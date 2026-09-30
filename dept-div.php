@@ -7,16 +7,18 @@
  * @since Lorainccc 1.0
  */
 get_header(); ?>
+
 <div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
 	<?php the_post_thumbnail(); ?>
-	</div>
+</div>
+
 <div class="small-12 columns nopadding show-for-small-only"><!--Begin Mobile Side Menu -->
  <div class="small-12 medium-12 large-12 columns nopadding">
   <div class="row show-for-small-only sub-mobile-menu-row hide-for-print" style="background:#000;">
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
      <button class="menu-icon" type="button" data-toggle>Toggle Sidebar Menu</button>
      </span> </div>
-   <div class="small-10 columns nopadding hide-for-print">
+   <div class="small-10 columns nopadding hide-for-print" aria-label="Side Menu">
     <h3 class="sub-mobile-menu-header" style="padding-top: 6px;
    padding-left: 8px;color:#ffffff ;"><?php echo bloginfo('the-title'); ?></h3></div>
   </div>
@@ -43,7 +45,21 @@ get_header(); ?>
  <div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
 </div>
-<div class="medium-4 large-4 columns hide-for-small-only hide-for-print">
+
+	<div class="small-12 medium-8 large-8 medium-push-4 large-push-4 columns">		
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'template-parts/content', 'deptdiv' ); ?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div>	
+
+<div class="medium-4 large-4 medium-pull-8 large-pull-8 columns hide-for-small-only hide-for-print"  role="region" aria-label="Side Menu">
 	<div class="small-12 medium-12 large-12 columns sidebar-widget">
 	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>
 	 <div class="small-12 medium-12 large-12 columns sidebar-menu-header hide-for-print">
@@ -51,7 +67,7 @@ get_header(); ?>
   </div>
  <div id="secondary" class="medium-12 columns secondary nopadding">
 		<?php if ( has_nav_menu( 'left-nav' ) ) : ?>
-			<nav id="site-navigation" class="main-navigation hide-for-print" role="navigation">
+			<nav id="site-navigation" class="main-navigation hide-for-print" role="navigation" aria-label="Side Menu">
 				<?php
 					// Primary navigation menu.
 					wp_nav_menu( array(
@@ -78,29 +94,6 @@ get_header(); ?>
 	<?php } ?>
 	</div>
 	</div>			
-	<div class="small-12 medium-8 large-8 columns">		
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'deptdiv' ); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div>	
-	<div class="small-12 columns hide-for-medium hide-for-print">
-					<?php if ( is_active_sidebar( 'lccc-events-sidebar' ) ) { ?>
-			<div class="small-12 medium-12 large-12 columns">
-				<?php dynamic_sidebar( 'lccc-events-sidebar' ); ?>
-			</div>	
-			<?php } ?>
-	<?php if ( is_active_sidebar( 'lccc-badges-sidebar' ) ) { ?>
-			<div class="small-12 medium-12 large-12 columns">			
-			<?php dynamic_sidebar( 'lccc-badges-sidebar' ); ?>
-			</div>
-	<?php } ?>
-	</div>
 </div>
 <?php get_footer(); ?>

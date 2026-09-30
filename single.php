@@ -13,7 +13,7 @@ get_header(); ?>
    <div class="small-2 columns" style="padding-top: 0.5rem;padding-left: 1.625rem;"> <span data-responsive-toggle="sub-responsive-menu" data-hide-for="medium">
      <button class="menu-icon" type="button" data-toggle>Toggle Sidebar Menu</button>
      </span> </div>
-   <div class="small-10 columns nopadding hide-for-print">
+   <div class="small-10 columns nopadding hide-for-print" aria-label="Side Menu">
     <h3 class="sub-mobile-menu-header" style="padding-top: 6px;
    padding-left: 8px;color:#ffffff ;"><?php echo bloginfo('the-title'); ?></h3></div>
   </div>

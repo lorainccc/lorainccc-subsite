@@ -6,6 +6,21 @@
 			"custom": false,
 			"palette": [
 				{
+					"slug": "blue",
+					"color": "#0055a5",
+					"name": "Blue"
+				},
+				{
+					"slug": "dark-blue",
+					"color": "#0556a4",
+					"name": "Medium Blue"
+				},
+				{
+					"slug": "light-blue",
+					"color": "#2f8ccc",
+					"name": "Light Blue"
+				},
+				{
 					"slug": "teal",
 					"color": "#008290",
 					"name": "Teal"
@@ -24,26 +39,6 @@
 					"slug": "purple",
 					"color": "#67296e",
 					"name": "Purple"
-				},
-				{
-					"slug": "blue",
-					"color": "#0055a5",
-					"name": "Blue"
-				},
-				{
-					"slug": "dark-blue",
-					"color": "#0556a4",
-					"name": "Medium Blue"
-				},
-				{
-					"slug": "gold",
-					"color": "#FFC600",
-					"name": "Gold"
-				},
-				{
-					"slug": "light-blue",
-					"color": "#2f8ccc",
-					"name": "Light Blue"
 				},
 				{
 					"slug": "gray",
