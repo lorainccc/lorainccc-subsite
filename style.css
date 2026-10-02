@@ -117,7 +117,8 @@ hr{border:0;height:20px;width:90%;height:50px;padding:2rem 0;-webkit-box-shadow:
 .recent-events .event .calendar-icon span{color:#0c3b78;display:block;line-height:100%;text-transform:uppercase;font-weight:700}
 .recent-events .event .calendar-icon .month{font-size:.6rem}.recent-events .event .calendar-icon .day{font-size:1rem}
 .events-feed a.button{margin-top:1.5rem}.events-feed-item{font-size:.75rem;margin-top:2.5rem}
-.events-feed-item h2{font-size:1.25rem}.events-feed-item .add-to-calendar a img{display:inline-block}
+.events-feed-item h2{font-size:1.25rem}.events-feed-item .add-to-calendar a img{display:inline-block} .button {font-size: 1rem;vertical-align: unset;}
+.add-to-calendar {background: #2a8000;margin: 25px 5px;}
 .events-feed-item .calendar-icon{width:90px;height:90px;background-image:url(/wp-content/themes/lorainccc/images/icons/calendaricon_blue.svg);padding:2rem 1rem;text-align:center}
 .events-feed-item .calendar-icon span{color:#0c3b78;display:block;line-height:100%;text-transform:uppercase;font-weight:700}
 .events-feed-item .calendar-icon .month{font-size:.8rem}.events-feed-item .calendar-icon .day{font-size:1.75rem}

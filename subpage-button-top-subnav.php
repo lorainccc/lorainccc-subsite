@@ -7,13 +7,13 @@
  * @since Lorainccc 1.0
  */
 get_header(); ?>
-<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
+<div class="small-12 medium-12 large-12 columns gateway-header hide-for-print">
 	<?php the_post_thumbnail(); ?>
 </div>
 <div class="row page-content">
-<div class="small-12 medium-12 large-12 columns breadcrumb-container">
+<nav id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container" aria-label="Breadcrumb Navigation">
    <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
-</div>
+</nav>
 	<div class="small-12 columns">		
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

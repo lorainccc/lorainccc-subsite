@@ -42,9 +42,7 @@ get_header(); ?>
   </div>
  </div>
 </div><!--End Mobile Side Menu -->
-<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
-   <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
-</div>
+
 
 <div class="small-12 medium-8 large-8 medium-push-4 large-push-4 columns">
 	<div id="primary" class="content-area">

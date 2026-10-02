@@ -84,9 +84,9 @@ if ( function_exists( 'sharing_display' ) ) {
   </div>
  </div>
 </div><!--End Mobile Side Menu -->
-<div id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container">
-   <?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
-</div>
+	<nav id="lc_breadcrumbs" aria-label="Breadcrumb menu" role="region" class="small-12 medium-12 large-12 columns breadcrumb-container" aria-label="Breadcrumb Navigation">
+   		<?php get_template_part( 'template-parts/content', 'breadcrumb' ); ?>
+	</nav>
 <div class="medium-4 large-4 columns hide-for-small-only hide-for-print">
 	<div class="small-12 medium-12 large-12 columns sidebar-widget">
 	<?php	if ( has_nav_menu( 'left-nav' ) ) : ?>
